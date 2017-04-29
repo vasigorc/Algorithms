@@ -1,0 +1,15 @@
+eclipse
+build
+exit
+eclipse same-targets
+eclipse
+test
+runMain Main
+exiy
+exit
+runMain Main
+exit
+sbt
+eclipse
+runMain Main
+exit

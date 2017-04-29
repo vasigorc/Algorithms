@@ -1,0 +1,8 @@
+[0m[[0minfo[0m] [0m[32mBitonicSearchTests:[0m[0m
+[0m[[0minfo[0m] [0m[31m- test Bitonic Search *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  TestFailedException was thrown during property evaluation.[0m[0m
+[0m[[0minfo[0m] [0m[31m    Message: -1 equaled -1[0m[0m
+[0m[[0minfo[0m] [0m[31m    Location: (BitonicSearchTests.scala:25)[0m[0m
+[0m[[0minfo[0m] [0m[31m    Occurred when passed generated values ([0m[0m
+[0m[[0minfo[0m] [0m[31m      arg0 = Array()[0m[0m
+[0m[[0minfo[0m] [0m[31m    )[0m[0m
