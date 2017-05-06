@@ -1,5 +1,6 @@
 import ca.vgorcinschi.algorithms1_4_34.validators.InputValidators._
 import scala.io.{StdIn}
+import ca.vgorcinschi.algorithms1_4_34.hotandcold.HotAndColdImpl
 
 object Main extends App {
   
@@ -13,6 +14,7 @@ object Main extends App {
 		  val ubInput = StdIn.readLine("What is the upper limit of the range" 
        +" you wish to guess.\n")
 		  val upperBound = validateType[Int](ubInput)
+		  new HotAndColdImpl(upperBound).play
 		  //repeat game?
 		  repeatGame()
 		} else {

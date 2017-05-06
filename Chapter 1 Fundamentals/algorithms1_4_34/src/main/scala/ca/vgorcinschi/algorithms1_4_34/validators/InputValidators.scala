@@ -1,7 +1,6 @@
 package ca.vgorcinschi.algorithms1_4_34.validators
 import scala.io.{StdIn}
 import scala.util.{Try, Success, Failure}
-import scala.reflect.runtime.universe
 
 object InputValidators {
   

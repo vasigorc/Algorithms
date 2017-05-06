@@ -4,3 +4,10 @@ eclipse
 compile
 eclipse
 exit
+compile
+compile -feature
+compile
+exit
+compile
+eit
+exit
