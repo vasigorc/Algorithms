@@ -15,7 +15,6 @@ class HotAndColdImpl(upperBound: Int) extends {
    */
   override def guess(attempt: Int):Unit = {
     counter+=1
-    println(secretIndex);
     val guessIndex = binary(array, attempt)
     guessIndex match {
       case -1 => {
