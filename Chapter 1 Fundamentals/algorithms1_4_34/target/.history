@@ -11,3 +11,8 @@ exit
 compile
 eit
 exit
+compile
+exit
+compile
+runMain Main
+exit

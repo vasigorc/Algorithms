@@ -1,6 +1,8 @@
 package ca.vgorcinschi.algorithms1_4_34.hotandcold
 
 import ca.vgorcinschi.algorithms1_4_34._
+import ca.vgorcinschi.algorithms1_4_34.validators.InputValidators._
+import scala.io.{StdIn}
 
 class HotAndColdImpl(upperBound: Int) extends {
   val secret = scala.util.Random.nextInt(upperBound-1)
@@ -11,9 +13,32 @@ class HotAndColdImpl(upperBound: Int) extends {
   /*
    * the main logic of the application goes into this method
    */
-  override def guess(guess: Int) = {
-    ???
+  override def guess(attempt: Int):Unit = {
+    counter+=1
+    println(secretIndex);
+    val guessIndex = binary(array, attempt)
+    guessIndex match {
+      case -1 => {
+         val nextAttempt = StdIn.readLine(s"Please be attentive $attempt is outside the search range" 
+	          +" (0 to $upperBound). Try again: \n");
+         val a = validateType[Int](nextAttempt)
+         guess(a)
+      }
+      case x if (secretIndex == x) => println("Congratulations! You have guessed" 
+	                  +" the secret number "+secret+" "+counter+" guesses.")
+      case x if (counter > 1) => {
+        if(absDiff(previousIndex) < absDiff(guessIndex))
+          println("Colder...")
+        else
+          println("Hotter ...")
+        previousIndex = guessIndex
+        guess(validateType[Int](StdIn.readLine("Try again ... \n")))
+      }
+      case _ => previousIndex = guessIndex; guess(validateType[Int](StdIn.readLine("Try again ... \n")))
+    }
   }
   
-  override def play = println("Secret's index in the array is: "+secretIndex)
+  def absDiff(a: Int):Int = scala.math.abs(secretIndex - a)
+  
+  override def play = guess(validateType[Int](StdIn.readLine("Your first try: \n")))
 }
