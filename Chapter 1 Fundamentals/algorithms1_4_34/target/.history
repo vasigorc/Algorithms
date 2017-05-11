@@ -16,3 +16,25 @@ exit
 compile
 runMain Main
 exit
+eclipse
+compile
+runMain Main
+compile
+eclipse
+compile
+eclipse
+sbt inspect tree clean
+inspect tree clean
+compile
+eclipse
+compile
+eclipse
+compile
+eclipse
+run
+last
+exit
+last
+run
+last
+exit

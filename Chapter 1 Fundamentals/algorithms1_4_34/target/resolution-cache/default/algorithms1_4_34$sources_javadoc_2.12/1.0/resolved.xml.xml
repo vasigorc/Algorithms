@@ -4,7 +4,7 @@
 		module="algorithms1_4_34$sources_javadoc_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20170502204507"
+		publication="20170510201346"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
