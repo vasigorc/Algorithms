@@ -5,8 +5,9 @@ scalaVersion := "2.12.1"
 name := "algorithms1_4_34"
 version := "1.0"
 
-libraryDependencies += "org.scalatest" % "scalatest_2.12" % "3.0.1" % "test"
-libraryDependencies += "org.scalacheck" %% "scalacheck" % "1.13.4" % "test"
+libraryDependencies ++= Seq("org.scalatest" % "scalatest_2.12" % "3.0.1" % "test",
+			"org.scalacheck" %% "scalacheck" % "1.13.4" % "test",
+             "org.scala-js" % "scalajs-dom_sjs0.6_2.12" % "0.9.1")
 
 // This is an application with a main method
 scalaJSUseMainModuleInitializer := true

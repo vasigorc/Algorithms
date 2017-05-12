@@ -4,7 +4,7 @@
 		module="algorithms1_4_34_sjs0.6_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20170510201437"
+		publication="20170511205615"
 	>
 		<description>
 		algorithms1_4_34
@@ -42,5 +42,6 @@
 		<dependency org="org.scala-js" name="scalajs-test-interface_2.12" rev="0.6.15" conf="test->default(compile)"/>
 		<dependency org="org.scalatest" name="scalatest_2.12" rev="3.0.1" conf="test->default(compile)"/>
 		<dependency org="org.scalacheck" name="scalacheck_2.12" rev="1.13.4" conf="test->default(compile)"/>
+		<dependency org="org.scala-js" name="scalajs-dom_sjs0.6_2.12" rev="0.9.1" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>
