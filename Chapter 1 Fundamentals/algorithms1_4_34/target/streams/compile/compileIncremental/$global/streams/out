@@ -2,39 +2,14 @@
 [0m[[0mdebug[0m] [0m[naha] Initial source changes: [0m
 [0m[[0mdebug[0m] [0m[naha] 	removed:Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	added: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] 	modified: Set(/home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/src/main/scala/ca/vgorcinschi/algorithms1_4_34/HotAndColdJS.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] 	modified: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidated products: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] External API changes: API Changes: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set(/home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/src/main/scala/ca/vgorcinschi/algorithms1_4_34/HotAndColdJS.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] [0m
 [0m[[0mdebug[0m] [0m[naha] Sources indirectly invalidated by:[0m
 [0m[[0mdebug[0m] [0m[naha] 	product: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	binary dep: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	external source: Set()[0m
-[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/src/main/scala/ca/vgorcinschi/algorithms1_4_34/HotAndColdJS.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/src/main/scala/ca/vgorcinschi/algorithms1_4_34/HotAndColdJS.scala)[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source to /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/scala-2.12/classes...[0m
-[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.13:component from component compiler for Scala 2.12.1[0m
-[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.13:component from component compiler for Scala 2.12.1[0m
-[0m[[0mdebug[0m] [0mRunning cached compiler 7e8f1b4f, interfacing (CompilerInterface) with Scala compiler version 2.12.1[0m
-[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
-[0m[[0mdebug[0m] [0m	-Xplugin:/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-compiler_2.12.1/jars/scalajs-compiler_2.12.1-0.6.15.jar[0m
-[0m[[0mdebug[0m] [0m	-bootclasspath[0m
-[0m[[0mdebug[0m] [0m	/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes:/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.1.jar[0m
-[0m[[0mdebug[0m] [0m	-classpath[0m
-[0m[[0mdebug[0m] [0m	/home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/scala-2.12/classes:/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-library_2.12/jars/scalajs-library_2.12-0.6.15.jar:/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-dom_sjs0.6_2.12/jars/scalajs-dom_sjs0.6_2.12-0.9.1.jar[0m
-[0m[[0mdebug[0m] [0mScala compilation took 5.892000069 s[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/src/main/scala/ca/vgorcinschi/algorithms1_4_34/HotAndColdJS.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/src/main/scala/ca/vgorcinschi/algorithms1_4_34/HotAndColdJS.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/src/main/scala/ca/vgorcinschi/algorithms1_4_34/HotAndColdJS.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/src/main/scala/ca/vgorcinschi/algorithms1_4_34/HotAndColdJS.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/src/main/scala/ca/vgorcinschi/algorithms1_4_34/HotAndColdJS.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	appendPar.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] New invalidations:[0m
-[0m[[0mdebug[0m] [0m[naha] 	Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Previously invalidated, but (transitively) depend on new invalidations:[0m
-[0m[[0mdebug[0m] [0m[naha] 	Set()[0m
-[0m[[0mdebug[0m] [0m[naha] All newly invalidated sources after taking into account (previously) recompiled sources:Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set()[0m

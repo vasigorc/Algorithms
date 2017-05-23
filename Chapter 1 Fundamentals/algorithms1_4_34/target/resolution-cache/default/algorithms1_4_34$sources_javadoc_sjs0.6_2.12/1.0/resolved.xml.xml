@@ -4,7 +4,7 @@
 		module="algorithms1_4_34$sources_javadoc_sjs0.6_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20170511205617"
+		publication="20170522210340"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -65,6 +65,9 @@
 			<artifact name="jetty-io" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="jetty-io" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
+		<dependency org="org.webjars" name="jquery" rev="2.1.4" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="jquery" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
 		<dependency org="org.scala-lang.modules" name="scala-parser-combinators_2.12" rev="1.0.4" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="scala-parser-combinators_2.12" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="scala-parser-combinators_2.12" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
@@ -77,11 +80,15 @@
 			<artifact name="jetty-server" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="jetty-server" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
+		<dependency org="be.doeraene" name="scalajs-jquery_sjs0.6_2.12" rev="0.9.1" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="scalajs-jquery_sjs0.6_2.12" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="scalajs-jquery_sjs0.6_2.12" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
 		<dependency org="org.eclipse.jetty" name="jetty-util" rev="8.1.16.v20140903" transitive="false" conf="phantom-js-jetty->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="jetty-util" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="jetty-util" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
-		<dependency org="org.scala-js" name="scalajs-dom_sjs0.6_2.12" rev="0.9.1" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+		<dependency org="org.scala-js" name="scalajs-dom_sjs0.6_2.12" rev="0.9.1" transitive="false" conf="compile->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;compile-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master">
 			<artifact name="scalajs-dom_sjs0.6_2.12" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="scalajs-dom_sjs0.6_2.12" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>

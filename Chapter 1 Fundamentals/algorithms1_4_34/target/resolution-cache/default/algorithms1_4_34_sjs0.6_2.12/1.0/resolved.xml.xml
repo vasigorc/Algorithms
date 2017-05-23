@@ -4,7 +4,7 @@
 		module="algorithms1_4_34_sjs0.6_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20170511205615"
+		publication="20170522202444"
 	>
 		<description>
 		algorithms1_4_34
@@ -37,11 +37,13 @@
 		<dependency org="org.scala-lang" name="scala-library" rev="2.12.1" conf="scala-tool->default,optional(default);compile->default(compile)"/>
 		<dependency org="org.eclipse.jetty" name="jetty-websocket" rev="8.1.16.v20140903" conf="phantom-js-jetty->default(compile)"/>
 		<dependency org="org.eclipse.jetty" name="jetty-server" rev="8.1.16.v20140903" conf="phantom-js-jetty->default(compile)"/>
+		<dependency org="org.webjars" name="jquery" rev="2.1.4" conf="compile->default(compile)"/>
 		<dependency org="org.scala-js" name="scalajs-compiler_2.12.1" rev="0.6.15" conf="plugin->default(compile)"/>
 		<dependency org="org.scala-js" name="scalajs-library_2.12" rev="0.6.15" conf="compile->default(compile)"/>
 		<dependency org="org.scala-js" name="scalajs-test-interface_2.12" rev="0.6.15" conf="test->default(compile)"/>
 		<dependency org="org.scalatest" name="scalatest_2.12" rev="3.0.1" conf="test->default(compile)"/>
 		<dependency org="org.scalacheck" name="scalacheck_2.12" rev="1.13.4" conf="test->default(compile)"/>
 		<dependency org="org.scala-js" name="scalajs-dom_sjs0.6_2.12" rev="0.9.1" conf="compile->default(compile)"/>
+		<dependency org="be.doeraene" name="scalajs-jquery_sjs0.6_2.12" rev="0.9.1" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>
