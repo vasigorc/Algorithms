@@ -4,7 +4,7 @@
 		module="algorithms1_4_34-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20170510201358"
+		publication="20170524051849"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>
@@ -43,6 +43,6 @@
 			<artifact name="global-plugins" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
 		<dependency org="com.typesafe.sbteclipse" name="sbteclipse-plugin" rev="5.1.0" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
-		<dependency org="org.scala-js" name="sbt-scalajs" rev="0.6.15" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
+		<dependency org="org.scala-js" name="sbt-scalajs" rev="0.6.16" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
 	</dependencies>
 </ivy-module>

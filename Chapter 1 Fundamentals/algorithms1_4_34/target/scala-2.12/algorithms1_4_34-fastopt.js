@@ -83,7 +83,7 @@ var $linkingInfo = {
 
   "assumingES6": false,
 
-  "linkerVersion": "0.6.15"
+  "linkerVersion": "0.6.16"
 };
 $g["Object"]["freeze"]($linkingInfo);
 $g["Object"]["freeze"]($linkingInfo["semantics"]);
@@ -1322,7 +1322,12 @@ $c_sjsr_Bits$.prototype.doubleToLongBitsPolyfill__p1__D__J = (function(value) {
       var a$1 = $uI((x | 0));
       var e = ((a$1 < 1023) ? a$1 : 1023);
       var b = e;
-      var n = ((av / $uD($g.Math.pow(2.0, b))) * twoPowFbits);
+      var twoPowE = $uD($g.Math.pow(2.0, b));
+      if ((twoPowE > av)) {
+        e = (((-1) + e) | 0);
+        twoPowE = (twoPowE / 2)
+      };
+      var n = ((av / twoPowE) * twoPowFbits);
       var w = $uD($g.Math.floor(n));
       var f = (n - w);
       var f$1 = ((f < 0.5) ? w : ((f > 0.5) ? (1 + w) : (((w % 2) !== 0) ? (1 + w) : w)));
@@ -1547,7 +1552,19 @@ $c_Lca_vgorcinschi_algorithms1$und4$und34_HotAndColdJS$.prototype.init___ = (fun
   return this
 });
 $c_Lca_vgorcinschi_algorithms1$und4$und34_HotAndColdJS$.prototype.main__V = (function() {
-  (0, $m_Lorg_scalajs_jquery_package$().jQuery$1)("body").append("<p>Hello world!</p>")
+  (0, $m_Lorg_scalajs_jquery_package$().jQuery$1)((function($this) {
+    return (function() {
+      $this.setupUI__V()
+    })
+  })(this))
+});
+$c_Lca_vgorcinschi_algorithms1$und4$und34_HotAndColdJS$.prototype.setupUI__V = (function() {
+  (0, $m_Lorg_scalajs_jquery_package$().jQuery$1)("#click-me-button").click((function($this) {
+    return (function() {
+      $this.addClickedMessage__V()
+    })
+  })(this));
+  (0, $m_Lorg_scalajs_jquery_package$().jQuery$1)("body").append("<p>Hello World!</p>")
 });
 $c_Lca_vgorcinschi_algorithms1$und4$und34_HotAndColdJS$.prototype.addClickedMessage__V = (function() {
   (0, $m_Lorg_scalajs_jquery_package$().jQuery$1)("body").append("<p>You clicked the button!</p>")
@@ -2626,9 +2643,6 @@ $e.ca = ($e.ca || {});
 $e.ca.vgorcinschi = ($e.ca.vgorcinschi || {});
 $e.ca.vgorcinschi.algorithms1_4_34 = ($e.ca.vgorcinschi.algorithms1_4_34 || {});
 $e.ca.vgorcinschi.algorithms1_4_34.HotAndColdJS = $m_Lca_vgorcinschi_algorithms1$und4$und34_HotAndColdJS$;
-$e.addClickedMessage = (function() {
-  $m_Lca_vgorcinschi_algorithms1$und4$und34_HotAndColdJS$().addClickedMessage__V()
-});
 $m_Lca_vgorcinschi_algorithms1$und4$und34_HotAndColdJS$().main__V();
 }).call(this);
 //# sourceMappingURL=algorithms1_4_34-fastopt.js.map

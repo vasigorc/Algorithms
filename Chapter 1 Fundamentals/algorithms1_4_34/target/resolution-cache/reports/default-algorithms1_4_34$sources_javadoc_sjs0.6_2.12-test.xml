@@ -7,10 +7,25 @@
 		revision="1.0"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, phantom-js-jetty"
-		date="20170522210340"/>
+		date="20170524051935"/>
 	<dependencies>
+		<module organisation="org.scala-js" name="scalajs-test-interface_2.12">
+			<revision name="0.6.16" status="release" pubdate="20170428072553" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scala-js.org/" extra-info.apiURL="http://www.scala-js.org/api/scalajs-test-interface/0.6.16/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="8">
+				<license name="BSD New" url="https://github.com/scala-js/scala-js/blob/master/LICENSE"/>
+				<metadata-artifact status="no" details="" size="3032" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-test-interface_2.12/ivy-0.6.16.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16.pom"/>
+				<caller organisation="default" name="algorithms1_4_34$sources_javadoc_sjs0.6_2.12" conf="test, compile, runtime" rev="0.6.16" rev-constraint-default="0.6.16" rev-constraint-dynamic="0.6.16" callerrev="1.0" extra-info.apiURL="http://www.scala-js.org/api/scalajs-test-interface/0.6.16/"/>
+				<artifacts>
+					<artifact name="scalajs-test-interface_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="29185" time="151" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-test-interface_2.12/srcs/scalajs-test-interface_2.12-0.6.16-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16-sources.jar"/>
+					</artifact>
+					<artifact name="scalajs-test-interface_2.12" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="803957" time="1301" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-test-interface_2.12/docs/scalajs-test-interface_2.12-0.6.16-javadoc.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="org.scalatest" name="scalatest_2.12">
-			<revision name="3.0.1" status="release" pubdate="20161109235252" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="8">
+			<revision name="3.0.1" status="release" pubdate="20161109235252" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="7">
 				<license name="the Apache License, ASL Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="5287" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scalatest/scalatest_2.12/ivy-3.0.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.1/scalatest_2.12-3.0.1.pom"/>
 				<caller organisation="default" name="algorithms1_4_34$sources_javadoc_sjs0.6_2.12" conf="test, compile, runtime" rev="3.0.1" rev-constraint-default="3.0.1" rev-constraint-dynamic="3.0.1" callerrev="1.0"/>
@@ -69,17 +84,17 @@
 				</artifacts>
 			</revision>
 		</module>
-		<module organisation="org.scala-js" name="scalajs-test-interface_2.12">
-			<revision name="0.6.15" status="release" pubdate="20170320063043" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scala-js.org/" extra-info.apiURL="http://www.scala-js.org/api/scalajs-test-interface/0.6.15/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="7">
-				<license name="BSD New" url="https://github.com/scala-js/scala-js/blob/master/LICENSE"/>
-				<metadata-artifact status="no" details="" size="3032" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-test-interface_2.12/ivy-0.6.15.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.15/scalajs-test-interface_2.12-0.6.15.pom"/>
-				<caller organisation="default" name="algorithms1_4_34$sources_javadoc_sjs0.6_2.12" conf="test, compile, runtime" rev="0.6.15" rev-constraint-default="0.6.15" rev-constraint-dynamic="0.6.15" callerrev="1.0" extra-info.apiURL="http://www.scala-js.org/api/scalajs-test-interface/0.6.15/"/>
+		<module organisation="org.scala-lang" name="scala-reflect">
+			<revision name="2.12.1" status="release" pubdate="20161205050619" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.1/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="6">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="no" details="" size="2825" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.12.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.1/scala-reflect-2.12.1.pom"/>
+				<caller organisation="default" name="algorithms1_4_34$sources_javadoc_sjs0.6_2.12" conf="test, compile, runtime" rev="2.12.1" rev-constraint-default="2.12.1" rev-constraint-dynamic="2.12.1" callerrev="1.0" extra-info.apiURL="http://www.scala-lang.org/api/2.12.1/"/>
 				<artifacts>
-					<artifact name="scalajs-test-interface_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="29187" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-test-interface_2.12/srcs/scalajs-test-interface_2.12-0.6.15-sources.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.15/scalajs-test-interface_2.12-0.6.15-sources.jar"/>
+					<artifact name="scala-reflect" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="572951" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-reflect/srcs/scala-reflect-2.12.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.1/scala-reflect-2.12.1-sources.jar"/>
 					</artifact>
-					<artifact name="scalajs-test-interface_2.12" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="804870" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-test-interface_2.12/docs/scalajs-test-interface_2.12-0.6.15-javadoc.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.15/scalajs-test-interface_2.12-0.6.15-javadoc.jar"/>
+					<artifact name="scala-reflect" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="5835625" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-reflect/docs/scala-reflect-2.12.1-javadoc.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.1/scala-reflect-2.12.1-javadoc.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -114,8 +129,38 @@
 				</artifacts>
 			</revision>
 		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.12.1" status="release" pubdate="20161205050923" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.1/" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="4">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="no" details="" size="2653" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/ivy-2.12.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.1/scala-library-2.12.1.pom"/>
+				<caller organisation="default" name="algorithms1_4_34$sources_javadoc_sjs0.6_2.12" conf="test, compile, runtime" rev="2.12.1" rev-constraint-default="2.12.1" rev-constraint-dynamic="2.12.1" callerrev="1.0" extra-info.apiURL="http://www.scala-lang.org/api/2.12.1/"/>
+				<artifacts>
+					<artifact name="scala-library" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="988614" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.1/scala-library-2.12.1-sources.jar"/>
+					</artifact>
+					<artifact name="scala-library" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="30967256" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/docs/scala-library-2.12.1-javadoc.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.1/scala-library-2.12.1-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-js" name="scalajs-library_2.12">
+			<revision name="0.6.16" status="release" pubdate="20170428072257" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scala-js.org/" extra-info.apiURL="http://www.scala-js.org/api/scalajs-library/0.6.16/" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="2">
+				<license name="BSD New" url="https://github.com/scala-js/scala-js/blob/master/LICENSE"/>
+				<metadata-artifact status="no" details="" size="2996" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-library_2.12/ivy-0.6.16.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16.pom"/>
+				<caller organisation="default" name="algorithms1_4_34$sources_javadoc_sjs0.6_2.12" conf="test, compile, runtime" rev="0.6.16" rev-constraint-default="0.6.16" rev-constraint-dynamic="0.6.16" callerrev="1.0" extra-info.apiURL="http://www.scala-js.org/api/scalajs-library/0.6.16/"/>
+				<artifacts>
+					<artifact name="scalajs-library_2.12" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="2486463" time="2743" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-library_2.12/docs/scalajs-library_2.12-0.6.16-javadoc.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16-javadoc.jar"/>
+					</artifact>
+					<artifact name="scalajs-library_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="146572" time="310" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-library_2.12/srcs/scalajs-library_2.12-0.6.16-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="be.doeraene" name="scalajs-jquery_sjs0.6_2.12">
-			<revision name="0.9.1" status="release" pubdate="20161029113810" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scala-js.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="2">
+			<revision name="0.9.1" status="release" pubdate="20161029113810" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scala-js.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
 				<license name="BSD 3-Clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
 				<metadata-artifact status="no" details="" size="3109" time="0" location="/home/vgorcinschi/.ivy2/cache/be.doeraene/scalajs-jquery_sjs0.6_2.12/ivy-0.9.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/be/doeraene/scalajs-jquery_sjs0.6_2.12/0.9.1/scalajs-jquery_sjs0.6_2.12-0.9.1.pom"/>
 				<caller organisation="default" name="algorithms1_4_34$sources_javadoc_sjs0.6_2.12" conf="test, compile, runtime" rev="0.9.1" rev-constraint-default="0.9.1" rev-constraint-dynamic="0.9.1" callerrev="1.0"/>
@@ -145,58 +190,13 @@
 			</revision>
 		</module>
 		<module organisation="org.webjars" name="jquery">
-			<revision name="2.1.4" status="release" pubdate="20150430014105" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://webjars.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
+			<revision name="2.1.4" status="release" pubdate="20150430014105" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://webjars.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="0">
 				<license name="MIT License" url="https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt"/>
 				<metadata-artifact status="no" details="" size="3754" time="0" location="/home/vgorcinschi/.ivy2/cache/org.webjars/jquery/ivy-2.1.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/webjars/jquery/2.1.4/jquery-2.1.4.pom"/>
 				<caller organisation="default" name="algorithms1_4_34$sources_javadoc_sjs0.6_2.12" conf="test, compile, runtime" rev="2.1.4" rev-constraint-default="2.1.4" rev-constraint-dynamic="2.1.4" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="jquery" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="3886" time="0" location="/home/vgorcinschi/.ivy2/cache/org.webjars/jquery/srcs/jquery-2.1.4-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/webjars/jquery/2.1.4/jquery-2.1.4-sources.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.scala-js" name="scalajs-library_2.12">
-			<revision name="0.6.15" status="release" pubdate="20170320062803" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scala-js.org/" extra-info.apiURL="http://www.scala-js.org/api/scalajs-library/0.6.15/" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="0">
-				<license name="BSD New" url="https://github.com/scala-js/scala-js/blob/master/LICENSE"/>
-				<metadata-artifact status="no" details="" size="2996" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-library_2.12/ivy-0.6.15.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.15/scalajs-library_2.12-0.6.15.pom"/>
-				<caller organisation="default" name="algorithms1_4_34$sources_javadoc_sjs0.6_2.12" conf="test, compile, runtime" rev="0.6.15" rev-constraint-default="0.6.15" rev-constraint-dynamic="0.6.15" callerrev="1.0" extra-info.apiURL="http://www.scala-js.org/api/scalajs-library/0.6.15/"/>
-				<artifacts>
-					<artifact name="scalajs-library_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="146361" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-library_2.12/srcs/scalajs-library_2.12-0.6.15-sources.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.15/scalajs-library_2.12-0.6.15-sources.jar"/>
-					</artifact>
-					<artifact name="scalajs-library_2.12" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="2505986" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-library_2.12/docs/scalajs-library_2.12-0.6.15-javadoc.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.15/scalajs-library_2.12-0.6.15-javadoc.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.scala-lang" name="scala-reflect">
-			<revision name="2.12.1" status="release" pubdate="20161205050619" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.1/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="6">
-				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="no" details="" size="2825" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.12.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.1/scala-reflect-2.12.1.pom"/>
-				<caller organisation="default" name="algorithms1_4_34$sources_javadoc_sjs0.6_2.12" conf="test, compile, runtime" rev="2.12.1" rev-constraint-default="2.12.1" rev-constraint-dynamic="2.12.1" callerrev="1.0" extra-info.apiURL="http://www.scala-lang.org/api/2.12.1/"/>
-				<artifacts>
-					<artifact name="scala-reflect" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="572951" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-reflect/srcs/scala-reflect-2.12.1-sources.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.1/scala-reflect-2.12.1-sources.jar"/>
-					</artifact>
-					<artifact name="scala-reflect" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="5835625" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-reflect/docs/scala-reflect-2.12.1-javadoc.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.1/scala-reflect-2.12.1-javadoc.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.scala-lang" name="scala-library">
-			<revision name="2.12.1" status="release" pubdate="20161205050923" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.1/" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="4">
-				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="no" details="" size="2653" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/ivy-2.12.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.1/scala-library-2.12.1.pom"/>
-				<caller organisation="default" name="algorithms1_4_34$sources_javadoc_sjs0.6_2.12" conf="test, compile, runtime" rev="2.12.1" rev-constraint-default="2.12.1" rev-constraint-dynamic="2.12.1" callerrev="1.0" extra-info.apiURL="http://www.scala-lang.org/api/2.12.1/"/>
-				<artifacts>
-					<artifact name="scala-library" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="988614" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.1-sources.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.1/scala-library-2.12.1-sources.jar"/>
-					</artifact>
-					<artifact name="scala-library" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="30967256" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/docs/scala-library-2.12.1-javadoc.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.1/scala-library-2.12.1-javadoc.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>

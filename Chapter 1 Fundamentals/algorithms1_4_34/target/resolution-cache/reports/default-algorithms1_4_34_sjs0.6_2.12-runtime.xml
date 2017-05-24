@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="runtime"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, phantom-js-jetty"
-		date="20170522202444"/>
+		date="20170524051920"/>
 	<dependencies>
 		<module organisation="be.doeraene" name="scalajs-jquery_sjs0.6_2.12">
 			<revision name="0.9.1" status="release" pubdate="20161029113810" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scala-js.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="4">
@@ -35,20 +35,20 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-js" name="scalajs-library_2.12">
-			<revision name="0.6.15" status="release" pubdate="20170320062803" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scala-js.org/" extra-info.apiURL="http://www.scala-js.org/api/scalajs-library/0.6.15/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master, runtime(*), master(compile), compile(*)" position="2">
+			<revision name="0.6.16" status="release" pubdate="20170428072257" resolver="public" artresolver="public" homepage="http://scala-js.org/" extra-info.apiURL="http://www.scala-js.org/api/scalajs-library/0.6.16/" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master, runtime(*), master(compile), compile(*)" position="2">
 				<license name="BSD New" url="https://github.com/scala-js/scala-js/blob/master/LICENSE"/>
-				<metadata-artifact status="no" details="" size="2996" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-library_2.12/ivy-0.6.15.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.15/scalajs-library_2.12-0.6.15.pom"/>
-				<caller organisation="default" name="algorithms1_4_34_sjs0.6_2.12" conf="compile, runtime" rev="0.6.15" rev-constraint-default="0.6.15" rev-constraint-dynamic="0.6.15" callerrev="1.0"/>
+				<metadata-artifact status="successful" details="" size="2227" time="129" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-library_2.12/ivy-0.6.16.xml" searched="true" original-local-location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-library_2.12/ivy-0.6.16.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16.pom"/>
+				<caller organisation="default" name="algorithms1_4_34_sjs0.6_2.12" conf="compile, runtime" rev="0.6.16" rev-constraint-default="0.6.16" rev-constraint-dynamic="0.6.16" callerrev="1.0"/>
 				<caller organisation="be.doeraene" name="scalajs-jquery_sjs0.6_2.12" conf="default, compile, runtime, master" rev="0.6.13" rev-constraint-default="0.6.13" rev-constraint-dynamic="0.6.13" callerrev="0.9.1"/>
 				<caller organisation="org.scala-js" name="scalajs-dom_sjs0.6_2.12" conf="default, compile, runtime, master" rev="0.6.13" rev-constraint-default="0.6.13" rev-constraint-dynamic="0.6.13" callerrev="0.9.1"/>
 				<artifacts>
-					<artifact name="scalajs-library_2.12" type="jar" ext="jar" status="no" details="" size="6398203" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-library_2.12/jars/scalajs-library_2.12-0.6.15.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.15/scalajs-library_2.12-0.6.15.jar"/>
+					<artifact name="scalajs-library_2.12" type="jar" ext="jar" status="successful" details="" size="6431478" time="12192" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-library_2.12/jars/scalajs-library_2.12-0.6.16.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 			<revision name="0.6.13" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
-				<evicted-by rev="0.6.15"/>
+				<evicted-by rev="0.6.16"/>
 				<caller organisation="be.doeraene" name="scalajs-jquery_sjs0.6_2.12" conf="default, compile, runtime, master" rev="0.6.13" rev-constraint-default="0.6.13" rev-constraint-dynamic="0.6.13" callerrev="0.9.1"/>
 				<caller organisation="org.scala-js" name="scalajs-dom_sjs0.6_2.12" conf="default, compile, runtime, master" rev="0.6.13" rev-constraint-default="0.6.13" rev-constraint-dynamic="0.6.13" callerrev="0.9.1"/>
 				<artifacts>
@@ -56,12 +56,12 @@
 			</revision>
 		</module>
 		<module organisation="org.webjars" name="jquery">
-			<revision name="2.1.4" status="release" pubdate="20150430014105" resolver="public" artresolver="public" homepage="http://webjars.org" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="1">
+			<revision name="2.1.4" status="release" pubdate="20150430014105" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://webjars.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
 				<license name="MIT License" url="https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt"/>
-				<metadata-artifact status="successful" details="" size="6955" time="132" location="/home/vgorcinschi/.ivy2/cache/org.webjars/jquery/ivy-2.1.4.xml" searched="true" original-local-location="/home/vgorcinschi/.ivy2/cache/org.webjars/jquery/ivy-2.1.4.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/webjars/jquery/2.1.4/jquery-2.1.4.pom"/>
+				<metadata-artifact status="no" details="" size="3754" time="0" location="/home/vgorcinschi/.ivy2/cache/org.webjars/jquery/ivy-2.1.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/webjars/jquery/2.1.4/jquery-2.1.4.pom"/>
 				<caller organisation="default" name="algorithms1_4_34_sjs0.6_2.12" conf="compile, runtime" rev="2.1.4" rev-constraint-default="2.1.4" rev-constraint-dynamic="2.1.4" callerrev="1.0"/>
 				<artifacts>
-					<artifact name="jquery" type="jar" ext="jar" status="successful" details="" size="158370" time="710" location="/home/vgorcinschi/.ivy2/cache/org.webjars/jquery/jars/jquery-2.1.4.jar">
+					<artifact name="jquery" type="jar" ext="jar" status="no" details="" size="158370" time="0" location="/home/vgorcinschi/.ivy2/cache/org.webjars/jquery/jars/jquery-2.1.4.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/webjars/jquery/2.1.4/jquery-2.1.4.jar"/>
 					</artifact>
 				</artifacts>
@@ -72,8 +72,8 @@
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
 				<metadata-artifact status="no" details="" size="2653" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/ivy-2.12.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.1/scala-library-2.12.1.pom"/>
 				<caller organisation="default" name="algorithms1_4_34_sjs0.6_2.12" conf="compile, runtime" rev="2.12.1" rev-constraint-default="2.12.1" rev-constraint-dynamic="2.12.1" callerrev="1.0"/>
+				<caller organisation="org.scala-js" name="scalajs-library_2.12" conf="default, compile, runtime, master" rev="2.12.1" rev-constraint-default="2.12.1" rev-constraint-dynamic="2.12.1" callerrev="0.6.16"/>
 				<caller organisation="be.doeraene" name="scalajs-jquery_sjs0.6_2.12" conf="default, compile, runtime, master" rev="2.12.1" rev-constraint-default="2.12.1" rev-constraint-dynamic="2.12.1" callerrev="0.9.1"/>
-				<caller organisation="org.scala-js" name="scalajs-library_2.12" conf="default, compile, runtime, master" rev="2.12.1" rev-constraint-default="2.12.1" rev-constraint-dynamic="2.12.1" callerrev="0.6.15"/>
 				<caller organisation="org.scala-js" name="scalajs-dom_sjs0.6_2.12" conf="default, compile, runtime, master" rev="2.12.1" rev-constraint-default="2.12.1" rev-constraint-dynamic="2.12.1" callerrev="0.9.1"/>
 				<artifacts>
 					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="5272325" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.1.jar">

@@ -1,0 +1,16 @@
+{
+  "name": "algorithms1_4_34",
+  "version": "1.0.0",
+  "description": "hotandcold",
+  "main": "target/scala-2.12/algorithms1_4_34-fastopt.js",
+  "dependencies": {
+    "jsdom": "^11.0.0",
+    "source-map-support": "^0.4.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vgorcinschi",
+  "license": "ISC"
+}
