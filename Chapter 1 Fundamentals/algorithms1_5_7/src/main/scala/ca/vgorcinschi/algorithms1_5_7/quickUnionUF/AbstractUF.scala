@@ -1,7 +1,8 @@
 package ca.vgorcinschi.algorithms1_5_7.quickUnionUF
 
-abstract class AbstractUF(array: Array[Int]) extends UF{
+abstract class AbstractUF extends UF{
   
+  val array: Array[Int]
    //validate that p is a valid index
    protected def validate(p: Int) = {
 		  val l = array.length
