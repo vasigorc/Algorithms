@@ -4,7 +4,7 @@
 		module="algorithms1_4_34$sources_javadoc_sjs0.6_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20170524051935"
+		publication="20170530202748"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

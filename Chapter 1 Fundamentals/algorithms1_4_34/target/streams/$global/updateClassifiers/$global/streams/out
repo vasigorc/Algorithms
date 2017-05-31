@@ -2178,20 +2178,8 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.webjars#jquery;2.1.4!jquery.jar(src)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] be.doeraene#scalajs-jquery_sjs0.6_2.12;0.9.1!scalajs-jquery_sjs0.6_2.12.jar(doc)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] be.doeraene#scalajs-jquery_sjs0.6_2.12;0.9.1!scalajs-jquery_sjs0.6_2.12.jar(src)[0m
-[0m[[0mdebug[0m] [0m		tried /home/vgorcinschi/.ivy2/local/org.scala-js/scalajs-library_2.12/0.6.16/docs/scalajs-library_2.12-javadoc.jar[0m
-[0m[[0mdebug[0m] [0m		tried /home/vgorcinschi/.ivy2/local/org.scala-js/scalajs-library_2.12/0.6.16/srcs/scalajs-library_2.12-sources.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16-javadoc.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16-javadoc.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16-javadoc.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16-javadoc.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16-javadoc.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scala-js#scalajs-library_2.12;0.6.16!scalajs-library_2.12.jar(doc) (2743ms)[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16-sources.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16-sources.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16-sources.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16-sources.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16-sources.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scala-js#scalajs-library_2.12;0.6.16!scalajs-library_2.12.jar(src) (310ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-js#scalajs-library_2.12;0.6.16!scalajs-library_2.12.jar(doc)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-js#scalajs-library_2.12;0.6.16!scalajs-library_2.12.jar(src)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-js#scalajs-dom_sjs0.6_2.12;0.9.1!scalajs-dom_sjs0.6_2.12.jar(doc)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-js#scalajs-dom_sjs0.6_2.12;0.9.1!scalajs-dom_sjs0.6_2.12.jar(src)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.12.1!scala-library.jar(src)[0m
@@ -2202,20 +2190,8 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.1!scala-reflect.jar(doc)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalatest#scalatest_2.12;3.0.1!scalatest_2.12.jar(src)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalatest#scalatest_2.12;3.0.1!scalatest_2.12.jar(doc)[0m
-[0m[[0mdebug[0m] [0m		tried /home/vgorcinschi/.ivy2/local/org.scala-js/scalajs-test-interface_2.12/0.6.16/srcs/scalajs-test-interface_2.12-sources.jar[0m
-[0m[[0mdebug[0m] [0m		tried /home/vgorcinschi/.ivy2/local/org.scala-js/scalajs-test-interface_2.12/0.6.16/docs/scalajs-test-interface_2.12-javadoc.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16-sources.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16-sources.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16-sources.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16-sources.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16-sources.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scala-js#scalajs-test-interface_2.12;0.6.16!scalajs-test-interface_2.12.jar(src) (151ms)[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16-javadoc.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16-javadoc.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16-javadoc.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16-javadoc.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16-javadoc.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scala-js#scalajs-test-interface_2.12;0.6.16!scalajs-test-interface_2.12.jar(doc) (1301ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-js#scalajs-test-interface_2.12;0.6.16!scalajs-test-interface_2.12.jar(src)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-js#scalajs-test-interface_2.12;0.6.16!scalajs-test-interface_2.12.jar(doc)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4!scala-parser-combinators_2.12.jar(src)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4!scala-parser-combinators_2.12.jar(doc)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.5!scala-xml_2.12.jar(src)[0m
@@ -2228,20 +2204,8 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.1!scala-compiler.jar(src)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(doc)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)[0m
-[0m[[0mdebug[0m] [0m		tried /home/vgorcinschi/.ivy2/local/org.scala-js/scalajs-compiler_2.12.1/0.6.16/docs/scalajs-compiler_2.12.1-javadoc.jar[0m
-[0m[[0mdebug[0m] [0m		tried /home/vgorcinschi/.ivy2/local/org.scala-js/scalajs-compiler_2.12.1/0.6.16/srcs/scalajs-compiler_2.12.1-sources.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16-javadoc.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16-javadoc.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16-javadoc.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16-javadoc.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16-javadoc.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scala-js#scalajs-compiler_2.12.1;0.6.16!scalajs-compiler_2.12.1.jar(doc) (2633ms)[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16-sources.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16-sources.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16-sources.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16-sources.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16-sources.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scala-js#scalajs-compiler_2.12.1;0.6.16!scalajs-compiler_2.12.1.jar(src) (286ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-js#scalajs-compiler_2.12.1;0.6.16!scalajs-compiler_2.12.1.jar(doc)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-js#scalajs-compiler_2.12.1;0.6.16!scalajs-compiler_2.12.1.jar(src)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.14.1!jline.jar(src)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.14.1!jline.jar(doc)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jetty#jetty-continuation;8.1.16.v20140903!jetty-continuation.jar(src)[0m
@@ -2258,7 +2222,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jetty.orbit#javax.servlet;3.0.0.v201112011016!javax.servlet.jar(src)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jetty#jetty-http;8.1.16.v20140903!jetty-http.jar(doc)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jetty#jetty-http;8.1.16.v20140903!jetty-http.jar(src)[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 277ms :: artifacts dl 7473ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 327ms :: artifacts dl 276ms[0m
 [0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34$sources_javadoc_sjs0.6_2.12;1.0 compile produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34$sources_javadoc_sjs0.6_2.12-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34$sources_javadoc_sjs0.6_2.12;1.0 runtime produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34$sources_javadoc_sjs0.6_2.12-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34$sources_javadoc_sjs0.6_2.12;1.0 test produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34$sources_javadoc_sjs0.6_2.12-test.xml[0m
@@ -2273,4 +2237,4 @@
 [0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34$sources_javadoc_sjs0.6_2.12;1.0 pom produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34$sources_javadoc_sjs0.6_2.12-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34$sources_javadoc_sjs0.6_2.12;1.0 scala-tool produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34$sources_javadoc_sjs0.6_2.12-scala-tool.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34$sources_javadoc_sjs0.6_2.12;1.0 phantom-js-jetty produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34$sources_javadoc_sjs0.6_2.12-phantom-js-jetty.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (277ms resolve - 7473ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (327ms resolve - 276ms download)[0m

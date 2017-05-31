@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="plugin"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, phantom-js-jetty"
-		date="20170524051935"/>
+		date="20170530202748"/>
 	<dependencies>
 		<module organisation="org.scala-js" name="scalajs-compiler_2.12.1">
 			<revision name="0.6.16" status="release" pubdate="20170428071126" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scala-js.org/" extra-info.apiURL="http://www.scala-js.org/api/scalajs-compiler/0.6.16/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="4">
@@ -15,10 +15,10 @@
 				<metadata-artifact status="no" details="" size="3270" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-compiler_2.12.1/ivy-0.6.16.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16.pom"/>
 				<caller organisation="default" name="algorithms1_4_34$sources_javadoc_sjs0.6_2.12" conf="plugin" rev="0.6.16" rev-constraint-default="0.6.16" rev-constraint-dynamic="0.6.16" callerrev="1.0" extra-info.apiURL="http://www.scala-js.org/api/scalajs-compiler/0.6.16/"/>
 				<artifacts>
-					<artifact name="scalajs-compiler_2.12.1" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="1935910" time="2633" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-compiler_2.12.1/docs/scalajs-compiler_2.12.1-0.6.16-javadoc.jar">
+					<artifact name="scalajs-compiler_2.12.1" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="1935910" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-compiler_2.12.1/docs/scalajs-compiler_2.12.1-0.6.16-javadoc.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16-javadoc.jar"/>
 					</artifact>
-					<artifact name="scalajs-compiler_2.12.1" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="153117" time="286" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-compiler_2.12.1/srcs/scalajs-compiler_2.12.1-0.6.16-sources.jar">
+					<artifact name="scalajs-compiler_2.12.1" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="153117" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-js/scalajs-compiler_2.12.1/srcs/scalajs-compiler_2.12.1-0.6.16-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16-sources.jar"/>
 					</artifact>
 				</artifacts>

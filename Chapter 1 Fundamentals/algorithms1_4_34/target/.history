@@ -99,3 +99,29 @@ eclipse
 compile
 run
 ~fastOptJS
+runMain Main
+run Main
+reload
+eclipse
+reload
+compile
+reload
+exit
+compile
+eclipse
+clean
+compile
+exit
+compile
+dependency
+dependencies
+allDependencies
+jsDependencies
+inspect tree clean
+compile
+clean
+compile
+reload
+compile
+eclipse
+exit

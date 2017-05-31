@@ -31,21 +31,8 @@
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.1 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.1 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.1 {scala-tool=[default, optional(default)], compile=[default(compile)]}[0m
 [0m[[0minfo[0m] [0mResolving org.scala-js#scalajs-library_2.12;0.6.16 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-js#scalajs-library_2.12;0.6.16 {compile=[default(compile)]}[0m
-[0m[[0minfo[0m] [0mResolving org.scala-js#scalajs-library_2.12;0.6.16 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.scala-js#scalajs-library_2.12;0.6.16 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried /home/vgorcinschi/.ivy2/local/org.scala-js/scalajs-library_2.12/0.6.16/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for org.scala-js#scalajs-library_2.12;0.6.16[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for org.scala-js#scalajs-library_2.12;0.6.16[0m
-[0m[[0mdebug[0m] [0m		=> https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16.pom (0.6.16)[0m
-[0m[[0mdebug[0m] [0mdownloading https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.scala-js#scalajs-library_2.12;0.6.16!scalajs-library_2.12.pom(pom.original) (129ms)[0m
-[0m[[0mdebug[0m] [0m		tried /home/vgorcinschi/.ivy2/local/org.scala-js/scalajs-library_2.12/0.6.16/jars/scalajs-library_2.12.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16.jar[0m
-[0m[[0mdebug[0m] [0m	found org.scala-js#scalajs-library_2.12;0.6.16 in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-js#scalajs-library_2.12;0.6.16[0m
+[0m[[0mdebug[0m] [0m	found org.scala-js#scalajs-library_2.12;0.6.16 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[0.6.16] org.scala-js#scalajs-library_2.12;0.6.16[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#algorithms1_4_34_sjs0.6_2.12;1.0->org.scala-js#scalajs-library_2.12;0.6.16 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#algorithms1_4_34_sjs0.6_2.12;1.0->org.scala-js#scalajs-library_2.12;0.6.16 [compile->compile][0m
@@ -423,21 +410,8 @@
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.1 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.1 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.1 {scala-tool=[default, optional(default)], compile=[default(compile)]}[0m
 [0m[[0minfo[0m] [0mResolving org.scala-js#scalajs-test-interface_2.12;0.6.16 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-js#scalajs-test-interface_2.12;0.6.16 {test=[default(compile)]}[0m
-[0m[[0minfo[0m] [0mResolving org.scala-js#scalajs-test-interface_2.12;0.6.16 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.scala-js#scalajs-test-interface_2.12;0.6.16 {test=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried /home/vgorcinschi/.ivy2/local/org.scala-js/scalajs-test-interface_2.12/0.6.16/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for org.scala-js#scalajs-test-interface_2.12;0.6.16[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for org.scala-js#scalajs-test-interface_2.12;0.6.16[0m
-[0m[[0mdebug[0m] [0m		=> https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16.pom (0.6.16)[0m
-[0m[[0mdebug[0m] [0mdownloading https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.scala-js#scalajs-test-interface_2.12;0.6.16!scalajs-test-interface_2.12.pom(pom.original) (139ms)[0m
-[0m[[0mdebug[0m] [0m		tried /home/vgorcinschi/.ivy2/local/org.scala-js/scalajs-test-interface_2.12/0.6.16/jars/scalajs-test-interface_2.12.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16.jar[0m
-[0m[[0mdebug[0m] [0m	found org.scala-js#scalajs-test-interface_2.12;0.6.16 in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-js#scalajs-test-interface_2.12;0.6.16[0m
+[0m[[0mdebug[0m] [0m	found org.scala-js#scalajs-test-interface_2.12;0.6.16 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[0.6.16] org.scala-js#scalajs-test-interface_2.12;0.6.16[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#algorithms1_4_34_sjs0.6_2.12;1.0->org.scala-js#scalajs-test-interface_2.12;0.6.16 [test->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#algorithms1_4_34_sjs0.6_2.12;1.0->org.scala-js#scalajs-test-interface_2.12;0.6.16 [test->compile][0m
@@ -1594,21 +1568,8 @@
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.1 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.1 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.1 {scala-tool=[default, optional(default)], compile=[default(compile)]}[0m
 [0m[[0minfo[0m] [0mResolving org.scala-js#scalajs-compiler_2.12.1;0.6.16 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-js#scalajs-compiler_2.12.1;0.6.16 {plugin=[default(compile)]}[0m
-[0m[[0minfo[0m] [0mResolving org.scala-js#scalajs-compiler_2.12.1;0.6.16 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.scala-js#scalajs-compiler_2.12.1;0.6.16 {plugin=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried /home/vgorcinschi/.ivy2/local/org.scala-js/scalajs-compiler_2.12.1/0.6.16/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for org.scala-js#scalajs-compiler_2.12.1;0.6.16[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for org.scala-js#scalajs-compiler_2.12.1;0.6.16[0m
-[0m[[0mdebug[0m] [0m		=> https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16.pom (0.6.16)[0m
-[0m[[0mdebug[0m] [0mdownloading https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.scala-js#scalajs-compiler_2.12.1;0.6.16!scalajs-compiler_2.12.1.pom(pom.original) (153ms)[0m
-[0m[[0mdebug[0m] [0m		tried /home/vgorcinschi/.ivy2/local/org.scala-js/scalajs-compiler_2.12.1/0.6.16/jars/scalajs-compiler_2.12.1.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16.jar[0m
-[0m[[0mdebug[0m] [0m	found org.scala-js#scalajs-compiler_2.12.1;0.6.16 in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-js#scalajs-compiler_2.12.1;0.6.16[0m
+[0m[[0mdebug[0m] [0m	found org.scala-js#scalajs-compiler_2.12.1;0.6.16 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[0.6.16] org.scala-js#scalajs-compiler_2.12.1;0.6.16[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#algorithms1_4_34_sjs0.6_2.12;1.0->org.scala-js#scalajs-compiler_2.12.1;0.6.16 [plugin->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#algorithms1_4_34_sjs0.6_2.12;1.0->org.scala-js#scalajs-compiler_2.12.1;0.6.16 [plugin->compile][0m
@@ -2027,20 +1988,10 @@
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.12.1!scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.webjars#jquery;2.1.4!jquery.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/scala-js/scalajs-library_2.12/0.6.16/scalajs-library_2.12-0.6.16.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scala-js#scalajs-library_2.12;0.6.16!scalajs-library_2.12.jar (12192ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-js#scalajs-library_2.12;0.6.16!scalajs-library_2.12.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-js#scalajs-dom_sjs0.6_2.12;0.9.1!scalajs-dom_sjs0.6_2.12.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] be.doeraene#scalajs-jquery_sjs0.6_2.12;0.9.1!scalajs-jquery_sjs0.6_2.12.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/scala-js/scalajs-test-interface_2.12/0.6.16/scalajs-test-interface_2.12-0.6.16.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scala-js#scalajs-test-interface_2.12;0.6.16!scalajs-test-interface_2.12.jar (346ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-js#scalajs-test-interface_2.12;0.6.16!scalajs-test-interface_2.12.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalatest#scalatest_2.12;3.0.1!scalatest_2.12.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalacheck#scalacheck_2.12;1.13.4!scalacheck_2.12.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalactic#scalactic_2.12;3.0.1!scalactic_2.12.jar(bundle)[0m
@@ -2048,12 +1999,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.5!scala-xml_2.12.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4!scala-parser-combinators_2.12.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/scala-js/scalajs-compiler_2.12.1/0.6.16/scalajs-compiler_2.12.1-0.6.16.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scala-js#scalajs-compiler_2.12.1;0.6.16!scalajs-compiler_2.12.1.jar (1182ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-js#scalajs-compiler_2.12.1;0.6.16!scalajs-compiler_2.12.1.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.1!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.14.1!jline.jar[0m
@@ -2064,7 +2010,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jetty#jetty-http;8.1.16.v20140903!jetty-http.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jetty.orbit#javax.servlet;3.0.0.v201112011016!javax.servlet.jar(orbit)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jetty#jetty-continuation;8.1.16.v20140903!jetty-continuation.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1192ms :: artifacts dl 13751ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 263ms :: artifacts dl 12ms[0m
 [0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 compile produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 runtime produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 test produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-test.xml[0m
@@ -2079,5 +2025,5 @@
 [0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 pom produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 scala-tool produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-scala-tool.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 phantom-js-jetty produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-phantom-js-jetty.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (1192ms resolve - 13751ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (263ms resolve - 12ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
