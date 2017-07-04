@@ -1,6 +1,7 @@
 package ca.vgorcinschi.algorithms1_5_7.quickUnionUF
 
-import rx.lang.scala.Observable
+import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits.global
 
 class QuickUnionUF(size: Int)extends AbstractUF{
   
@@ -16,19 +17,21 @@ class QuickUnionUF(size: Int)extends AbstractUF{
   override def connected(p: Int, q: Int):Boolean = find(p) == find(q)
   
   override def union(p: Int, q: Int) = {
-    //add future or rx
-    //val rootP = find(p)
-    //val rootQ = find(q)
-    //if(rootP != rootQ){
-       //array(rootP) = rootQ
-       //count -= 1
-  //}
-    val a = obsFind(p) zip obsFind(q) filter { case(p,q) => p != q }
-    a.subscribe((a)=>{
-      array(a._1) = a._2
-      count -= 1
-    })
+    /*
+     * need to declare Futures outisde
+     * for-comprehension loop to run in parallel
+     */
+    val fRootP = Future { find(p)}
+    val fRootQ = Future { find(q)}
+    
+    for {
+      rootP <- fRootP
+      rootQ <- fRootQ
+      if(rootP != rootQ)
+    } {
+        array(rootP) = rootQ
+        count -=1
+    }
   }
   
-  def obsFind(i:Int):Observable[Int] = Observable.just(i)
 }

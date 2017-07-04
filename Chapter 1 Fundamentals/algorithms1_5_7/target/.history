@@ -9,3 +9,21 @@ eclipse
 reload
 compile
 exit
+compile
+eclipse
+compile
+reload
+compile
+last compile:compileIncremental
+compile
+eclipse
+reload
+compile
+eclipse
+compile
+last compile:compileIncremental
+exit
+compile
+exit
+compile
+exit
