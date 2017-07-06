@@ -125,3 +125,16 @@ reload
 compile
 eclipse
 exit
+eclipse
+last *:update
+compile
+last *:update
+reload
+compile
+reload
+compile
+reload
+compile
+eclipse
+runMain Main
+exit

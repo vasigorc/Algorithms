@@ -1,0 +1,2 @@
+[0m[[31merror[0m] [0m`runMain` is not supported when using a main module initializer (scalaJSUseMainModuleInitializer := true) since the (unique) entry point is burned in the fastOptJS/fullOptJS.[0m
+[0m[[31merror[0m] [0m(compile:[31mrunMain[0m) `runMain` is not supported when using a main module initializer (scalaJSUseMainModuleInitializer := true) since the (unique) entry point is burned in the fastOptJS/fullOptJS.[0m
