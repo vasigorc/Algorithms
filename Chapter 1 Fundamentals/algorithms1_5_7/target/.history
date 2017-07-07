@@ -30,3 +30,5 @@ exit
 runMain Main
 compile
 exit
+runMain Main
+exit

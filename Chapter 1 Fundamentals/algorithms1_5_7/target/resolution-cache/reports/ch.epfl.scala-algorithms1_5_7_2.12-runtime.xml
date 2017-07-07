@@ -7,40 +7,15 @@
 		revision="1.0"
 		conf="runtime"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20170701105553"/>
+		date="20170707232450"/>
 	<dependencies>
-		<module organisation="io.reactivex" name="rxscala_2.12">
-			<revision name="0.26.5" status="release" pubdate="20161228142258" resolver="public" artresolver="public" homepage="https://github.com/ReactiveX/RxScala" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="1">
-				<license name="Apache-2.0" url="https://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="3091" time="150" location="/home/vgorcinschi/.ivy2/cache/io.reactivex/rxscala_2.12/ivy-0.26.5.xml" searched="true" original-local-location="/home/vgorcinschi/.ivy2/cache/io.reactivex/rxscala_2.12/ivy-0.26.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/reactivex/rxscala_2.12/0.26.5/rxscala_2.12-0.26.5.pom"/>
-				<caller organisation="ch.epfl.scala" name="algorithms1_5_7_2.12" conf="compile, runtime" rev="0.26.5" rev-constraint-default="0.26.5" rev-constraint-dynamic="0.26.5" callerrev="1.0"/>
-				<artifacts>
-					<artifact name="rxscala_2.12" type="jar" ext="jar" status="successful" details="" size="414378" time="285" location="/home/vgorcinschi/.ivy2/cache/io.reactivex/rxscala_2.12/jars/rxscala_2.12-0.26.5.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/reactivex/rxscala_2.12/0.26.5/rxscala_2.12-0.26.5.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="io.reactivex" name="rxjava">
-			<revision name="1.2.4" status="release" pubdate="20161215070309" resolver="public" artresolver="public" homepage="https://github.com/ReactiveX/RxJava" downloaded="true" searched="true" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="2">
-				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2413" time="155" location="/home/vgorcinschi/.ivy2/cache/io.reactivex/rxjava/ivy-1.2.4.xml" searched="true" original-local-location="/home/vgorcinschi/.ivy2/cache/io.reactivex/rxjava/ivy-1.2.4.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/reactivex/rxjava/1.2.4/rxjava-1.2.4.pom"/>
-				<caller organisation="io.reactivex" name="rxscala_2.12" conf="default, compile, runtime, master" rev="1.2.4" rev-constraint-default="1.2.4" rev-constraint-dynamic="1.2.4" callerrev="0.26.5"/>
-				<artifacts>
-					<artifact name="rxjava" type="jar" ext="jar" status="successful" details="" size="1140498" time="509" location="/home/vgorcinschi/.ivy2/cache/io.reactivex/rxjava/jars/rxjava-1.2.4.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/reactivex/rxjava/1.2.4/rxjava-1.2.4.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
 		<module organisation="org.scala-lang" name="scala-library">
-			<revision name="2.12.1" status="release" pubdate="20161205060923" resolver="public" artresolver="public" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.1/" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, compile(*), runtime, runtime(*), master(compile), master" position="0">
+			<revision name="2.12.1" status="release" pubdate="20161205060923" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.1/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="0">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="successful" details="" size="1587" time="137" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/ivy-2.12.1.xml" searched="true" original-local-location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/ivy-2.12.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.1/scala-library-2.12.1.pom"/>
+				<metadata-artifact status="no" details="" size="2653" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/ivy-2.12.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.1/scala-library-2.12.1.pom"/>
 				<caller organisation="ch.epfl.scala" name="algorithms1_5_7_2.12" conf="compile, runtime" rev="2.12.1" rev-constraint-default="2.12.1" rev-constraint-dynamic="2.12.1" callerrev="1.0"/>
-				<caller organisation="io.reactivex" name="rxscala_2.12" conf="default, compile, runtime, master" rev="2.12.1" rev-constraint-default="2.12.1" rev-constraint-dynamic="2.12.1" callerrev="0.26.5"/>
 				<artifacts>
-					<artifact name="scala-library" type="jar" ext="jar" status="successful" details="" size="5272325" time="1997" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.1.jar">
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="5272325" time="0" location="/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.1.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.1/scala-library-2.12.1.jar"/>
 					</artifact>
 				</artifacts>

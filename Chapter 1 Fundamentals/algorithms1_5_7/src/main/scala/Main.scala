@@ -1,6 +1,7 @@
 import scala.io.Source
 import ca.vgorcinschi.algorithms1_5_7.quickUnionUF.QuickUnionUF
 import scala.util.matching.Regex
+import ca.vgorcinschi.algorithms1_5_7.quickUnionUF.WeightedQuickUnionUF
 
 object Main extends App {
   val allLines = Source.fromFile("src/main/resources/mediumUF.txt").getLines().toList

@@ -6,7 +6,7 @@ package ca.vgorcinschi.algorithms1_5_7.quickUnionUF
  */
 abstract class AbstractUF(var count: Int) extends UF{
   
-  override def counter() = count
+  override def counter() = array.distinct.length
   
   val array: Array[Int]
    //validate that p is a valid index
