@@ -1,0 +1,28 @@
+[0m[[0minfo[0m] [0mRunning Main [0m
+[0m[[0mdebug[0m] [0mWaiting for threads to exit or System.exit to be called.[0m
+[0m[[0mdebug[0m] [0m  Classpath:[0m
+[0m[[0mdebug[0m] [0m	/home/vgorcinschi/workspace-scala/Algorithms/Chapter 1 Fundamentals/algorithms1_5_7/target/scala-2.12/classes[0m
+[0m[[0mdebug[0m] [0m	/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.1.jar[0m
+[0m[[0mdebug[0m] [0m	/home/vgorcinschi/.ivy2/cache/io.reactivex/rxscala_2.12/jars/rxscala_2.12-0.26.5.jar[0m
+[0m[[0mdebug[0m] [0m	/home/vgorcinschi/.ivy2/cache/io.reactivex/rxjava/jars/rxjava-1.2.4.jar[0m
+[0m[[0mdebug[0m] [0mWaiting for thread run-main-4 to terminate.[0m
+[0m[[0mdebug[0m] [0m	Thread run-main-4 exited.[0m
+[0m[[0mdebug[0m] [0mInterrupting remaining threads (should be all daemons).[0m
+[0m[[0mdebug[0m] [0mInterrupting thread scala-execution-context-global-103[0m
+[0m[[0mdebug[0m] [0m	Interrupted scala-execution-context-global-103[0m
+[0m[[0mdebug[0m] [0mInterrupting thread scala-execution-context-global-102[0m
+[0m[[0mdebug[0m] [0m	Interrupted scala-execution-context-global-102[0m
+[0m[[0mdebug[0m] [0mInterrupting thread scala-execution-context-global-99[0m
+[0m[[0mdebug[0m] [0m	Interrupted scala-execution-context-global-99[0m
+[0m[[0mdebug[0m] [0mInterrupting thread scala-execution-context-global-98[0m
+[0m[[0mdebug[0m] [0m	Interrupted scala-execution-context-global-98[0m
+[0m[[0mdebug[0m] [0mInterrupting thread scala-execution-context-global-100[0m
+[0m[[0mdebug[0m] [0m	Interrupted scala-execution-context-global-100[0m
+[0m[[0mdebug[0m] [0mInterrupting thread scala-execution-context-global-104[0m
+[0m[[0mdebug[0m] [0m	Interrupted scala-execution-context-global-104[0m
+[0m[[0mdebug[0m] [0mInterrupting thread scala-execution-context-global-101[0m
+[0m[[0mdebug[0m] [0m	Interrupted scala-execution-context-global-101[0m
+[0m[[0mdebug[0m] [0mInterrupting thread scala-execution-context-global-105[0m
+[0m[[0mdebug[0m] [0m	Interrupted scala-execution-context-global-105[0m
+[0m[[0mdebug[0m] [0mSandboxed run complete..[0m
+[0m[[0mdebug[0m] [0mExited with code 0[0m

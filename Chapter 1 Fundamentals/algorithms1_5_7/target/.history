@@ -27,3 +27,6 @@ compile
 exit
 compile
 exit
+runMain Main
+compile
+exit

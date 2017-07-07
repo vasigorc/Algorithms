@@ -26,6 +26,7 @@ object Main extends App {
     if (!uf.connected(intP, intQ)) {
       uf.union(intP, intQ)
       println(s"L`union fait sur $intP et $intQ")
+      println(s"Le nombre des composants est maintenant - ${uf.counter()}")
     }
   }
 }
