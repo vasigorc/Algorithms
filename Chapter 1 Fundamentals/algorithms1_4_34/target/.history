@@ -138,3 +138,5 @@ compile
 eclipse
 runMain Main
 exit
+compile
+exit

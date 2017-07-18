@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/home/vgorcinschi/workspace-scala/Algorithms/Chapter%201%20Fundamentals/algorithms1_4_34/}algorithms1_4_34...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter%201%20Fundamentals/algorithms1_4_34/}algorithms1_4_34...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: default#algorithms1_4_34_sjs0.6_2.12;1.0[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, phantom-js-jetty][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -176,7 +176,7 @@
 [0m[[0mdebug[0m] [0m	Sonatype OSS Snapshots: downloading https://oss.sonatype.org/content/repositories/snapshots/com/greencatsoft/scalajs-angular_sjs0.6_2.12/0.8-SNAPSHOT/scalajs-angular_sjs0.6_2.12-0.8-SNAPSHOT.pom[0m
 [0m[[0mdebug[0m] [0m	Sonatype OSS Snapshots: downloading https://oss.sonatype.org/content/repositories/snapshots/com/greencatsoft/scalajs-angular_sjs0.6_2.12/0.8-SNAPSHOT/scalajs-angular_sjs0.6_2.12-0.8-SNAPSHOT.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://oss.sonatype.org/content/repositories/snapshots/com/greencatsoft/scalajs-angular_sjs0.6_2.12/0.8-SNAPSHOT/scalajs-angular_sjs0.6_2.12-0.8-SNAPSHOT.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.greencatsoft#scalajs-angular_sjs0.6_2.12;0.8-SNAPSHOT!scalajs-angular_sjs0.6_2.12.pom(pom.original) (4201ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.greencatsoft#scalajs-angular_sjs0.6_2.12;0.8-SNAPSHOT!scalajs-angular_sjs0.6_2.12.pom(pom.original) (287ms)[0m
 [0m[[0mdebug[0m] [0m		tried /home/vgorcinschi/.ivy2/local/com.greencatsoft/scalajs-angular_sjs0.6_2.12/0.8-SNAPSHOT/jars/scalajs-angular_sjs0.6_2.12.jar[0m
 [0m[[0mdebug[0m] [0m	maven-metadata not available: https://repo1.maven.org/maven2/com/greencatsoft/scalajs-angular_sjs0.6_2.12/0.8-SNAPSHOT/maven-metadata.xml[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/com/greencatsoft/scalajs-angular_sjs0.6_2.12/0.8-SNAPSHOT/scalajs-angular_sjs0.6_2.12-0.8-SNAPSHOT.jar[0m
@@ -187,7 +187,7 @@
 [0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/com/greencatsoft/scalajs-angular_sjs0.6_2.12/0.8-SNAPSHOT/scalajs-angular_sjs0.6_2.12-0.8-SNAPSHOT.jar[0m
 [0m[[0mdebug[0m] [0mcom.greencatsoft#scalajs-angular_sjs0.6_2.12;0.8-SNAPSHOT is changing, but has not changed: will trust cached artifacts if any[0m
 [0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/com/greencatsoft/scalajs-angular_sjs0.6_2.12/0.8-SNAPSHOT/scalajs-angular_sjs0.6_2.12-0.8-SNAPSHOT.pom[0m
-[0m[[33mwarn[0m] [0mUnable to reparse com.greencatsoft#scalajs-angular_sjs0.6_2.12;0.8-SNAPSHOT from Sonatype OSS Snapshots, using Thu Jul 06 06:50:00 CEST 2017[0m
+[0m[[33mwarn[0m] [0mUnable to reparse com.greencatsoft#scalajs-angular_sjs0.6_2.12;0.8-SNAPSHOT from Sonatype OSS Snapshots, using Sun Jul 16 18:57:22 EDT 2017[0m
 [0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/com/greencatsoft/scalajs-angular_sjs0.6_2.12/0.8-SNAPSHOT/scalajs-angular_sjs0.6_2.12-0.8-SNAPSHOT.jar[0m
 [0m[[0mdebug[0m] [0m	found com.greencatsoft#scalajs-angular_sjs0.6_2.12;0.8-SNAPSHOT in Sonatype OSS Snapshots[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#algorithms1_4_34_sjs0.6_2.12;1.0->com.greencatsoft#scalajs-angular_sjs0.6_2.12;0.8-SNAPSHOT [compile->runtime][0m
@@ -242,7 +242,7 @@
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-dom_sjs0.6_2.12/0.9.2/scalajs-dom_sjs0.6_2.12-0.9.2.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-dom_sjs0.6_2.12/0.9.2/scalajs-dom_sjs0.6_2.12-0.9.2.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/scala-js/scalajs-dom_sjs0.6_2.12/0.9.2/scalajs-dom_sjs0.6_2.12-0.9.2.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.scala-js#scalajs-dom_sjs0.6_2.12;0.9.2!scalajs-dom_sjs0.6_2.12.pom(pom.original) (167ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.scala-js#scalajs-dom_sjs0.6_2.12;0.9.2!scalajs-dom_sjs0.6_2.12.pom(pom.original) (172ms)[0m
 [0m[[0mdebug[0m] [0m		tried /home/vgorcinschi/.ivy2/local/org.scala-js/scalajs-dom_sjs0.6_2.12/0.9.2/jars/scalajs-dom_sjs0.6_2.12.jar[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-dom_sjs0.6_2.12/0.9.2/scalajs-dom_sjs0.6_2.12-0.9.2.jar[0m
 [0m[[0mdebug[0m] [0m	found org.scala-js#scalajs-dom_sjs0.6_2.12;0.9.2 in public[0m
@@ -2832,13 +2832,13 @@
 [0m[[0mdebug[0m] [0m	Sonatype OSS Snapshots: downloading https://oss.sonatype.org/content/repositories/snapshots/com/greencatsoft/scalajs-angular_sjs0.6_2.12/0.8-SNAPSHOT/scalajs-angular_sjs0.6_2.12-0.8-SNAPSHOT.jar[0m
 [0m[[0mdebug[0m] [0m	Sonatype OSS Snapshots: downloading https://oss.sonatype.org/content/repositories/snapshots/com/greencatsoft/scalajs-angular_sjs0.6_2.12/0.8-SNAPSHOT/scalajs-angular_sjs0.6_2.12-0.8-SNAPSHOT.jar.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://oss.sonatype.org/content/repositories/snapshots/com/greencatsoft/scalajs-angular_sjs0.6_2.12/0.8-SNAPSHOT/scalajs-angular_sjs0.6_2.12-0.8-SNAPSHOT.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.greencatsoft#scalajs-angular_sjs0.6_2.12;0.8-SNAPSHOT!scalajs-angular_sjs0.6_2.12.jar (6109ms)[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.greencatsoft#scalajs-angular_sjs0.6_2.12;0.8-SNAPSHOT!scalajs-angular_sjs0.6_2.12.jar (1866ms)[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scala-js/scalajs-dom_sjs0.6_2.12/0.9.2/scalajs-dom_sjs0.6_2.12-0.9.2.jar[0m
 [0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/scala-js/scalajs-dom_sjs0.6_2.12/0.9.2/scalajs-dom_sjs0.6_2.12-0.9.2.jar ...[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-dom_sjs0.6_2.12/0.9.2/scalajs-dom_sjs0.6_2.12-0.9.2.jar[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scala-js/scalajs-dom_sjs0.6_2.12/0.9.2/scalajs-dom_sjs0.6_2.12-0.9.2.jar.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/scala-js/scalajs-dom_sjs0.6_2.12/0.9.2/scalajs-dom_sjs0.6_2.12-0.9.2.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scala-js#scalajs-dom_sjs0.6_2.12;0.9.2!scalajs-dom_sjs0.6_2.12.jar (1532ms)[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scala-js#scalajs-dom_sjs0.6_2.12;0.9.2!scalajs-dom_sjs0.6_2.12.jar (4591ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.1!scala-reflect.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-js#scalajs-test-interface_2.12;0.6.16!scalajs-test-interface_2.12.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalatest#scalatest_2.12;3.0.1!scalatest_2.12.jar(bundle)[0m
@@ -2858,20 +2858,20 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jetty#jetty-http;8.1.16.v20140903!jetty-http.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jetty.orbit#javax.servlet;3.0.0.v201112011016!javax.servlet.jar(orbit)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jetty#jetty-continuation;8.1.16.v20140903!jetty-continuation.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 11355ms :: artifacts dl 7659ms[0m
-[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 compile produced in /home/vgorcinschi/workspace-scala/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 runtime produced in /home/vgorcinschi/workspace-scala/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 test produced in /home/vgorcinschi/workspace-scala/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 provided produced in /home/vgorcinschi/workspace-scala/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 optional produced in /home/vgorcinschi/workspace-scala/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 compile-internal produced in /home/vgorcinschi/workspace-scala/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 runtime-internal produced in /home/vgorcinschi/workspace-scala/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 test-internal produced in /home/vgorcinschi/workspace-scala/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 plugin produced in /home/vgorcinschi/workspace-scala/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 sources produced in /home/vgorcinschi/workspace-scala/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 docs produced in /home/vgorcinschi/workspace-scala/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 pom produced in /home/vgorcinschi/workspace-scala/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 scala-tool produced in /home/vgorcinschi/workspace-scala/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 phantom-js-jetty produced in /home/vgorcinschi/workspace-scala/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-phantom-js-jetty.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (11355ms resolve - 7659ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3108ms :: artifacts dl 6484ms[0m
+[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 compile produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 runtime produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 test produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 provided produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 optional produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 compile-internal produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 runtime-internal produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 test-internal produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 plugin produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 sources produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 docs produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 pom produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 scala-tool produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#algorithms1_4_34_sjs0.6_2.12;1.0 phantom-js-jetty produced in /home/vgorcinschi/Documents/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-phantom-js-jetty.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (3108ms resolve - 6484ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

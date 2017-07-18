@@ -1,3 +1,4 @@
+//src/main/resources=main
 //src/main/scala=main
 P=
 Xcheckinit=false
@@ -34,7 +35,7 @@ organizeimports.wildcards=scalaz$scalaz.Scalaz
 recompileOnMacroDef=true
 relationsDebug=false
 scala.compiler.additionalParams=\ -Xsource\:2.12 -Ymacro-expand\:none
-scala.compiler.installation=-673594519
+scala.compiler.installation=-1363357368
 scala.compiler.sourceLevel=2.12
 scala.compiler.useProjectSettings=true
 stopBuildOnError=true
