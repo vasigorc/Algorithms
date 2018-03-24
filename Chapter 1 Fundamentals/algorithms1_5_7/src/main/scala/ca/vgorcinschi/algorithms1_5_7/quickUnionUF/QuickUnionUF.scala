@@ -1,7 +1,7 @@
 package ca.vgorcinschi.algorithms1_5_7.quickUnionUF
 
-import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.Future
 
 class QuickUnionUF(size: Int) extends AbstractUF(size) {
 

@@ -6,8 +6,6 @@ name := "algorithms1_5_12"
 organization := "ch.epfl.scala"
 version := "1.0"
 
-libraryDependencies += "org.typelevel" %% "cats" % "0.9.0"
-
 // Here's a quick glimpse of what a multi-project build looks like for this
 // build, with only one "subproject" defined, called `root`:
 

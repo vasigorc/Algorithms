@@ -1,0 +1,49 @@
+[debug] [naha] 
+[debug] [naha] Initial source changes: 
+[debug] [naha] 	removed:Set()
+[debug] [naha] 	added: Set()
+[debug] [naha] 	modified: Set(/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/Main.scala, /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_12/pathCompression/QUPathCompression.scala, /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/QuickUnionUF.scala)
+[debug] [naha] Invalidated products: Set()
+[debug] [naha] External API changes: API Changes: Set()
+[debug] [naha] Modified binary dependencies: Set()
+[debug] [naha] Initial directly invalidated sources: Set(/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/Main.scala, /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_12/pathCompression/QUPathCompression.scala, /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/QuickUnionUF.scala)
+[debug] [naha] 
+[debug] [naha] Sources indirectly invalidated by:
+[debug] [naha] 	product: Set()
+[debug] [naha] 	binary dep: Set()
+[debug] [naha] 	external source: Set()
+[debug] All initially invalidated sources: Set(/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/Main.scala, /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_12/pathCompression/QUPathCompression.scala, /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/QuickUnionUF.scala)
+[debug] [naha] Initial set of included nodes: Set(/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/Main.scala, /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_12/pathCompression/QUPathCompression.scala, /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/QuickUnionUF.scala)
+[debug] [naha] Including /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/WeightedQuickUnionUF.scala by /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/QuickUnionUF.scala
+[info] Compiling 3 Scala sources to /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes...
+[debug] Getting org.scala-sbt:compiler-interface:0.13.13:component from component compiler for Scala 2.12.1
+[debug] Getting org.scala-sbt:compiler-interface:0.13.13:component from component compiler for Scala 2.12.1
+[debug] Running cached compiler 6dc714da, interfacing (CompilerInterface) with Scala compiler version 2.12.1
+[debug] Calling Scala compiler with arguments  (CompilerInterface):
+[debug] 	-bootclasspath
+[debug] 	/usr/java/jdk1.8.0_161/jre/lib/resources.jar:/usr/java/jdk1.8.0_161/jre/lib/rt.jar:/usr/java/jdk1.8.0_161/jre/lib/sunrsasign.jar:/usr/java/jdk1.8.0_161/jre/lib/jsse.jar:/usr/java/jdk1.8.0_161/jre/lib/jce.jar:/usr/java/jdk1.8.0_161/jre/lib/charsets.jar:/usr/java/jdk1.8.0_161/jre/lib/jfr.jar:/usr/java/jdk1.8.0_161/jre/classes:/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.1.jar
+[debug] 	-classpath
+[debug] 	/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes
+[warn] there was one feature warning; re-run with -feature for details
+[warn] one warning found
+[debug] Scala compilation took 3.625956669 s
+[debug] [naha] Invalidating /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/Main.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/Main.scala...
+[debug] [naha] Initial set of included nodes: Set(/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/Main.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/Main.scala)
+[debug] [naha] The /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/Main.scala source file has the following regular definitions changed:
+[debug] [naha] 	allLines, uf, size, integerRegex.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] Invalidating /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_12/pathCompression/QUPathCompression.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_12/pathCompression/QUPathCompression.scala...
+[debug] [naha] Initial set of included nodes: Set(/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_12/pathCompression/QUPathCompression.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_12/pathCompression/QUPathCompression.scala)
+[debug] [naha] The /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_12/pathCompression/QUPathCompression.scala source file has the following regular definitions changed:
+[debug] [naha] 	.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] New invalidations:
+[debug] [naha] 	Set()
+[debug] [naha] Initial set of included nodes: Set()
+[debug] [naha] Previously invalidated, but (transitively) depend on new invalidations:
+[debug] [naha] 	Set()
+[debug] [naha] All newly invalidated sources after taking into account (previously) recompiled sources:Set()

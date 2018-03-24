@@ -4,7 +4,7 @@
 		module="algorithms1_5_12_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20170718060737"
+		publication="20180319230051"
 	>
 		<description>
 		algorithms1_5_12
@@ -34,6 +34,5 @@
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.12.1" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.12.1" conf="scala-tool->default,optional(default);compile->default(compile)"/>
-		<dependency org="org.typelevel" name="cats_2.12" rev="0.9.0" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

@@ -1,8 +1,7 @@
+import ca.vgorcinschi.algorithms1_5_7.quickUnionUF.WeightedQuickUnionUF
+
 import scala.io.Source
-import ca.vgorcinschi.algorithms1_5_7.quickUnionUF.QuickUnionUF
 import scala.util.matching.Regex
-import ca.vgorcinschi.algorithms1_5_7.quickUnionUF.WeightedQuickUnionUF
-import ca.vgorcinschi.algorithms1_5_7.quickUnionUF.WeightedQuickUnionUF
 
 object Main extends App {
   val allLines = Source.fromFile("src/main/resources/mediumUF.txt").getLines().toList
@@ -12,23 +11,24 @@ object Main extends App {
 
   val uf = new WeightedQuickUnionUF(size)
 
-  val Integer = new Regex("(-)?(\\d+)")
+  val integerRegex = new Regex("(-)?(\\d+)")
 
   for (line <- allLines.tail) {
-    val p = Integer findFirstIn line
+    val p = integerRegex findFirstIn line
 
     assert(p.isDefined)
-    
+
     val intP = p.get toInt
-    val q = Integer findFirstIn line.substring(p.get.length).replace("\\s+", "")
+    val q = integerRegex findFirstIn line.substring(p.get.length).replace("\\s+", "")
 
     assert(q.isDefined)
 
     val intQ = q.get.toInt
+
     if (!uf.connected(intP, intQ)) {
       uf.union(intP, intQ)
       println(s"L`union fait sur $intP et $intQ")
-      println(s"Le nombre des composants est maintenant - ${uf.counter()}")
+      println(s"Le nombre des composants est maintenant - ${uf.counter}")
     }
   }
   println(s"\n\tLe tableau final:\n${uf.array.mkString(", ")}")
