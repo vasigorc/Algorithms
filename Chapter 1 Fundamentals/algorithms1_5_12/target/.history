@@ -4,3 +4,7 @@ eclipse
 exit
 eclipse
 exit
+compile
+run weighted
+-jvm-debug 5005 weighted
+run weighted

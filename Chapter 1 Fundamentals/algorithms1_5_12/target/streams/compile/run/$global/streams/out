@@ -1,10 +1,10 @@
-[info] Running Main 
-[debug] Waiting for threads to exit or System.exit to be called.
-[debug]   Classpath:
-[debug] 	/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes
-[debug] 	/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.1.jar
-[debug] Waiting for thread run-main-0 to terminate.
-[debug] 	Thread run-main-0 exited.
-[debug] Interrupting remaining threads (should be all daemons).
-[debug] Sandboxed run complete..
-[debug] Exited with code 0
+[0m[[0minfo[0m] [0mRunning Main weighted[0m
+[0m[[0mdebug[0m] [0mWaiting for threads to exit or System.exit to be called.[0m
+[0m[[0mdebug[0m] [0m  Classpath:[0m
+[0m[[0mdebug[0m] [0m	/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes[0m
+[0m[[0mdebug[0m] [0m	/home/vgorcinschi/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.1.jar[0m
+[0m[[0mdebug[0m] [0mWaiting for thread run-main-0 to terminate.[0m
+[0m[[0mdebug[0m] [0m	Thread run-main-0 exited.[0m
+[0m[[0mdebug[0m] [0mInterrupting remaining threads (should be all daemons).[0m
+[0m[[0mdebug[0m] [0mSandboxed run complete..[0m
+[0m[[0mdebug[0m] [0mExited with code 0[0m

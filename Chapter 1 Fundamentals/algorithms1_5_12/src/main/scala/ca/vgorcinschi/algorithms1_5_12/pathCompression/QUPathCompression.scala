@@ -4,7 +4,7 @@ import ca.vgorcinschi.algorithms1_5_7.quickUnionUF.QuickUnionUF
 
 import scala.collection.mutable.ListBuffer
 
-class QUPathCompression(size: Int) extends QuickUnionUF(size){
+case class QUPathCompression(size: Int) extends QuickUnionUF(size){
 
   override def find(p: Int): Int = {
     var tmp = p

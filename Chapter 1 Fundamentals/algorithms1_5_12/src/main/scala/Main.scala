@@ -1,4 +1,4 @@
-import ca.vgorcinschi.algorithms1_5_7.quickUnionUF.WeightedQuickUnionUF
+import ca.vgorcinschi.algorithms1_5_7.quickUnionUF.{QuickUnionUF, WeightedQuickUnionUF}
 
 import scala.io.Source
 import scala.util.matching.Regex
@@ -7,9 +7,12 @@ object Main extends App {
   val allLines = Source.fromFile("src/main/resources/mediumUF.txt").getLines().toList
   //get & print the initial number of components
   val size = allLines.head.trim.toInt
+
   println(s"Le nombre initial de composants est $size")
 
-  val uf = new WeightedQuickUnionUF(size)
+  val clArg = args(0)
+
+  val uf = QuickUnionUF(clArg)(size)
 
   val integerRegex = new Regex("(-)?(\\d+)")
 

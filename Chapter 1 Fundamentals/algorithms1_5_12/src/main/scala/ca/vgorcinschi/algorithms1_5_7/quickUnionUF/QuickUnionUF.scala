@@ -1,5 +1,7 @@
 package ca.vgorcinschi.algorithms1_5_7.quickUnionUF
 
+import ca.vgorcinschi.algorithms1_5_12.pathCompression.QUPathCompression
+
 class QuickUnionUF(size: Int) extends AbstractUF(size) {
 
   override val array = (0 to size).toArray
@@ -26,4 +28,12 @@ class QuickUnionUF(size: Int) extends AbstractUF(size) {
   }
   
   def performUnion(rootP: Int, rootQ: Int) = array(rootP) = rootQ 
+}
+
+object QuickUnionUF{
+
+  def apply(kind: String) = kind match {
+    case "weighted" => new WeightedQuickUnionUF(_)
+    case _ => new QUPathCompression(_)
+  }
 }

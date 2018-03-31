@@ -2,7 +2,7 @@
 
 scalaVersion := "2.12.1"
 
-name := "algorithms1_5_12"
+name := "algorithms1_5_12_and1_5_13"
 organization := "ch.epfl.scala"
 version := "1.0"
 

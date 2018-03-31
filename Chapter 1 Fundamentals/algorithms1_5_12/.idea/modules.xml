@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithms1_5_12.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithms1_5_12.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithms1_5_12-build.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithms1_5_12-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithms1_5_12_and1_5_13.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithms1_5_12_and1_5_13.iml" />
     </modules>
   </component>
 </project>
