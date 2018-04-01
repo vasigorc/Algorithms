@@ -1,0 +1,13 @@
+[0m[[0m[31merror[0m] [0m[0m/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_14/src/main/scala/ca/vgorcinschi/algorithms1_5_14/WeightedQUByHeight.scala:3:23: object algorithms1_5_7 is not a member of package ca.vgorcinschi[0m
+[0m[[0m[31merror[0m] [0m[0mimport ca.vgorcinschi.algorithms1_5_7.AbstractUF[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_14/src/main/scala/ca/vgorcinschi/algorithms1_5_14/WeightedQUByHeight.scala:5:46: not found: type AbstractUF[0m
+[0m[[0m[31merror[0m] [0m[0mclass WeightedQUByHeight (size: Int) extends AbstractUF(size) {[0m
+[0m[[0m[31merror[0m] [0m[0m                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_14/src/main/scala/ca/vgorcinschi/algorithms1_5_14/WeightedQUByHeight.scala:5:57: no arguments allowed for nullary constructor Object: ()Object[0m
+[0m[[0m[31merror[0m] [0m[0mclass WeightedQUByHeight (size: Int) extends AbstractUF(size) {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_14/src/main/scala/ca/vgorcinschi/algorithms1_5_14/WeightedQUByHeight.scala:40:5: not found: value count[0m
+[0m[[0m[31merror[0m] [0m[0m    count -= 1[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
