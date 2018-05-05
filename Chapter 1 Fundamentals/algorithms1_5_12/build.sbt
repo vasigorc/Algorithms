@@ -6,6 +6,7 @@ name := "algorithms1_5_12_and1_5_13"
 organization := "ch.epfl.scala"
 version := "1.0"
 
+resolvers += Classpaths.typesafeReleases
 // Here's a quick glimpse of what a multi-project build looks like for this
 // build, with only one "subproject" defined, called `root`:
 
