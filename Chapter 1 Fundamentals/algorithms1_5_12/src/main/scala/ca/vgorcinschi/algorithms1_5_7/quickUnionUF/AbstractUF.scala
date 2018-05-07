@@ -4,9 +4,10 @@ package ca.vgorcinschi.algorithms1_5_7.quickUnionUF
  * takes the initial number of components
  * as its argument
  */
-abstract class AbstractUF(var count: Int) extends UF{
+abstract class AbstractUF(private var count: Int) extends UF{
   
-  override def counter() = array.distinct.length
+  override def counter() = count
+  def count (n: Int): Unit = {count = n}
   
   val array: Array[Int]
    //validate that p is a valid index

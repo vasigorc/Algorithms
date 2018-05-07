@@ -24,7 +24,7 @@ class QuickUnionUF(size: Int) extends AbstractUF(size) {
 
       if (rootP != rootQ)
       performUnion(rootP, rootQ)
-      count -= 1
+      count(counter()-1)
   }
   
   def performUnion(rootP: Int, rootQ: Int) = array(rootP) = rootQ 
