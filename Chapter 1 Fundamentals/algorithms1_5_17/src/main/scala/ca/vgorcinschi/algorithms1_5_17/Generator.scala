@@ -17,6 +17,11 @@ object Generator {
     }
   }
 
+  def positiveInts(hi: Int = Int.MaxValue):Generator[Int] = {
+    require(hi > 0)
+    for (x <- choose(0, hi)) yield Math.abs(hi)
+  }
+
   def pairs[T, U](t: Generator[T], u: Generator[U]) = new Generator[(T, U)] {
     def generate = (t.generate, u.generate)
   }

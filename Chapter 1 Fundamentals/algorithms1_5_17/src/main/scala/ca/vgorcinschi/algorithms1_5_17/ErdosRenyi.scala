@@ -5,12 +5,11 @@ import ca.vgorcinschi.algorithms1_5_7.quickUnionUF.QuickUnionUF
 object ErdosRenyi extends App {
 
   import Generator._
-  val ZERO = 0
 
   def count(n: Int):Int = {
 
     var connections = 0
-    val randomPairs = pairs(choose(ZERO, n), choose(ZERO, n))
+    val randomPairs = pairs(positiveInts(n), positiveInts(n))
     val uf = new QuickUnionUF(n)
     val stream = streamOfRandom(randomPairs)
     for{
