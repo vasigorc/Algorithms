@@ -4,17 +4,14 @@ import ca.vgorcinschi.algorithms1_5_7.quickUnionUF.QuickUnionUF
 
 object ErdosRenyi extends App {
 
-  import Generator._
-
   def count(n: Int):Int = {
 
     var connections = 0
-    val randomPairs = pairs(positiveInts(n), positiveInts(n))
     val uf = new QuickUnionUF(n)
-    val stream = streamOfRandom(randomPairs)
+    val combinations = (0 to n toStream).combinations(2).map {case Seq(x, y) => (x, y)}.toStream
     for{
       //for n sites there could be a max of n-1 union connections
-      (l, r) <- stream.takeWhile(_ => connections < n-1)
+      (l, r) <- combinations.takeWhile(_ => connections < n-1)
       if(!uf.connected(l, r))
     } {
       uf.union(l, r)
