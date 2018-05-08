@@ -2,10 +2,13 @@ package ca.vgorcinschi.algorithms1_5_17
 
 import ca.vgorcinschi.algorithms1_5_7.quickUnionUF.QuickUnionUF
 
+import scala.io.StdIn
+
 object ErdosRenyi extends App {
 
-  def count(n: Int):Int = {
+  play()
 
+  def count(n: Int):Int = {
     var connections = 0
     val uf = new QuickUnionUF(n)
     val combinations = (0 to n toStream).combinations(2).map {case Seq(x, y) => (x, y)}.toStream
@@ -18,5 +21,11 @@ object ErdosRenyi extends App {
       connections+=1
     }
     connections
+  }
+
+  def play():Unit ={
+    val answer = StdIn.readLine("Please indicate the upper bound for Erdos Renyi algorithm (an Int): \n")
+    val upperBound = InputValidators.validateType[Int](answer)
+    println(s"Quick Union finished. ${count(upperBound)} connections performed")
   }
 }

@@ -20,5 +20,6 @@ lazy val root = (project in file(".")).
         "org.scalatest" %% "scalatest" % scalaTestVersion % "test",
         "org.scalacheck" %% "scalacheck" % scalaCheckVersion % "test"
       )
-    }
+    },
+    mainClass in Compile := Some("ca.vgorcinschi.algorithms1_5_17.ErdosRenyi")
   ).dependsOn(core)

@@ -1,10 +1,8 @@
 package ca.vgorcinschi.algorithms1_5_17
 
 import org.scalacheck.{Gen, Prop}
-import org.scalatest.prop.Checkers
-import org.scalatest.{Matchers, PropSpec}
 
-class GeneratorProps extends PropSpec with Checkers with Matchers{
+class GeneratorProps extends BaseProps{
   val hi = 100
 
   property("choose"){
