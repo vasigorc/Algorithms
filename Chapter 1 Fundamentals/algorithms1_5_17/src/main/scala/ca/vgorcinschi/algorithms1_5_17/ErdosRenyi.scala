@@ -9,12 +9,15 @@ object ErdosRenyi extends App {
   play()
 
   def count(n: Int):Int = {
+    import Generator._
+
     var connections = 0
+    val randomPairs = pairs(positiveInts(n), positiveInts(n))
     val uf = new QuickUnionUF(n)
-    val combinations = (0 to n toStream).combinations(2).map {case Seq(x, y) => (x, y)}.toStream
+    val stream = streamOfRandom(randomPairs)
     for{
       //for n sites there could be a max of n-1 union connections
-      (l, r) <- combinations.takeWhile(_ => connections < n-1)
+      (l, r) <- stream.takeWhile(_ => connections < n-1)
       if(!uf.connected(l, r))
     } {
       uf.union(l, r)

@@ -4,9 +4,9 @@ object Generator {
 
   val integers = new Generator[Int] {
 
-    val rand = new java.util.Random
+//    val rand = new java.util.Random
 
-    override def generate: Int = rand.nextInt()
+    override def generate: Int = {val rand = new java.util.Random; rand.nextInt()}
   }
 
   def choose(lo: Int, hi: Int):Generator[Int] ={
@@ -15,6 +15,11 @@ object Generator {
       case 0 => 0
       case _ => lo + x % diff
     }
+  }
+
+  def positiveInts(hi: Int = Int.MaxValue):Generator[Int] = {
+    require(hi > 0)
+    for (x <- integers) yield Math.abs(x % hi)
   }
 
   def pairs[T, U](t: Generator[T], u: Generator[U]) = new Generator[(T, U)] {
