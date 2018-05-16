@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="977f0cea-7397-4708-bf28-a1bc404ec6ba" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/project/target/config-classes/$0c0456d66e537fb39653$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/project/target/config-classes/$0c0456d66e537fb39653.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/project/target/config-classes/$0c0456d66e537fb39653.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/project/target/config-classes/$9d2c201f2f3c507cc8b2$$anonfun$$sbtdef$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/project/target/config-classes/$9d2c201f2f3c507cc8b2$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/project/target/config-classes/$9d2c201f2f3c507cc8b2.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/project/target/config-classes/$9d2c201f2f3c507cc8b2.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/project/target/config-classes/$d169157c4e92ed1516a4$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/project/target/config-classes/$d169157c4e92ed1516a4.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/project/target/config-classes/$d169157c4e92ed1516a4.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$17f215d464d48388e3fe$$anonfun$$sbtdef$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$17f215d464d48388e3fe$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$17f215d464d48388e3fe.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$17f215d464d48388e3fe.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$3e7c7f38e6de3f07f6f7$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$3e7c7f38e6de3f07f6f7.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$3e7c7f38e6de3f07f6f7.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$56beb66729b481ece05b$$anonfun$$sbtdef$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$56beb66729b481ece05b$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$56beb66729b481ece05b.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$56beb66729b481ece05b.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$96afa0046654fc8d49a8$$anonfun$$sbtdef$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$96afa0046654fc8d49a8$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$96afa0046654fc8d49a8.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$96afa0046654fc8d49a8.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$a8281b3bf5b7a489a58c$$anonfun$$sbtdef$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$a8281b3bf5b7a489a58c$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$a8281b3bf5b7a489a58c.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$a8281b3bf5b7a489a58c.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$bf52c73211f9c3a590fb$$anonfun$$sbtdef$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$bf52c73211f9c3a590fb$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$bf52c73211f9c3a590fb.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$bf52c73211f9c3a590fb.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$c01110f897d1569bea8c$$anonfun$$sbtdef$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$c01110f897d1569bea8c$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$c01110f897d1569bea8c.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$c01110f897d1569bea8c.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$dd8665524d7a24c6a7c6$$anonfun$$sbtdef$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$dd8665524d7a24c6a7c6$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$dd8665524d7a24c6a7c6.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$dd8665524d7a24c6a7c6.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$e3568190f92e44eeca5a$$anonfun$$sbtdef$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$e3568190f92e44eeca5a$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$e3568190f92e44eeca5a.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$e3568190f92e44eeca5a.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$f2992ccbe6b81a278d38$$anonfun$$sbtdef$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$f2992ccbe6b81a278d38$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$f2992ccbe6b81a278d38.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$f2992ccbe6b81a278d38.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$f3b92f85747c838a1e1c$$anonfun$$sbtdef$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$f3b92f85747c838a1e1c$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$f3b92f85747c838a1e1c.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/config-classes/$f3b92f85747c838a1e1c.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/default/algorithms1_4_34-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/default/algorithms1_4_34-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/default/algorithms1_4_34-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/default/algorithms1_4_34-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-compile-internal.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-compile-internal.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-compile.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-compile.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-docs.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-docs.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-optional.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-optional.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-plugin.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-plugin.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-pom.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-pom.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-provided.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-provided.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-runtime-internal.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-runtime-internal.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-runtime.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-runtime.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-scala-tool.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-scala-tool.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-sources.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-sources.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-test-internal.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-test-internal.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-test.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/resolution-cache/reports/default-algorithms1_4_34-build-test.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/$global/ivyConfiguration/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/$global/ivyConfiguration/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/$global/update/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/$global/update/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/$global/update/$global/streams/update_cache_2.10/inputs" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/$global/update/$global/streams/update_cache_2.10/inputs" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/$global/update/$global/streams/update_cache_2.10/output" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/$global/update/$global/streams/update_cache_2.10/output" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/compile/compileIncremental/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/compile/compileIncremental/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/compile/copyResources/$global/streams/copy-resources" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/compile/copyResources/$global/streams/copy-resources" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/compile/copyResources/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/compile/copyResources/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/compile/exportedProducts/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/compile/exportedProducts/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/runtime/dependencyClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/runtime/dependencyClasspath/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/runtime/exportedProducts/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/runtime/exportedProducts/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/runtime/fullClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/runtime/fullClasspath/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/runtime/internalDependencyClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_4_34/project/target/streams/runtime/internalDependencyClasspath/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/default/algorithms1_4_34_sjs0.6_2.12/1.0/resolved.xml.properties" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/default/algorithms1_4_34_sjs0.6_2.12/1.0/resolved.xml.properties" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/default/algorithms1_4_34_sjs0.6_2.12/1.0/resolved.xml.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/default/algorithms1_4_34_sjs0.6_2.12/1.0/resolved.xml.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-compile-internal.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-compile-internal.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-compile.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-compile.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-docs.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-docs.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-optional.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-optional.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-phantom-js-jetty.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-phantom-js-jetty.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-plugin.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-plugin.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-pom.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-pom.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-provided.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-provided.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-runtime-internal.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-runtime-internal.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-runtime.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-runtime.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-scala-tool.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-scala-tool.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-sources.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-sources.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-test-internal.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-test-internal.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-test.xml" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/resolution-cache/reports/default-algorithms1_4_34_sjs0.6_2.12-test.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/input_dsp" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/input_dsp" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/$global/ivyConfiguration/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/$global/ivyConfiguration/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/$global/update/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/$global/update/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/$global/update/$global/streams/update_cache_2.12/inputs" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/$global/update/$global/streams/update_cache_2.12/inputs" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/$global/update/$global/streams/update_cache_2.12/output" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/$global/update/$global/streams/update_cache_2.12/output" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/$global/updateClassifiers/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/$global/updateClassifiers/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/$global/updateSbtClassifiers/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/$global/updateSbtClassifiers/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/compile/externalDependencyClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/compile/externalDependencyClasspath/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/compile/managedClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/compile/managedClasspath/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/test/externalDependencyClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/test/externalDependencyClasspath/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/test/managedClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_4_34/target/streams/test/managedClasspath/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/.idea/.directory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/.idea/hydra.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/.idea/libraries/sbt__org_scala_lang_scala_library_2_12_1_jar.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/.idea/libraries/sbt__org_scala_lang_scala_library_2_12_1_jar.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/.idea/modules.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/.idea/modules.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/.idea/modules/algorithms1_5_12-build.iml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/.idea/modules/algorithms1_5_12-build.iml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/.idea/modules/algorithms1_5_12_and1_5_13.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/.idea/sbt.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/.idea/sbt.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/.idea/vcs.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/project/target/config-classes/$e37f227eb5abe90a72c9$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/project/target/config-classes/$e37f227eb5abe90a72c9.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/project/target/config-classes/$e37f227eb5abe90a72c9.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/config-classes/$14b2af34efa20fbfe17b$$anonfun$$sbtdef$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/config-classes/$14b2af34efa20fbfe17b$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/config-classes/$14b2af34efa20fbfe17b.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/config-classes/$14b2af34efa20fbfe17b.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/config-classes/$1bbdfff12a61c4500681$$anonfun$$sbtdef$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/config-classes/$1bbdfff12a61c4500681$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/config-classes/$1bbdfff12a61c4500681.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/config-classes/$1bbdfff12a61c4500681.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/config-classes/$680f02d14fba6f9b26c0$$anonfun$$sbtdef$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/config-classes/$680f02d14fba6f9b26c0$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/config-classes/$680f02d14fba6f9b26c0.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/config-classes/$680f02d14fba6f9b26c0.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/config-classes/$afe1cb89ff21e2c9a1d7$$anonfun$$sbtdef$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/config-classes/$afe1cb89ff21e2c9a1d7$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/config-classes/$afe1cb89ff21e2c9a1d7.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/config-classes/$afe1cb89ff21e2c9a1d7.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/default/algorithms1_5_12-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/default/algorithms1_5_12-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/default/algorithms1_5_12-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/default/algorithms1_5_12-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-compile-internal.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-compile-internal.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-compile.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-compile.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-docs.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-docs.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-optional.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-optional.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-plugin.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-plugin.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-pom.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-pom.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-provided.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-provided.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-runtime-internal.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-runtime-internal.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-runtime.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-runtime.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-scala-tool.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-scala-tool.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-sources.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-sources.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-test-internal.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-test-internal.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-test.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/resolution-cache/reports/default-algorithms1_5_12-build-test.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/input_dsp" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/input_dsp" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/$global/ivyConfiguration/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/$global/ivyConfiguration/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/$global/update/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/$global/update/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/$global/update/$global/streams/update_cache_2.10/inputs" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/$global/update/$global/streams/update_cache_2.10/inputs" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/$global/update/$global/streams/update_cache_2.10/output" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/$global/update/$global/streams/update_cache_2.10/output" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/compile/compileIncremental/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/compile/compileIncremental/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/compile/copyResources/$global/streams/copy-resources" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/compile/copyResources/$global/streams/copy-resources" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/compile/copyResources/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/compile/copyResources/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/compile/dependencyClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/compile/dependencyClasspath/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/compile/exportedProducts/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/compile/exportedProducts/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/compile/externalDependencyClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/compile/externalDependencyClasspath/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/compile/managedClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/compile/managedClasspath/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/runtime/dependencyClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/runtime/dependencyClasspath/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/runtime/exportedProducts/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/runtime/exportedProducts/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/runtime/externalDependencyClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/runtime/externalDependencyClasspath/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/runtime/fullClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/runtime/fullClasspath/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/runtime/internalDependencyClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/runtime/internalDependencyClasspath/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/runtime/managedClasspath/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_5_12/project/target/streams/runtime/managedClasspath/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/.history" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/.history" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/ch.epfl.scala/algorithms1_5_12_and1_5_13_2.12/1.0/resolved.xml.properties" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/ch.epfl.scala/algorithms1_5_12_and1_5_13_2.12/1.0/resolved.xml.properties" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/ch.epfl.scala/algorithms1_5_12_and1_5_13_2.12/1.0/resolved.xml.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/ch.epfl.scala/algorithms1_5_12_and1_5_13_2.12/1.0/resolved.xml.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-compile-internal.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-compile-internal.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-compile.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-compile.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-docs.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-docs.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-optional.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-optional.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-plugin.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-plugin.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-pom.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-pom.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-provided.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-provided.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-runtime-internal.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-runtime-internal.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-runtime.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-runtime.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-scala-tool.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-scala-tool.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-sources.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-sources.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-test-internal.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-test-internal.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-test.xml" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/resolution-cache/reports/ch.epfl.scala-algorithms1_5_12_and1_5_13_2.12-test.xml" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/scala-2.12/classes/Main$.class" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/scala-2.12/classes/Main$.class" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/AbstractUF.class" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/AbstractUF.class" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/QuickUnionUF.class" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/QuickUnionUF.class" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/scala-2.12/classes/mediumUF.txt" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/scala-2.12/classes/mediumUF.txt" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/input_dsp" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/input_dsp" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/$global/ivyConfiguration/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/$global/ivyConfiguration/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/$global/update/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/$global/update/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/$global/update/$global/streams/update_cache_2.12/inputs" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/$global/update/$global/streams/update_cache_2.12/inputs" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/$global/update/$global/streams/update_cache_2.12/output" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/$global/update/$global/streams/update_cache_2.12/output" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/$global/updateClassifiers/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/$global/updateClassifiers/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/$global/updateSbtClassifiers/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/$global/updateSbtClassifiers/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/compile/$global/$global/discoveredMainClasses/data" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/compile/$global/$global/discoveredMainClasses/data" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/compile/compile/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/compile/compile/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/compile/compileIncremental/$global/streams/export" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/compile/compileIncremental/$global/streams/export" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/compile/compileIncremental/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/compile/compileIncremental/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/compile/copyResources/$global/streams/copy-resources" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/compile/copyResources/$global/streams/copy-resources" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/compile/copyResources/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_5_12/target/streams/compile/copyResources/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_7/project/project/target/config-classes/$67feca0e8da7410f4e55$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_7/project/project/target/config-classes/$67feca0e8da7410f4e55.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_7/project/project/target/config-classes/$67feca0e8da7410f4e55.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_7/project/target/streams/$global/ivyConfiguration/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_5_7/project/target/streams/$global/ivyConfiguration/$global/streams/out" />
+      <change beforePath="$PROJECT_DIR$/../algorithms1_5_7/project/target/streams/$global/update/$global/streams/out" afterPath="$PROJECT_DIR$/../algorithms1_5_7/project/target/streams/$global/update/$global/streams/out" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/project/target/" />
+    <ignored path="$PROJECT_DIR$/../algorithms1_5_12/target/" />
+    <ignored path="$PROJECT_DIR$/../algorithms1_5_12/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/../algorithms1_5_12/project/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="build.sbt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.sbt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="76" lean-forward="false" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ErdosRenyiSpec.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/ca/vgorcinschi/algorithms1_5_17/ErdosRenyiSpec.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Generator.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/ca/vgorcinschi/algorithms1_5_17/Generator.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ErdosRenyi.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/ca/vgorcinschi/algorithms1_5_17/ErdosRenyi.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+              <folding>
+                <element signature="e#41#104#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Package Object" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>count</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/scala/example/Solution.scala" />
+        <option value="$PROJECT_DIR$/project/plugins.sbt" />
+        <option value="$PROJECT_DIR$/src/test/scala/ca/vgorcinschi/algorithms1_5_17/GeneratorSpec.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/ca/vgorcinschi/algorithms1_5_17/package.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/ca/vgorcinschi/algorithms1_5_17/BaseSpec.scala" />
+        <option value="$PROJECT_DIR$/../algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/QuickUnionUF.scala" />
+        <option value="$PROJECT_DIR$/../algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/AbstractUF.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/ca/vgorcinschi/algorithms1_5_17/ErdosRenyiSpec.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/ca/vgorcinschi/algorithms1_5_17/BaseProps.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/ca/vgorcinschi/algorithms1_5_17/GeneratorProps.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/ca/vgorcinschi/algorithms1_5_17/ErdosRenyiProps.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/ca/vgorcinschi/algorithms1_5_17/Validable.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/ca/vgorcinschi/algorithms1_5_17/InputValidators.scala" />
+        <option value="$PROJECT_DIR$/build.sbt" />
+        <option value="$PROJECT_DIR$/src/main/scala/ca/vgorcinschi/algorithms1_5_17/ErdosRenyi.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/ca/vgorcinschi/algorithms1_5_17/Generator.scala" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1301" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="erdosrenyi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithms1_5_17" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="erdosrenyi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithms1_5_17" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="erdosrenyi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithms1_5_17" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="erdosrenyi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithms1_5_17" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="erdosrenyi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithms1_5_17" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="erdosrenyi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithms1_5_17" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="algorithms1_5_17" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="erdosrenyi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithms1_5_17" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="erdosrenyi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithms1_5_17" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="erdosrenyi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithms1_5_17" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="algorithms1_5_17" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../algorithms1_4_20" />
+    <property name="SearchEverywhereHistoryKey" value="Quic&#9;null&#9;null" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ca.vgorcinschi.algorithms1_5_17" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/scala/ca/vgorcinschi/algorithms1_5_17" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="Debug sbt shell" type="Remote" factoryName="Remote" activateToolWindowBeforeRun="false" singleton="true" temporary="true">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="44507" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="44507" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Remote.Debug sbt shell" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="lastUpdateTimestamp" value="1525812652268" />
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="erdosrenyi" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="algorithms1_5_12" />
+                <option name="path" value="$PROJECT_DIR$/../algorithms1_5_12" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="root" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="algorithms1_5_12-build" />
+                <option name="path" value="$PROJECT_DIR$/../algorithms1_5_12/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="root-build" />
+                <option name="path" value="$PROJECT_DIR$/project" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../algorithms1_5_12" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../algorithms1_5_14" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../algorithms1_5_7" value="PREVIEW" />
+        <entry key="$USER_HOME$/ideaProjects/akka-in-action/chapter-fault-tolerance" value="PREVIEW" />
+        <entry key="$USER_HOME$/ideaProjects/akka-in-action/chapter-futures" value="PREVIEW" />
+        <entry key="$USER_HOME$/ideaProjects/akka-in-action/chapter-remoting" value="PREVIEW" />
+        <entry key="$USER_HOME$/ideaProjects/akka-in-action/chapter-testdriven" value="PREVIEW" />
+        <entry key="$USER_HOME$/ideaProjects/akka-in-action/chapter-up-and-running" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="977f0cea-7397-4708-bf28-a1bc404ec6ba" name="Default" comment="" />
+      <created>1525086683962</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1525086683962</updated>
+      <workItem from="1525086686054" duration="45003000" />
+    </task>
+    <task id="LOCAL-00001" summary="algorithms1_5_17 first commit">
+      <created>1525493773428</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1525493773428</updated>
+    </task>
+    <task id="LOCAL-00002" summary="algorithms1_5_17 started testing ErdosRenyi.count">
+      <created>1525676764952</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1525676764952</updated>
+    </task>
+    <task id="LOCAL-00003" summary="algorithms1_5_17 testing ErdosRenyi.count">
+      <created>1525692508269</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1525692508269</updated>
+    </task>
+    <task id="LOCAL-00004" summary="algorithms1_5_17 ErdosRenyi.count">
+      <created>1525785440502</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1525785440502</updated>
+    </task>
+    <task id="LOCAL-00005" summary="algorithms1_5_17 finished">
+      <created>1525813994599</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1525813994599</updated>
+    </task>
+    <task id="LOCAL-00006" summary="algorithms1_5_17 randomization added">
+      <created>1525863159994</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1525863159994</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="45003000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="66" y="0" width="1854" height="1080" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="sbt" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843652" sideWeight="0.5022075" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948583" sideWeight="0.49668875" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948583" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14403974" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="sbt-shell-toolwindow" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843652" sideWeight="0.49779248" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843652" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948583" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979014" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="algorithms1_5_17 first commit" />
+    <MESSAGE value="algorithms1_5_17 started testing ErdosRenyi.count" />
+    <MESSAGE value="algorithms1_5_17 testing ErdosRenyi.count" />
+    <MESSAGE value="algorithms1_5_17 ErdosRenyi.count" />
+    <MESSAGE value="algorithms1_5_17 finished" />
+    <MESSAGE value="algorithms1_5_17 randomization added" />
+    <option name="LAST_COMMIT_MESSAGE" value="algorithms1_5_17 randomization added" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="6" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Remote">
+        <watch expression="counter &gt;= (n-1)" language="Scala" />
+        <watch expression="uf.connected(l, r)" language="Scala" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>uf.connected(l, r)</expression-string>
+        <language-id>Scala</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>counter &gt;= (n-1)</expression-string>
+        <language-id>Scala</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/algorithms1_5_17.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/example/Solution.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/build.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="60" lean-forward="false" selection-start-line="0" selection-start-column="60" selection-end-line="0" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/example/HelloSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/UF.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/QuickUnionUF.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="45" lean-forward="false" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/ca/vgorcinschi/algorithms1_5_17/BaseSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="54" lean-forward="false" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.12/srcs/scalatest_2.12-3.0.5-sources.jar!/org/scalatest/FlatSpecLike.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="1681" column="35" lean-forward="false" selection-start-line="1681" selection-start-column="35" selection-end-line="1681" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.12/srcs/scalatest_2.12-3.0.5-sources.jar!/org/scalatest/TestSuite.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="195" column="4" lean-forward="false" selection-start-line="195" selection-start-column="4" selection-end-line="195" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.12/srcs/scalatest_2.12-3.0.5-sources.jar!/org/scalatest/Engine.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="292" column="10" lean-forward="false" selection-start-line="292" selection-start-column="10" selection-end-line="292" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.12/srcs/scalatest_2.12-3.0.5-sources.jar!/org/scalatest/Transformer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../algorithms1_5_12/src/main/scala/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/AbstractUF.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.12/srcs/scalatest_2.12-3.0.5-sources.jar!/org/scalatest/OutcomeOf.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="84" column="6" lean-forward="false" selection-start-line="84" selection-start-column="6" selection-end-line="84" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/ca/vgorcinschi/algorithms1_5_17/BaseProps.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="24" />
+          <folding>
+            <element signature="e#41#82#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/ca/vgorcinschi/algorithms1_5_17/ErdosRenyiProps.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="36" lean-forward="false" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/ca/vgorcinschi/algorithms1_5_17/GeneratorProps.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/ca/vgorcinschi/algorithms1_5_17/Validable.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="38" column="1" lean-forward="false" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+          <folding>
+            <element signature="e#41#62#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/ca/vgorcinschi/algorithms1_5_17/InputValidators.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="76" lean-forward="false" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/ca/vgorcinschi/algorithms1_5_17/ErdosRenyiSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/ca/vgorcinschi/algorithms1_5_17/package.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/ca/vgorcinschi/algorithms1_5_17/Generator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/ca/vgorcinschi/algorithms1_5_17/ErdosRenyi.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding>
+            <element signature="e#41#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,43 @@
+[0m[[0m[0minfo[0m] [0m[0mPackaging /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/algorithms1_5_12_and1_5_13_2.12-1.0.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ca/vgorcinschi/algorithms1_5_7/quickUnionUF/QuickUnionUF$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/QuickUnionUF$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ca/vgorcinschi/algorithms1_5_13[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_13[0m
+[0m[[0m[0mdebug[0m] [0m[0m	mediumUF.txt[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/mediumUF.txt[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ca/vgorcinschi/algorithms1_5_13/pathCompression/WeightedQUPathCompression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_13/pathCompression/WeightedQUPathCompression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ca/vgorcinschi/algorithms1_5_7[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_7[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ca/vgorcinschi/algorithms1_5_13/pathCompression[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_13/pathCompression[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ca/vgorcinschi[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ca/vgorcinschi/algorithms1_5_12[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_12[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ca/vgorcinschi/algorithms1_5_7/quickUnionUF/QuickUnionUF.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/QuickUnionUF.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ca/vgorcinschi/algorithms1_5_7/quickUnionUF/AbstractUF.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/AbstractUF.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ca/vgorcinschi/algorithms1_5_7/quickUnionUF/WeightedQuickUnionUF.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/WeightedQuickUnionUF.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ca/vgorcinschi/algorithms1_5_12/pathCompression/QUPathCompression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_12/pathCompression/QUPathCompression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ca[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/ca[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ca/vgorcinschi/algorithms1_5_12/pathCompression/QUPathCompression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_12/pathCompression/QUPathCompression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ca/vgorcinschi/algorithms1_5_7/quickUnionUF/UF.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_7/quickUnionUF/UF.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ca/vgorcinschi/algorithms1_5_12/pathCompression[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_12/pathCompression[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ca/vgorcinschi/algorithms1_5_7/quickUnionUF[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_12/target/scala-2.12/classes/ca/vgorcinschi/algorithms1_5_7/quickUnionUF[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m

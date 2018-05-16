@@ -1,0 +1,27 @@
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers resolveSbtClassifiers" ;*/*:dumpStructureTo /tmp/sbt-structure.xml; session clear-all
+all {file:/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter%201%20Fundamentals/algorithms1_5_17/}root/products {file:/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter%201%20Fundamentals/algorithms1_5_17/}root/test:products
++ compile
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers resolveSbtClassifiers" ;*/*:dumpStructureTo /tmp/sbt-structure.xml; session clear-all
++ compile
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers resolveSbtClassifiers" ;*/*:dumpStructureTo /tmp/sbt-structure.xml; session clear-all
++ compile
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers resolveSbtClassifiers" ;*/*:dumpStructureTo /tmp/sbt-structure.xml; session clear-all
++ compile
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers resolveSbtClassifiers" ;*/*:dumpStructureTo /tmp/sbt-structure.xml; session clear-all
++ compile
++ reload
++ compile
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers resolveSbtClassifiers" ;*/*:dumpStructureTo /tmp/sbt-structure.xml; session clear-all
+testOnly ca.vgorcinschi.algorithms1_5_17.GeneratorSpec
++ compile
+testOnly ca.vgorcinschi.algorithms1_5_17.ErdosRenyiSpec
++ compile
+testOnly ca.vgorcinschi.algorithms1_5_17.ErdosRenyiSpec
+testOnly ca.vgorcinschi.algorithms1_5_17.ErdosRenyiProps
++ compile
++ reload
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers resolveSbtClassifiers" ;*/*:dumpStructureTo /tmp/sbt-structure.xml; session clear-all
++ compile
+run
+testOnly ca.vgorcinschi.algorithms1_5_17.ErdosRenyiSpec
+testOnly ca.vgorcinschi.algorithms1_5_17.ErdosRenyiProps

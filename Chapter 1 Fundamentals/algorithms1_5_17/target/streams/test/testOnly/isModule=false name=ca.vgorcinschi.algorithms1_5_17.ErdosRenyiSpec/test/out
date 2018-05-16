@@ -1,0 +1,17 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mErdosRenyiSpec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mA 0 passed to count[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should result in 0 connections *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  java.lang.IllegalArgumentException: requirement failed[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.Predef$.require(Predef.scala:264)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at ca.vgorcinschi.algorithms1_5_17.Generator$.positiveInts(Generator.scala:21)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at ca.vgorcinschi.algorithms1_5_17.ErdosRenyi$.count(ErdosRenyi.scala:15)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at ca.vgorcinschi.algorithms1_5_17.ErdosRenyiSpec.$anonfun$new$1(ErdosRenyiSpec.scala:6)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.FlatSpecLike$$anon$1.apply(FlatSpecLike.scala:1682)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m3 sites[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should yield two connections[0m[0m
