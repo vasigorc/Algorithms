@@ -1,5 +1,7 @@
 import Dependencies._
 
+lazy val seventeen = RootProject(file("../algorithms1_5_17/"))
+
 lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
@@ -9,4 +11,4 @@ lazy val root = (project in file(".")).
     )),
     name := "algorithms_1_5_19",
     libraryDependencies += scalaTest % Test
-  )
+  ).dependsOn(seventeen)
