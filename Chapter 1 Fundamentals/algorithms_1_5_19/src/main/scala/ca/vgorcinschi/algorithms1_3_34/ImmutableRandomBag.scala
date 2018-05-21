@@ -1,13 +1,11 @@
 package ca.vgorcinschi.algorithms1_3_34
 
+import ca.vgorcinschi.algorithms1_3_34.ImmutableRandomBag._
+
 import scala.annotation.tailrec
-import scala.collection.IterableLike
 import scala.util.Random
 
-import ImmutableRandomBag._
-
-class ImmutableRandomBag[Item](maybeNode: Option[Node[Item]], size: Int) extends Iterable[Item]
-  with IterableLike[Item, ImmutableRandomBag[Item]]{
+class ImmutableRandomBag[Item](maybeNode: Option[Node[Item]], override val size: Int) extends Iterable[Item]{
 
   override def isEmpty: Boolean = size == 0
 
@@ -19,15 +17,15 @@ class ImmutableRandomBag[Item](maybeNode: Option[Node[Item]], size: Int) extends
 
   private class RandomIterator[Item](first: Option[Node[Item]]) extends Iterator[Item]{
 
+    var current: Int = 0
+    var container: Vector[Item] = Vector()
+
     first match {
       case Some(node) => random(node)
       case None =>
     }
 
-    var current: Int = 0
-    var container: Vector[Item] = Vector()
-
-    override def hasNext: Boolean = current < size
+    override def hasNext: Boolean = current < ImmutableRandomBag.this.size
 
     override def next(): Item = {
       val item = container(current)
