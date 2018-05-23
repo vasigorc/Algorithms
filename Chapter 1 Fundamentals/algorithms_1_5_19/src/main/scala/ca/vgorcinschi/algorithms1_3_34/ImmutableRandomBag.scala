@@ -18,11 +18,9 @@ class ImmutableRandomBag[Item](maybeNode: Option[Node[Item]], override val size:
   private class RandomIterator[Item](first: Option[Node[Item]]) extends Iterator[Item]{
 
     var current: Int = 0
-    var container: Vector[Item] = Vector()
-
-    first match {
+    val container: Vector[Item] = first match {
       case Some(node) => random(node)
-      case None =>
+      case None => Vector()
     }
 
     override def hasNext: Boolean = current < ImmutableRandomBag.this.size
@@ -41,7 +39,7 @@ class ImmutableRandomBag[Item](maybeNode: Option[Node[Item]], override val size:
       }
 
       val items = randomHelper(Some(first), List[Item]())
-      container = Random.shuffle(items).toVector
+      Random.shuffle(items).toVector
     }
   }
 }
