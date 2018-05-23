@@ -1,12 +1,12 @@
 package ca.vgorcinschi.algorithms1_5_19
 
 import ca.vgorcinschi.algorithms1_3_34.ImmutableRandomBag
-import ca.vgorcinschi.algorithms1_5_19.RandomGrid.Connection
+import ca.vgorcinschi.algorithms1_5_19.RandomGrid.Cell
 
 class RandomBagSpec extends BaseSpec {
 
   trait RandomBag{
-    val begin = new ImmutableRandomBag[Connection](None, 0)
+    val begin = new ImmutableRandomBag[Cell](None, 0)
   }
 
   "Random Bag's iterator" should "contain all items passed to parent iterable" in new RandomBag{

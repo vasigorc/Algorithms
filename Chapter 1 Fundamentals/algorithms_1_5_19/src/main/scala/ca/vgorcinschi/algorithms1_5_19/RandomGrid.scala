@@ -3,7 +3,7 @@ package ca.vgorcinschi.algorithms1_5_19
 import ca.vgorcinschi.algorithms1_3_34.ImmutableRandomBag
 import ca.vgorcinschi.algorithms1_5_17.InputValidators
 import ca.vgorcinschi.algorithms1_5_7.quickUnionUF.QuickUnionUF
-import edu.princeton.cs.algs4.{StdDraw, StdOut}
+import edu.princeton.cs.algs4.StdDraw
 
 import scala.io.StdIn
 
@@ -11,14 +11,17 @@ object RandomGrid extends App{
 
   play()
 
-  case class Connection(row: Int, col: Int)
+  case class Cell(id: Int, row: Int, col: Int)
 
-  def generate(upperBound: Int):ImmutableRandomBag[Connection] = {
-    var randomBag = ImmutableRandomBag[Connection](None, 0)
+  def generate(upperBound: Int):ImmutableRandomBag[Cell] = {
+    var idGen: Int = 0
+
+    var randomBag = ImmutableRandomBag[Cell](None, 0)
     for{row <- 0 until upperBound
         col <- 0 until upperBound}
       {
-        randomBag = randomBag.add(Connection(row, col))
+        idGen+=1
+        randomBag = randomBag.add(Cell(idGen, row, col))
       }
     randomBag
   }
@@ -30,18 +33,15 @@ object RandomGrid extends App{
     val bag = generate(upperBound)//get bag of all connections
     val quickUnion = new QuickUnionUF(upperBound*upperBound)//UF is ^2 to nest all connections
 
-    StdDraw.setCanvasSize(400, 400)
     StdDraw.setXscale(0, upperBound)
     StdDraw.setYscale(0, upperBound)
-    StdDraw.setPenRadius(0.001)
+    StdDraw.setPenRadius(0.01)
     StdDraw.setPenColor(StdDraw.BLUE)
 
-    bag.iterator.foreach{
-      conn =>
-        quickUnion.union(conn.col, conn.row)
-        StdDraw.line(conn.col/upperBound, conn.col%upperBound,
-          conn.row/upperBound, conn.col%upperBound)
-        StdOut.println(quickUnion.counter())
+    bag.iterator.sliding(2,3).foreach{case List(c1, c2) =>
+      quickUnion.union(c1.id, c2.id)
+      StdDraw.line(c1.row, c1.col, c2.row, c2.col)
+      println(s"Nr of sites: ${quickUnion.counter()}")
     }
   }
 }
