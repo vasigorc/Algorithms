@@ -38,7 +38,7 @@ object RandomGrid extends App{
     StdDraw.setPenRadius(0.01)
     StdDraw.setPenColor(StdDraw.BLUE)
 
-    bag.iterator.sliding(2,3).foreach{case List(c1, c2) =>
+    bag.iterator.sliding(2,2).withPartial(false) foreach{case Seq(c1, c2) =>
       quickUnion.union(c1.id, c2.id)
       StdDraw.line(c1.row, c1.col, c2.row, c2.col)
       println(s"Nr of sites: ${quickUnion.counter()}")
