@@ -1,9 +1,10 @@
-package ca.vgorcinschi
+package ca.vgorcinschi.algorithms_2
 
 /**
   * Exercise 2.1.11
   * Implement a version of shellsort that keeps the increment sequence in an array,
-  * rather than computing it
+  * tather than computing it
+ *
   * @author vgorcinschi
   */
 class Ex2_1_11 extends BaseSort{
@@ -28,6 +29,8 @@ class Ex2_1_11 extends BaseSort{
   }
 
   def sequenceStream[T <: Ordered[T]](N: Int): Stream[Int] = {
+    import ca.vgorcinschi.StreamOps
+
     Stream.iterate(1)(h => 3*h +1).takeUntil(_ < N/3)
   }
 }

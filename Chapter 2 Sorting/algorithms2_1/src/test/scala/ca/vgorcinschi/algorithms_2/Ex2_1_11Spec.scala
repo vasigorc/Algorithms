@@ -1,4 +1,6 @@
-package ca.vgorcinschi
+package ca.vgorcinschi.algorithms_2
+
+import ca.vgorcinschi.{BaseSpec, easyShellSort}
 
 class Ex2_1_11Spec extends BaseSpec {
 
