@@ -13,16 +13,16 @@ class Ex2_1_11 extends BaseSort{
     val N = a.length
     val sequence: Array[Int] = sequenceStream(N).toArray //1, 4, 13, 40, 121, 364, 1093, ...
 
-    def tryExch(j: Int, h: Int):Unit = j match {
-      case _ if j >= h && less(a(j), a(j - h)) =>
-        exch(a, j, j-h)
-        tryExch(j-h, h)
+    def tryExch(j: Int, gap: Int):Unit = j match {
+      case _ if j >= gap && less(a(j), a(j - gap)) =>
+        exch(a, j, j-gap)
+        tryExch(j-gap, gap)
       case _ =>
     }
 
-    for (h <- sequence.reverse){
-      for (i <- h until N){
-        tryExch(i, h)
+    for (gap <- sequence.reverse){
+      for (i <- gap until N){
+        tryExch(i, gap)
       }
     }
     a

@@ -1,15 +1,15 @@
 package ca.vgorcinschi.algorithms_2
 
 //Segewick and Wayne's implementation re-written in Scala
-class MergeSort [T] extends BaseSort {
+class MergeSort [T <: Ordered[T]] {
   var aux: Array[T] = _
 
-  override def sort[T](a: Array[T])(implicit order: T => Ordered[T]): Array[T] = {
-    aux = new Array[T](a.length)
+  def sort(a: Array[T]): Array[T] = {
+    aux = a
     sort(a, 0, a.length-1)
   }
 
-  def sort(a: Array[T], lo: Int, hi: Int)(implicit order: T => Ordered[T]): Array[T] = {
+  protected def sort(a: Array[T], lo: Int, hi: Int): Array[T] = {
     if(hi <= lo) a
     else {
       val mid = lo + (hi - lo)/2
@@ -19,17 +19,31 @@ class MergeSort [T] extends BaseSort {
     }
   }
 
-  def merge(a: Array[T], lo: Int, mid: Int, hi: Int)(implicit order: T => Ordered[T]):Array[T] = {
+  def less(v: T, w: T):Boolean = v < w
+
+  def merge(a: Array[T], lo: Int, mid: Int, hi: Int):Array[T] = {
     var i = lo
     var j = mid+1
     //copy all passed-in items into auxiliary array
     (lo to hi).foreach(k=> {aux(k) = a(k)})
 
     (lo to hi).foreach(k=>{
-      if(i > mid) a(k) = aux(j+=1) // left half exausted - take from the right
-      else if(j > hi) a(k) = aux(i+=1) // right half exausted - take from the left
-      else if(less(aux(j), aux(i))) a(k) = aux(j+=1) // current key on right less - take from the right
-      else a(k) = aux(i+=1) // current key on left less - take from the left
+      if(i > mid) a(k) = {
+        j+=1
+        aux(j)
+      } // left half exausted - take from the right
+      else if(j > hi) a(k) = {
+        i+=1
+        aux(i)
+      } // right half exausted - take from the left
+      else if(less(aux(j), aux(i))){
+        j+=1
+        a(k)=aux(j)
+      } // current key on right less - take from the right
+      else{
+        i+=1
+        a(k)=aux(i)
+      }  // current key on left less - take from the left
     })
     a
   }
