@@ -1,11 +1,13 @@
 package ca.vgorcinschi.algorithms_2
 
+import scala.reflect.ClassTag
+
 //Segewick and Wayne's implementation re-written in Scala
-class MergeSort [T <: Ordered[T]] extends BaseSort [T]{
+class MergeSort [T <% Ordered[T]](implicit evidence: ClassTag[T]) extends BaseSort [T]{
   var aux: Array[T] = _
 
   def sort(a: Array[T]): Array[T] = {
-    aux = a
+    aux = new Array[T](a.length)
     sort(a, 0, a.length-1)
   }
 

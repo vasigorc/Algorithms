@@ -7,7 +7,7 @@ class Ex2_1_12Spec extends BaseSpec{
   val someSmallConstant = 0.6
 
   def fixture = new {
-    val customShellSort = new Ex2_1_12
+    val customShellSort = new Ex2_1_12[Char]
   }
 
   s"$easyShellSort" should s"be correctly sorted by ${fixture.customShellSort}" in {
@@ -20,7 +20,7 @@ class Ex2_1_12Spec extends BaseSpec{
     "constant" in {
     assert(Stream.iterate(100D)(i => scala.math.pow(i, 2)).take(3).forall{
       d => {
-        val shellSort = new Ex2_1_12
+        val shellSort = new Ex2_1_12[Double]
         val doubles = Array.fill(d.toInt){math.random}
         shellSort.sort(doubles)
         (shellSort.allRatios.sum / shellSort.allRatios.length) < someSmallConstant

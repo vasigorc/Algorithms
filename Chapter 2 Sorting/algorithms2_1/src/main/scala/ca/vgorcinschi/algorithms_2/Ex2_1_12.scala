@@ -17,7 +17,7 @@ import scala.collection.mutable.ListBuffer
  *
   * @author vgorcinschi
   */
-class Ex2_1_12[T <: Ordered[T]] extends BaseSort[T] {
+class Ex2_1_12[T <% Ordered[T]] extends BaseSort[T] {
 
   var nrOfCompares:Int = 0
   var previousNrOfCompares: Int = nrOfCompares

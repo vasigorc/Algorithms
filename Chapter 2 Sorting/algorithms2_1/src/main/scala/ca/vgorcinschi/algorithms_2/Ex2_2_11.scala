@@ -1,6 +1,9 @@
 package ca.vgorcinschi.algorithms_2
 
-class Ex2_2_11[T<: Ordered[T]] extends MergeSort[T] {
+import scala.reflect.ClassTag
+
+// Improvements from page 275
+class Ex2_2_11[T<% Ordered[T]](implicit evidence: ClassTag[T]) extends MergeSort[T] {
 
   override def sort(a: Array[T], lo: Int, hi: Int): Array[T] = {
     if(hi <= lo) return a

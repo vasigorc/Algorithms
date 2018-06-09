@@ -5,7 +5,7 @@ import ca.vgorcinschi.{BaseSpec, easyShellSort}
 class Ex2_1_11Spec extends BaseSpec {
 
   def fixture = new {
-    val customShellSort = new Ex2_1_11
+    val customShellSort = new Ex2_1_11[Char]
   }
 
   "sequenceStream" should "produce a sequence 1,4,13 for N = 15" in {

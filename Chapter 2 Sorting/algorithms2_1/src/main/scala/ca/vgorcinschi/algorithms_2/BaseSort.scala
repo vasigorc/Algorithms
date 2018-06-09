@@ -2,7 +2,7 @@ package ca.vgorcinschi.algorithms_2
 
 import edu.princeton.cs.algs4.StdOut
 
-trait BaseSort [T <: Ordered[T]]{
+abstract class BaseSort [T <% Ordered[T]]{
 
   def sort(a: Array[T]):Array[T]
 

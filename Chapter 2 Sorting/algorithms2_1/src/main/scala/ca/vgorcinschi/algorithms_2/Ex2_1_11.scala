@@ -7,7 +7,7 @@ package ca.vgorcinschi.algorithms_2
  *
   * @author vgorcinschi
   */
-class Ex2_1_11[T <: Ordered[T]] extends BaseSort[T]{
+class Ex2_1_11[T <% Ordered[T]] extends BaseSort[T]{
 
   override def sort(a: Array[T]): Array[T] = {
     val N = a.length
@@ -28,7 +28,7 @@ class Ex2_1_11[T <: Ordered[T]] extends BaseSort[T]{
     a
   }
 
-  def sequenceStream[T <: Ordered[T]](N: Int): Stream[Int] = {
+  def sequenceStream(N: Int): Stream[Int] = {
     import ca.vgorcinschi.StreamOps
 
     Stream.iterate(1)(h => 3*h +1).takeUntil(_ < N/3)
