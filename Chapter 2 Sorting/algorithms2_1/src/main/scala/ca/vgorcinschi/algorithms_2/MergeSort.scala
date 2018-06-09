@@ -1,7 +1,7 @@
 package ca.vgorcinschi.algorithms_2
 
 //Segewick and Wayne's implementation re-written in Scala
-class MergeSort [T <: Ordered[T]] {
+class MergeSort [T <: Ordered[T]] extends BaseSort [T]{
   var aux: Array[T] = _
 
   def sort(a: Array[T]): Array[T] = {
@@ -18,8 +18,6 @@ class MergeSort [T <: Ordered[T]] {
       merge(a, lo, mid, hi)
     }
   }
-
-  def less(v: T, w: T):Boolean = v < w
 
   def merge(a: Array[T], lo: Int, mid: Int, hi: Int):Array[T] = {
     var i = lo

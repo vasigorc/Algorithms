@@ -5,7 +5,7 @@ import scala.collection.mutable.ListBuffer
 /**
   * From "Introduction to the Art of Programming Using Scala":
   * Shell Sort is also called the "dimishing gap sort". Introduced in 1959 by Donald Shell iy was one of the first
-  * general sort algorithms that is faster than O(N^2).
+  * general sort algorithms that is faster than O(N^^2).
   *
   * Its basic idea is a bit counterintuitive. It performs an insertion sort repeatedly on different subsets of the full
   * array. To start with, the subsets are taken to be groups of elements that are widely spaced. The spacing between the
@@ -17,7 +17,7 @@ import scala.collection.mutable.ListBuffer
  *
   * @author vgorcinschi
   */
-class Ex2_1_12 extends BaseSort {
+class Ex2_1_12[T <: Ordered[T]] extends BaseSort[T] {
 
   var nrOfCompares:Int = 0
   var previousNrOfCompares: Int = nrOfCompares
@@ -30,7 +30,7 @@ class Ex2_1_12 extends BaseSort {
     previousNrOfCompares = nrOfCompares
   }
 
-  override def sort[T <% Ordered[T]](a: Array[T]): Array[T] = {
+  override def sort(a: Array[T]): Array[T] = {
     val N = a.length
     var gap = N/2
     while (gap>=1){

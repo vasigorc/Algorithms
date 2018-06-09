@@ -7,9 +7,9 @@ package ca.vgorcinschi.algorithms_2
  *
   * @author vgorcinschi
   */
-class Ex2_1_11 extends BaseSort{
+class Ex2_1_11[T <: Ordered[T]] extends BaseSort[T]{
 
-  override def sort[T <% Ordered[T]](a: Array[T]): Array[T] = {
+  override def sort(a: Array[T]): Array[T] = {
     val N = a.length
     val sequence: Array[Int] = sequenceStream(N).toArray //1, 4, 13, 40, 121, 364, 1093, ...
 
