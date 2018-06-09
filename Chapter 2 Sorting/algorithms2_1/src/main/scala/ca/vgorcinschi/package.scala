@@ -27,4 +27,10 @@ package object vgorcinschi {
     }
     x
   }
+
+  /*
+     based on solution from rosettacode.org but changed for Streams. We want to have Stream(1,?) collection
+     + adding reverse because we will need take(1) in most cases
+   */
+  def descedingValidDivisors(n: Int) = Stream.range(1, n/2).filter(i => n % i == 0).reverse
 }
