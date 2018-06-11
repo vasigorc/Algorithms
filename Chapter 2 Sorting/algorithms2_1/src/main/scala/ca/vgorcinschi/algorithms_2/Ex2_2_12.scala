@@ -1,5 +1,7 @@
 package ca.vgorcinschi.algorithms_2
 
+import ca.vgorcinschi.gd
+
 import scala.reflect.ClassTag
 
 /**
@@ -15,11 +17,49 @@ import scala.reflect.ClassTag
   *
   * @tparam T - bound type for any Ordered (Comparable) type
   */
+//class Ex2_2_12[T<% Ordered[T] with ClassTag[T]] extends MergeSort[T]{
 class Ex2_2_12[T<% Ordered[T]](implicit evidence: ClassTag[T]) extends MergeSort[T]{
 
   override def sort(a: Array[T]): Array[T] = {
     val N = a.length
     aux = new Array[T](a.length)
+
+    val greatestDivisor = gd(N)
+    val shellSort = new Ex2_1_11[T]
+
+    //sort part
+    for(i <- 0 to N-greatestDivisor by greatestDivisor){
+      shellSort.sort(a, i, (i+greatestDivisor)-1)//need to do -1 because we're 0 based index
+    }
+
+    //merge part, need to do *2 because merge method expects a mid parameter
+    def tryMerge(sI: Int, gd: Int): Unit ={
+      val twos = 2*gd-1
+      val ones = gd-1
+
+      if((sI + twos) < N){
+        merge(a, sI, twos/2, twos)
+        tryMerge(sI+twos, gd) // continue to try to merge while there are more chunks
+      } else if((sI + ones) < N){ //bottom case either we only have one subarray or we have reached last AND odd subarray
+        merge(a, 0, sI, sI + ones)
+      }
+    }
+
+    //we need to expand the chunks to merge while we haven't passed the middle of the original array
+    var currentGD = greatestDivisor
+    while (currentGD < N/2){
+      tryMerge(0, currentGD)
+      currentGD = currentGD * 2
+    }
     a
+  }
+
+  /*
+    we will take the greatest valid divisor as the splitterator for our array
+   */
+  def sublinearIndexes(arrayLength: Int):Set[Int] ={
+    import ca.vgorcinschi._
+    //safe to do (0) as the underlying Stream is guaranteed to be at least Stream(1)
+    (0 to arrayLength).filter(i => i % descedingValidDivisors(i).take(1)(0) == 0).toSet
   }
 }

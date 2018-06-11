@@ -33,4 +33,11 @@ package object vgorcinschi {
      + adding reverse because we will need take(1) in most cases
    */
   def descedingValidDivisors(n: Int) = Stream.range(1, n/2).filter(i => n % i == 0).reverse
+
+  def gd(n: Int):Int = descedingValidDivisors(n).take(1).head
+
+  //test if array is sorted
+  def isSorted[T <% Ordered[T]](a: Array[T]):Boolean ={
+    (1 until a.length).forall(i => a(i-1) <= a(i))
+  }
 }

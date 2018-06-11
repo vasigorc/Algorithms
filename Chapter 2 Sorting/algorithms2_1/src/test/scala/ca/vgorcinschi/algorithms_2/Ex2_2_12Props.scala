@@ -17,4 +17,11 @@ class Ex2_2_12Props extends BaseProps{
       gcdOldWay(left, right) == gcd(left, right)
     }
   }
+
+  property("descedingValidDivisors"){
+    forAll { n: Int =>
+      (n >= 0)
+      descedingValidDivisors(n) == gcdOldWay(n, 1)
+    }
+  }
 }
