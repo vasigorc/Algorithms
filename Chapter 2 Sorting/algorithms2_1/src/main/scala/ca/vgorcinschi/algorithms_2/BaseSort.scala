@@ -2,11 +2,14 @@ package ca.vgorcinschi.algorithms_2
 
 import edu.princeton.cs.algs4.StdOut
 
-abstract class BaseSort [T <% Ordered[T]]{
+abstract class BaseSort [T : Ordering]{
 
   def sort(a: Array[T]):Array[T]
 
-  def less(v: T, w: T):Boolean = v < w
+  def less(v: T, w: T):Boolean = {
+    import Ordered._
+    v < w
+  }
 
   def exch(a: Array[T], i: Int, j: Int): Unit = {
     val t = a(i)

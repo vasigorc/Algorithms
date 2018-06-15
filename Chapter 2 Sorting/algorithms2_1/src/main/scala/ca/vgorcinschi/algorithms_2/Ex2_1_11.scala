@@ -1,5 +1,7 @@
 package ca.vgorcinschi.algorithms_2
 
+import scala.reflect.ClassTag
+
 /**
   * Exercise 2.1.11
   * Implement a version of shellsort that keeps the increment sequence in an array,
@@ -7,7 +9,7 @@ package ca.vgorcinschi.algorithms_2
  *
   * @author vgorcinschi
   */
-class Ex2_1_11[T <% Ordered[T]] extends BaseSort[T]{
+class Ex2_1_11[T : ClassTag : Ordering] extends BaseSort[T]{
 
   override def sort(a: Array[T]): Array[T] = {
     val N = a.length
@@ -44,14 +46,14 @@ class Ex2_1_11[T <% Ordered[T]] extends BaseSort[T]{
     val sequence: Array[Int] = sequenceStream(end-start).toArray //1, 4, etc
 
     def tryExch(j: Int, gap: Int):Unit = j match {
-      case _ if j >= gap && less(a(j), a(j - gap)) =>
+      case _ if j >= start+gap && less(a(j), a(j - gap)) =>
         exch(a, j, j-gap)
         tryExch(j-gap, gap)
       case _ =>
     }
 
     for (gap <- sequence.reverse){
-      for (i <- start+gap to end){ //TODO: think over the looping logic
+      for (i <- start+gap to end){
         tryExch(i, gap)
       }
     }

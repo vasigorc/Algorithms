@@ -3,7 +3,6 @@ package ca.vgorcinschi.algorithms_2
 import ca.vgorcinschi.gd
 
 import scala.reflect.ClassTag
-
 /**
   * Sublinear extra space. Develop a merge implementation that reduces the extra
   * space requirements to max(M, N/M), based on the following idea, Divide the array
@@ -18,7 +17,7 @@ import scala.reflect.ClassTag
   * @tparam T - bound type for any Ordered (Comparable) type
   */
 //class Ex2_2_12[T<% Ordered[T] with ClassTag[T]] extends MergeSort[T]{
-class Ex2_2_12[T<% Ordered[T]](implicit evidence: ClassTag[T]) extends MergeSort[T]{
+class Ex2_2_12[T : ClassTag : Ordering] extends MergeSort[T]{
 
   override def sort(a: Array[T]): Array[T] = {
     val N = a.length
@@ -33,15 +32,17 @@ class Ex2_2_12[T<% Ordered[T]](implicit evidence: ClassTag[T]) extends MergeSort
     }
 
     //merge part, need to do *2 because merge method expects a mid parameter
-    def tryMerge(sI: Int, gd: Int): Unit ={
+    def tryMerge(startIndex: Int, gd: Int): Unit ={
       val twos = 2*gd-1
       val ones = gd-1
 
-      if((sI + twos) < N){
-        merge(a, sI, twos/2, twos)
-        tryMerge(sI+twos, gd) // continue to try to merge while there are more chunks
-      } else if((sI + ones) < N){ //bottom case either we only have one subarray or we have reached last AND odd subarray
-        merge(a, 0, sI, sI + ones)
+      if((startIndex + twos) < N){
+        val end = startIndex+twos
+        val mid = (end + startIndex)/2
+        merge(a, startIndex, mid, end)
+        tryMerge(startIndex+twos+1, gd) // continue to try to merge while there are more chunks (move startIndex past end of last chunk)
+      } else { //bottom case we only have one subarray left
+        merge(a, startIndex - twos, startIndex, N-1) //TODO check startIndex - twos
       }
     }
 
