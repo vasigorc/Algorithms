@@ -16,7 +16,6 @@ import scala.reflect.ClassTag
   *
   * @tparam T - bound type for any Ordered (Comparable) type
   */
-//class Ex2_2_12[T<% Ordered[T] with ClassTag[T]] extends MergeSort[T]{
 class Ex2_2_12[T : ClassTag : Ordering] extends MergeSort[T]{
 
   override def sort(a: Array[T]): Array[T] = {
@@ -33,16 +32,15 @@ class Ex2_2_12[T : ClassTag : Ordering] extends MergeSort[T]{
 
     //merge part, need to do *2 because merge method expects a mid parameter
     def tryMerge(startIndex: Int, gd: Int): Unit ={
-      val twos = 2*gd-1
-      val ones = gd-1
+      val twos = 2*gd
 
       if((startIndex + twos) < N){
-        val end = startIndex+twos
+        val end = startIndex+twos-1
         val mid = (end + startIndex)/2
         merge(a, startIndex, mid, end)
-        tryMerge(startIndex+twos+1, gd) // continue to try to merge while there are more chunks (move startIndex past end of last chunk)
+        tryMerge(startIndex+twos, gd) // continue to try to merge while there are more chunks (move startIndex past end of last chunk)
       } else { //bottom case we only have one subarray left
-        merge(a, startIndex - twos, startIndex, N-1) //TODO check startIndex - twos
+        merge(a, startIndex - twos, startIndex - 1, N-1)
       }
     }
 
