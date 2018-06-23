@@ -6,7 +6,7 @@ class Ex2_1_25[T : ClassTag : Ordering] extends BaseSort [T]{
 
   override def sort(a: Array[T]): Array[T] = {
     val N = a.length
-    for(i <- 1 to N){
+    for(i <- 1 until N){
       bubble(i, a)
     }
     a
@@ -21,7 +21,7 @@ class Ex2_1_25[T : ClassTag : Ordering] extends BaseSort [T]{
       j-=1
     }
     if(j != i){
-      a(j-1) = tmp
+      a(j) = tmp
     }
   }
 }
