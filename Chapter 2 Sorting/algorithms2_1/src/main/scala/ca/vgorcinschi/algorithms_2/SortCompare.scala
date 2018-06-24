@@ -1,6 +1,6 @@
 package ca.vgorcinschi.algorithms_2
 
-import ca.vgorcinschi.algorithms_1.{StdOut, Stopwatch}
+import ca.vgorcinschi.algorithms_1.Stopwatch
 
 import scala.util.Random
 
@@ -13,8 +13,8 @@ object SortCompare extends App{
 
   private val t1: Double = timeRandomInput(alg1, N, T)
   private val t2: Double = timeRandomInput(alg2, N, T)
-  StdOut.printf("For %d random Doubles\n   %s is", N, alg1)
-  StdOut.printf(" %.1f times faster than %s\n", t2/t1, alg2)
+  print(f"For $N%d random Doubles\n $alg1%s is")
+  println(f" ${t2/t1}%f faster than $alg2%s")
 
   def time(alg: String, a: Array[Double]):Double={
     val timer = new Stopwatch()
