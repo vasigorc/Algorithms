@@ -20,8 +20,6 @@ class Ex2_1_25[T : ClassTag : Ordering] extends BaseSort [T]{
       a(j) = a(j-1)
       j-=1
     }
-    if(j != i){
       a(j) = tmp
-    }
   }
 }
