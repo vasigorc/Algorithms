@@ -35,6 +35,7 @@ object SortCompare extends App{
 
   private def factoryMethod(alg: String):BaseSort[Double] = alg match {
     case "Insertion" => new InsertionSort[Double]
+    case "SentinelInsertion" => new SentinelInsertionSort[Double]
     case "Ex2_1_25" => new Ex2_1_25[Double]
     case v @ _ => throw new NotImplementedError(s"$v sort hasn't been added to the factory method yet.")
   }
