@@ -9,6 +9,10 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$/../algorithms1_5_12" />
+            <option value="$PROJECT_DIR$/../algorithms1_5_12/project" />
+            <option value="$PROJECT_DIR$/../algorithms1_5_17" />
+            <option value="$PROJECT_DIR$/../algorithms1_5_17/project" />
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/project" />
           </set>

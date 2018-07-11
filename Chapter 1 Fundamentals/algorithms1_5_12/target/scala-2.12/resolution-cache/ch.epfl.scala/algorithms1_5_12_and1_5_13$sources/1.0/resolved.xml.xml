@@ -4,7 +4,7 @@
 		module="algorithms1_5_12_and1_5_13$sources"
 		revision="1.0"
 		status="integration"
-		publication="20180508165050"
+		publication="20180520182617"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

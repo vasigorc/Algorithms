@@ -1,5 +1,9 @@
 package ca
 
+import scala.annotation.tailrec
+import scala.collection.immutable.Queue
+import scala.reflect.ClassTag
+
 package object vgorcinschi {
 
   val easyShellSort: Array[Char] = "EASYSHELLSORTQUESTION".toCharArray
@@ -39,5 +43,27 @@ package object vgorcinschi {
   //test if array is sorted
   def isSorted[T <% Ordered[T]](a: Array[T]):Boolean ={
     (1 until a.length).forall(i => a(i-1) <= a(i))
+  }
+
+  /*
+    Exercise 2.2.14 Merging sorted queues. Develop a function that takes two queues of sorted itemsas arguments and returns
+    a queue that resuts from merging the queues into sorted order.
+   */
+  implicit class QueueOps[T : ClassTag : Ordering](queue: Queue[T]){
+    def mergeQueue(that: Queue[T]):Queue[T] ={
+      require(queue != null && that != null, "Neither of the queues was initialized")
+      import Ordered._
+
+      @tailrec
+      def internal(first: Queue[T], second: Queue[T], acc: Queue[T]): Queue[T] =(first, second) match {
+        case (Queue(), Queue()) => acc
+        case (q, Queue()) => acc ++: q
+        case (Queue(), y) => acc ++: y
+        case (q, y) => if(q.head < y.head) internal(q.tail, y, acc.enqueue(q.head))
+        else internal(q.tail, y, acc.enqueue(q.head))
+      }
+
+      internal(queue, that, Queue())
+    }
   }
 }

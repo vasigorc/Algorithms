@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Chapter 1 Fundamentals-root.iml" filepath="$PROJECT_DIR$/.idea/modules/Chapter 1 Fundamentals-root.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithms_1_5_19-root-build.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithms_1_5_19-root-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithms1_5_12.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithms1_5_12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithms1_5_12-build.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithms1_5_12-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithms1_5_17-root-build.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithms1_5_17-root-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/root.iml" filepath="$PROJECT_DIR$/.idea/modules/root.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/root-build.iml" filepath="$PROJECT_DIR$/.idea/modules/root-build.iml" />
     </modules>
