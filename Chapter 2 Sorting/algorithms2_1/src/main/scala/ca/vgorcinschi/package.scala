@@ -60,7 +60,7 @@ package object vgorcinschi {
         case (q, Queue()) => acc ++: q
         case (Queue(), y) => acc ++: y
         case (q, y) => if(q.head < y.head) internal(q.tail, y, acc.enqueue(q.head))
-        else internal(q.tail, y, acc.enqueue(q.head))
+        else internal(q, y.tail, acc.enqueue(y.head))
       }
 
       internal(queue, that, Queue())
