@@ -1,4 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/home/vgorcinschi/data/eclipseProjects/Algorithms/Chapter 1 Fundamentals/algorithms1_5_17/src/test/scala/ca/vgorcinschi/algorithms1_5_17/GeneratorSpec.scala:13:30: No implicit view available from org.scalatest.Assertion => org.scalacheck.Prop.[0m
-[0m[[0m[31merror[0m] [0m[0m    Prop.forAll(smallInteger){n =>[0m
-[0m[[0m[31merror[0m] [0m[0m                             ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
