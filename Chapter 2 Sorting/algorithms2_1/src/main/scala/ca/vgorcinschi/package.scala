@@ -36,7 +36,7 @@ package object vgorcinschi {
      based on solution from rosettacode.org but changed for Streams. We want to have Stream(1,?) collection
      + adding reverse because we will need take(1) in most cases
    */
-  def descedingValidDivisors(n: Int) = Stream.range(1, n/2).filter(i => n % i == 0).reverse
+  def descedingValidDivisors(n: Int): Stream[Int] = Stream.range(1, n/2).filter(i => n % i == 0).reverse
 
   def gd(n: Int):Int = descedingValidDivisors(n).take(1).head
 
@@ -45,13 +45,20 @@ package object vgorcinschi {
     (1 until a.length).forall(i => a(i-1) <= a(i))
   }
 
+  def isSorted[T <% Ordered[T]](s: Seq[T]):Boolean = s match {
+    case _ if s.size < 2 => true
+    case x::xs => {
+      if(x < xs.head) isSorted(xs) else false
+    }
+  }
+
   /*
     Exercise 2.2.14 Merging sorted queues. Develop a function that takes two queues of sorted itemsas arguments and returns
     a queue that resuts from merging the queues into sorted order.
    */
   implicit class QueueOps[T : ClassTag : Ordering](queue: Queue[T]){
     def mergeQueue(that: Queue[T]):Queue[T] ={
-      require(queue != null && that != null, "Neither of the queues was initialized")
+      if(that == null) return queue
       import Ordered._
 
       @tailrec
