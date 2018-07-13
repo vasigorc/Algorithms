@@ -10,7 +10,6 @@ def shuffleArray(a: Array[Int]):Array[Int]={
       collector
     else{
       val randomIndex = Random.nextInt(a.length)
-      print(filledIndex)
       if(!collector.contains(randomIndex)){
         collector(filledIndex)=randomIndex
         permutationIndices(filledIndex+1, collector)
