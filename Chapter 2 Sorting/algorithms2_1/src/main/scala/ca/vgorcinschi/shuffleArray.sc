@@ -27,11 +27,12 @@ def shuffleArray(a: Array[Int]):Array[Int]={
 
   val collector = permutationIndices(0, new Array(a.length))
   (a /: collector){case (initial, collectorIndex)=>
-    val arrReplaceIndex = collectorIndex
-    val arrContraReplaceIndex = collector(collectorIndex)
-    swapValues(collector, arrReplaceIndex, arrContraReplaceIndex)
-    swapValues(a, arrReplaceIndex, arrContraReplaceIndex)
+    if(collector(collectorIndex) > 0){//if permutation cycle is not finished
+      val arrReplaceIndex = collectorIndex
+      val arrContraReplaceIndex = collector(collectorIndex)
+      collector(arrReplaceIndex)-=a.length
+      collector(arrContraReplaceIndex)-=a.length
+      swapValues(a, arrReplaceIndex, arrContraReplaceIndex)
+    } else collector
   }
 }
-
-shuffleArray(Array(0,1,2,3))
