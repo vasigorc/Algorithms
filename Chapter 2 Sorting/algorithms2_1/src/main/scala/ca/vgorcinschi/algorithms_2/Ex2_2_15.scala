@@ -12,7 +12,8 @@ class Ex2_2_15[T : ClassTag : Ordering] {
       if(a1.length == 0) Queue()
       else if(a1.length == 1) a1.head
       else {
-        val result = a1.grouped(2).map{case (a1: Array[Queue[T]]) => a1(0).mergeQueue(a1(1))}.toArray
+        val result = a1.grouped(2).map{case (a1: Array[Queue[T]]) =>
+          if(a1.length ==1) a1(0) else a1(0).mergeQueue(a1(1))}.toArray
         internal(result)
       }
     }
