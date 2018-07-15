@@ -6,7 +6,7 @@ import org.scalacheck.{Arbitrary, Gen}
 
 import scala.collection.immutable.Queue
 
-class Ex2_2_14Spec extends BaseProps{
+class Ex2_2_14Props extends BaseProps{
 
   private val genIntQueue = implicitly[Arbitrary[Queue[Int]]].arbitrary
   private val genSortedIntQueue: Gen[Queue[Int]] = genIntQueue.map(_.sorted)
