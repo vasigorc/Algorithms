@@ -28,15 +28,13 @@ class Ex2_2_16[T : ClassTag : Ordering] extends MergeSort[T] {
 
     while (thereIsMore){
       while (efa < N){
-        while (efa < N && maxValue(efa, sfa) <= a(efa)){
-            efa += 1
-        }
+        while (efa < N && maxValue(efa, sfa) <= a(efa))
+          efa += 1
 
         esa = efa
 
-        while (esa < N && maxValue(esa, efa) <= a(esa)){
-            esa += 1
-        }
+        while (esa < N && maxValue(esa, efa) <= a(esa))
+          esa += 1
 
         if(efa != esa)
           merge(a, sfa, math.max(efa - 1, 0), esa - 1)
