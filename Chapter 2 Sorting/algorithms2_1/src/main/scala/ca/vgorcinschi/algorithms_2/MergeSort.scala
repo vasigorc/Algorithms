@@ -39,8 +39,7 @@ class MergeSort [T : ClassTag : Ordering] extends BaseSort [T]{
       else if(less(aux(j), aux(i))){
         a(k)=aux(j)
         j+=1
-      } // current key on right less - take from the right
-      else{
+      } else { // current key on right less - take from the right
         a(k)=aux(i)
         i+=1
       }  // current key on left less - take from the left
