@@ -13,39 +13,41 @@ class Ex2_2_17 [T : Ordering]{
   def mergesort(list: List[T]):List[T] = {
     import Ordered._
 
-    def sort(p: (List[T], List[T])):List[T] = p match {
-      case (Nil, Nil) => Nil
-      case (ha :: Nil, Nil) => ha :: Nil
-      case (Nil, hb :: Nil) => hb :: Nil
-      case (as, bs) => merge(halfifyAndSort(as), halfifyAndSort(bs))
-    }
-
     def nextSubsequences(as: List[T]) : (List[T], List[T]) = {
       def loop(source: List[T], fs: List[T], ss: List[T]):(List[T], List[T]) = (source, fs, ss) match {
         case (first :: tail, Nil , Nil) => loop(tail, List(first), ss)
         case (first :: tail, _, Nil) => if(first > fs.head) loop(tail, first :: fs, ss) else loop(tail, fs, List(first))
         case (first :: tail, _, _) => if(first > ss.head) loop(tail, fs, first :: ss) else (fs, ss)
+        case (Nil, _, Nil) => (fs.reverse, ss)
         case (Nil, _, _) => (fs.reverse, ss.reverse)
       }
 
       loop(as, Nil, Nil)
     }
 
-    def merge(as: List[T], bs: List[T]): List[T] = {
-      def loop(cs: List[T], ds: List[T], r: List[T]): List[T] = (cs, ds) match {
-        case (ha :: ta, hb :: tb) =>
-          if (ha < hb) loop(ta, ds, ha :: r)
-          else loop(cs, tb, hb :: r)
-        case (ha :: ta, Nil) => loop(ta, Nil, ha :: r)
-        case (Nil, hb :: tb) => loop(Nil, tb, hb :: r)
-        case (Nil, Nil) => r
-      }
-
-      loop(as, bs, Nil).reverse
+    def merge(left: List[T], right: List[T]): List[T] = (left, right) match {
+      case (x :: xs, y :: ys) if x <= y => x :: merge(xs, right)
+      case (x :: xs, y :: ys) => y :: merge(left, ys)
+      case _ => if (left.isEmpty) right else left
     }
 
-    def halfifyAndSort(as: List[T]) = sort(nextSubsequences(as))
+    def bottomUpSort(as: List[T]): List[T] = {
+      def loop(subsequences: (List[T], List[T]), unsorted: List[T], sorted: List[T]) :List[T] = {
+        if(subsequences._1.size == as.size) subsequences._1
+        else{
+          val mergedPart: List[T] = (merge _).tupled(subsequences)
+          if(mergedPart.size == as.size) mergedPart
+          else {
+            val newUnsorted = unsorted.drop(mergedPart.size)
+            loop(nextSubsequences(newUnsorted), newUnsorted, mergedPart)
+          }
+        }
+      }
 
-    halfifyAndSort(list)
+      val firstTuple = nextSubsequences(as)
+      loop(firstTuple, as.drop(firstTuple._1.size + firstTuple._2.size), Nil)
+    }
+
+    bottomUpSort(list)
   }
 }
