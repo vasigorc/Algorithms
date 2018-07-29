@@ -1,5 +1,6 @@
 package ca.vgorcinschi.algorithms_2
 
+import scala.annotation.tailrec
 import scala.collection.immutable.Queue
 import scala.util.Try
 
@@ -20,6 +21,7 @@ class Ex2_2_17 [T : Ordering]{
     case class TupleAndRemainder(tuple: (List[T], List[T]), remainder: List[T])
 
     def nextSubsequences(as: List[T]) : (List[T], List[T]) = {
+      @tailrec
       def loop(source: List[T], fs: List[T], ss: List[T]):(List[T], List[T]) = (source, fs, ss) match {
         case (first :: tail, Nil , Nil) => loop(tail, List(first), ss)
         case (first :: tail, _, Nil) => if(first >= fs.head) loop(tail, first :: fs, ss) else loop(tail, fs, List(first))
@@ -38,12 +40,13 @@ class Ex2_2_17 [T : Ordering]{
     }
 
     def merge(left: List[T], right: List[T]): List[T] = (left, right) match {
-      case (x :: xs, y :: ys) if x <= y => x :: merge(xs, right)
-      case (x :: xs, y :: ys) => y :: merge(left, ys)
+      case (x :: xs, y :: _) if x <= y => x :: merge(xs, right)
+      case (_ :: _, y :: ys) => y :: merge(left, ys)
       case _ => if (left.isEmpty) right else left
     }
 
     def bottomUpSort(as: List[T]): List[T] = {
+      @tailrec
       def loop(subsequences: (List[T], List[T]), unsorted: List[T], sorted: Queue[T]) :List[T] = {
         if(subsequences._1.size == as.size) subsequences._1
         else{
@@ -55,7 +58,7 @@ class Ex2_2_17 [T : Ordering]{
                 val newSorted = merge(sorted, mergedPart)
                 val tupleAndRemainder: TupleAndRemainder = tus(newSorted)
                 loop(tupleAndRemainder.tuple, tupleAndRemainder.remainder, Queue.empty[T])
-              case xs =>
+              case _ =>
                 val tupleAndRemainder: TupleAndRemainder = tus(unsorted)
                 loop(tupleAndRemainder.tuple, tupleAndRemainder.remainder, Queue(merge(sorted, mergedPart): _*))
             }
