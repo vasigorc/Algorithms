@@ -9,7 +9,6 @@ class Ex2_2_17Spec extends BaseSpec {
   behavior of "Bottom-Up merge sort on a list"
 
   it should "sort a list of Ints" in {
-    import ca.vgorcinschi._
 
     val result = new Ex2_2_17[Int].mergesort(sampleList)
     result shouldBe sorted

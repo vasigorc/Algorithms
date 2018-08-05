@@ -1,0 +1,9 @@
+# ignore idea files
+*.iml
+**/.idea
+
+# any targets
+**/target 
+
+#directory files
+*.directory

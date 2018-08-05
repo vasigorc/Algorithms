@@ -1,0 +1,10 @@
+# .jar files
+**/lib
+*.jar
+
+# ignore idea files
+*.iml
+**/.idea
+
+# any targets
+**/target
