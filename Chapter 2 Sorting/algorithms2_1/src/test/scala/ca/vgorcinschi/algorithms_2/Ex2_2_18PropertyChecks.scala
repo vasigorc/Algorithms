@@ -11,8 +11,7 @@ class Ex2_2_18PropertyChecks extends BasePropertyChecks{
     forAll {(list: List[Int]) =>
       var shuffledList = listShuffler.shuffle(list)
       shuffledList should have size list.size
-      if(list.nonEmpty && list.size > 1)
-        shuffledList should not equal list
+      (list.nonEmpty && list.size > 1) ==> (shuffledList != list)
     }
   }
 }
