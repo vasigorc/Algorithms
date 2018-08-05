@@ -1,6 +1,7 @@
 # .jar files
 **/lib
 *.jar
+*.directory
 
 # ignore idea files
 *.iml
