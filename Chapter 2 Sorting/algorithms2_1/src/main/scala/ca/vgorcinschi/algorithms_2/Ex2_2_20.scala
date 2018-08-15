@@ -10,7 +10,7 @@ class Ex2_2_20 [T : ClassTag : Ordering] extends BaseSort [T]{
 
   type Indexed = (T, Int)
 
-  override def sort(a: Array[T]): Array[Int] = {
+  def indexSort(a: Array[T]): Array[Int] = {
 
     val zippedWithIndex: List[Indexed] = a.toList.zipWithIndex
     val tupplesList = msort(zippedWithIndex)
@@ -38,4 +38,6 @@ class Ex2_2_20 [T : ClassTag : Ordering] extends BaseSort [T]{
       merge(msort(ys), msort(zs))
     }
   }
+
+  override def sort(a: Array[T]): Array[T] = ???
 }
