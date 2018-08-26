@@ -1,4 +1,4 @@
-package ca.vgorcinschi.algorithms_2
+package ca.vgorcinschi.algorithms2_2
 
 import ca.vgorcinschi.BaseProps
 import org.scalacheck.Prop.forAll

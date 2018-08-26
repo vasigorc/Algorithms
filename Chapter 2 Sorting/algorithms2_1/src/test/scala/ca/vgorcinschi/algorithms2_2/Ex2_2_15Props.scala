@@ -1,4 +1,4 @@
-package ca.vgorcinschi.algorithms_2
+package ca.vgorcinschi.algorithms2_2
 
 import org.scalatest.prop.GeneratorDrivenPropertyChecks
 import org.scalatest.{FunSuite, Matchers}

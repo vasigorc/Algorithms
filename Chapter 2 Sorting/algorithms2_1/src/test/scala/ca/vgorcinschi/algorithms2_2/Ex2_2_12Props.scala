@@ -1,9 +1,8 @@
-package ca.vgorcinschi.algorithms_2
+package ca.vgorcinschi.algorithms2_2
 
-import ca.vgorcinschi.BaseProps
-import org.scalacheck.Prop._
-import ca.vgorcinschi._
+import ca.vgorcinschi.{BaseProps, _}
 import org.scalacheck.Gen
+import org.scalacheck.Prop._
 
 class Ex2_2_12Props extends BaseProps{
 

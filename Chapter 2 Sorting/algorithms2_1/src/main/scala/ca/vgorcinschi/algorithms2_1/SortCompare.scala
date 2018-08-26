@@ -1,4 +1,4 @@
-package ca.vgorcinschi.algorithms_2
+package ca.vgorcinschi.algorithms2_1
 
 import ca.vgorcinschi.algorithms_1.Stopwatch
 

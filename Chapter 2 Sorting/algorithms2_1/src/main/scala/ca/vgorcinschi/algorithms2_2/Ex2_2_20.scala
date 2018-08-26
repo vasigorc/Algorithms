@@ -1,4 +1,6 @@
-package ca.vgorcinschi.algorithms_2
+package ca.vgorcinschi.algorithms2_2
+
+import ca.vgorcinschi.algorithms2_1.BaseSort
 
 import scala.reflect.ClassTag
 

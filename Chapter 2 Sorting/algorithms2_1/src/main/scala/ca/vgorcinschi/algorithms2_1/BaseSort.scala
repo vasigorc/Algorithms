@@ -1,4 +1,4 @@
-package ca.vgorcinschi.algorithms_2
+package ca.vgorcinschi.algorithms2_1
 
 import edu.princeton.cs.algs4.StdOut
 

@@ -1,4 +1,4 @@
-package ca.vgorcinschi.algorithms_2
+package ca.vgorcinschi.algorithms2_2
 
 import scala.collection.immutable.Queue
 import scala.reflect.ClassTag
