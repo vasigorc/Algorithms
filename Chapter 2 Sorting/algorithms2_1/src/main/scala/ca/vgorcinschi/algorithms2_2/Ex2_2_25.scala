@@ -23,7 +23,7 @@ class Ex2_2_25 [T : ClassTag : Ordering] extends BaseSort[T]{
      */
     val divisor: Int = math.round(e.toDouble/k).toInt
 
-    val indices: List[Int] = 0 to e by divisor toList //generate list of "milestones"
+    val indices: List[Int] = indicesGen(e, divisor) toList //generate list of "milestones"
     var previous = indices.head
     val current: List[Array[T]] = for (m <- indices.tail) yield {
       val unsorted = a.slice(previous, m)
@@ -31,6 +31,12 @@ class Ex2_2_25 [T : ClassTag : Ordering] extends BaseSort[T]{
       ksort(unsorted, k)
     }
     merge(current, Array.empty)
+  }
+
+  private def indicesGen(e: Int, divisor: Int): IndexedSeq[Int] = {
+    val range: Range = 0 to e by divisor
+    if (!range.contains(e - 1)) range :+ e
+    else range
   }
 
   //reduce all subarrays into an accumulator
@@ -41,12 +47,12 @@ class Ex2_2_25 [T : ClassTag : Ordering] extends BaseSort[T]{
     case _ =>
       import Ordered._
       val withIndex = cur.zipWithIndex
-      val max = (withIndex.head /: withIndex.tail) {
-        (n, f) => if(n._1.head > f._1.head) n
+      val min = (withIndex.head /: withIndex.tail) {
+        (n, f) => if(n._1.head < f._1.head) n
         else f
       }
-      val nextCur = cur(max._2).tail :: cur.slice(0, max._2) ::: cur.slice(max._2, cur.length)
-      merge(nextCur.filter(_.nonEmpty), acc ++: max._1)
+      val nextCur = cur(min._2).tail :: cur.slice(0, min._2) ::: cur.slice(min._2 + 1, cur.length)
+      merge(nextCur.filter(_.nonEmpty), acc ++: min._1)
   }
 
   override def sort(a: Array[T]): Array[T] = ???
