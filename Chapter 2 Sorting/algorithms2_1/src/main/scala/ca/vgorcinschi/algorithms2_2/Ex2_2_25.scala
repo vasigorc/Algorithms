@@ -2,6 +2,7 @@ package ca.vgorcinschi.algorithms2_2
 
 import ca.vgorcinschi.algorithms2_1.BaseSort
 import org.scalameter
+import org.scalameter.Measurer.MemoryFootprint
 
 import scala.annotation.tailrec
 import scala.reflect.ClassTag
@@ -101,5 +102,17 @@ object Ex2_2_25 extends App{
 
       Basically at 10-k algorithm starts to slow down, at k-s 80-90 it is ~ 20 times
       longer then when merging with 2,5 or 6 way merge
+   */
+
+  //memory footprint test
+  keys.foreach {k=>
+    val memoryFootPrint: Quantity[Double] = withMeasurer(new MemoryFootprint) measure {
+      instance.ksort(useCase, k)
+    }
+    println(s"$sortName sorted Int array of size ${useCase.length} with $k way merge with $memoryFootPrint")
+  }
+
+  /*
+    foot print doesn't depend on number of k's - it is ~4Mb for all runs
    */
 }
