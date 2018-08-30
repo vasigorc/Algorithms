@@ -14,7 +14,8 @@ class Ex2_2_25 [T : ClassTag : Ordering] extends BaseSort[T]{
 
   def ksort(a: Array[T], k: Int): Array[T] = {
     val e = a.length
-    if(k > e) return a //proceed to merge stage at this point
+    if(a.isEmpty || e == 1) return a
+    if(k > e) ksort(a, k - 1)
     /*
       Else for every k we need k-1 division points between 0 and e
 
@@ -35,7 +36,7 @@ class Ex2_2_25 [T : ClassTag : Ordering] extends BaseSort[T]{
 
   private def indicesGen(e: Int, divisor: Int): IndexedSeq[Int] = {
     val range: Range = 0 to e by divisor
-    if (!range.contains(e - 1)) range :+ e
+    if (!range.contains(e)) range :+ e
     else range
   }
 
@@ -52,7 +53,7 @@ class Ex2_2_25 [T : ClassTag : Ordering] extends BaseSort[T]{
         else f
       }
       val nextCur = cur(min._2).tail :: cur.slice(0, min._2) ::: cur.slice(min._2 + 1, cur.length)
-      merge(nextCur.filter(_.nonEmpty), acc ++: min._1)
+      merge(nextCur.filter(_.nonEmpty), acc :+ min._1.head)
   }
 
   override def sort(a: Array[T]): Array[T] = ???
