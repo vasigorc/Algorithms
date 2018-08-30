@@ -13,7 +13,8 @@ lazy val root = (project in file(".")).
       val scalaCheckVersion = "1.14.0"
       Seq(scalaTest % Test,
         "org.scalatest" %% "scalatest" % scalaTestVersion % "test",
-        "org.scalacheck" %% "scalacheck" % scalaCheckVersion % "test"
+        "org.scalacheck" %% "scalacheck" % scalaCheckVersion % "test",
+        "com.storm-enroute" %% "scalameter" % "0.9"
       )
     }
   )
