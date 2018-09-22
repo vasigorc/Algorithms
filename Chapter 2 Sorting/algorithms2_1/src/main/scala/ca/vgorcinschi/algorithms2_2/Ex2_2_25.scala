@@ -2,7 +2,8 @@ package ca.vgorcinschi.algorithms2_2
 
 import ca.vgorcinschi.algorithms2_1.BaseSort
 import org.scalameter
-import org.scalameter.Measurer.MemoryFootprint
+import org.scalameter.Measurer.{MemoryFootprint, MethodInvocationCount}
+import org.scalameter.execution.invocation.InvocationCountMatcher
 
 import scala.annotation.tailrec
 import scala.reflect.ClassTag
