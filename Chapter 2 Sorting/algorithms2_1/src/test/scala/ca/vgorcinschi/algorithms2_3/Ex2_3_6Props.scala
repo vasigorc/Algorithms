@@ -31,11 +31,13 @@ class Ex2_3_6Props extends Bench.OfflineReport with BasePropertyChecks {
   test("Number of array indices compare should be less or equal to 2NlnN") {
     Prop.forAll(finalTest) { x: Array[Int] =>
 
+      val N = x.length
+
       val result: Quantity[Double] = scalameter.withMeasurer(measurer) measure {
         quicksort.sort(x)
       }
 
-      result.value should be <= 2*x.length*scala.math.log1p(x.length)
+      result.value should be <= 2*N*scala.math.log(N)
     }
   }
 
