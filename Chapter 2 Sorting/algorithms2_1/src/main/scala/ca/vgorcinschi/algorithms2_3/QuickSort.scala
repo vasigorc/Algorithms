@@ -9,7 +9,7 @@ class QuickSort[T: ClassTag : Ordering] extends BaseSort[T] {
 
   override def sort(a: Array[T]): Array[T] = {
     assert(a.nonEmpty, s"${getClass.getSimpleName}.sort expects a non empty array as argument")
-    sort(Random.shuffle(a).toArray, 0, a.length - 1)
+    sort(Random.shuffle(a.toList).toArray, 0, a.length - 1)
   }
 
   private def sort(a: Array[T], lo: Int, hi: Int): Array[T] = {
@@ -24,10 +24,12 @@ class QuickSort[T: ClassTag : Ordering] extends BaseSort[T] {
     val pivot = a(lo) //partitioning item
     while (i < j) {
       //scan right, scan left, check for scan complete, and exchange
-      Stream.iterate(i)(i+=1).takeWhile(iter => i != hi || less(a(iter), pivot))
-      Stream.iterate(j)(j-=1).takeWhile(iter => j != lo || less(pivot, a(iter)))
-      if(i < j) exch(a, i, j)
+      Stream.iterate(i) { _ => i += 1; i } takeWhile(iter => i != hi || less(a(iter), pivot))
+
+      Stream.iterate(j) { _ => j -= 1; j } takeWhile(iter => j != lo || less(pivot, a(iter)))
+      if (i < j) exch(a, i, j)
     }
+
     exch(a, lo, j) // put pivot into a(j)
     j // with a(lo..j-1) <= a(j) <= a(j+1..hi)
   }

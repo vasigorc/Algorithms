@@ -1,14 +1,15 @@
 package ca.vgorcinschi.algorithms2_3
 
-import ca.vgorcinschi.BasePropertyChecks
+import ca.vgorcinschi.BaseProps
 import org.scalacheck.{Arbitrary, Gen, Prop}
 import org.scalameter
 import org.scalameter.Measurer.MethodInvocationCount
-import org.scalameter.api._
+import org.scalameter.Quantity
 import org.scalameter.execution.invocation.InvocationCountMatcher
-import org.scalameter.{Bench, Context, Measurer, Quantity}
 
-class Ex2_3_6Props extends Bench.OfflineReport with BasePropertyChecks {
+import scala.math.log
+
+class Ex2_3_6Props extends BaseProps {
 
   //Ns for C_N
   private val GenNs: Gen[Int] = Gen.oneOf(100, 1000, 10000)
@@ -28,25 +29,19 @@ class Ex2_3_6Props extends Bench.OfflineReport with BasePropertyChecks {
 
 
   //tests execution
-  test("Number of array indices compare should be less or equal to 2NlnN") {
-    Prop.forAll(finalTest) { x: Array[Int] =>
+  property("Number of array indices compare should be less or equal to 2NlnN") {
+
+    Prop.forAll(genIntArray) { x: Array[Int] =>
 
       val N = x.length
 
-      val result: Quantity[Double] = scalameter.withMeasurer(measurer) measure {
+      val result: Quantity[Double] = scalameter.withMeasurer(MethodInvocationCount(
+        InvocationCountMatcher.forName("ca.vgorcinschi.algorithms2_1.BaseSort", "less"))
+        .map(v => v.copy(value = v.value.valuesIterator.sum))) measure {
         quicksort.sort(x)
       }
-
-      result.value should be <= 2*N*scala.math.log(N)
+      info(s"${result.value}")
+      result.value <= 2*N*log(N)
     }
   }
-
-  override def measurer: Measurer[Double] = MethodInvocationCount(
-    InvocationCountMatcher.forName("ca.vgorcinschi.algorithms2_1.BaseSort", "less"))
-    .map(v => v.copy(value = v.value.valuesIterator.sum))
-
-  override def aggregator: Aggregator[Double] = Aggregator.median
-
-  //one JVM instance
-  override def defaultConfig: Context = Context(exec.independentSamples -> 1)
 }
