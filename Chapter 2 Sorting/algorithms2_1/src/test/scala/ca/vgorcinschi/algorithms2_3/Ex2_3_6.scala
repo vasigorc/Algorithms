@@ -11,10 +11,9 @@ import scala.util.Random
 object Ex2_3_6 extends Bench.OfflineReport {
 
   private val NsGen: Gen[Int] = Gen.exponential("Ns")(100, 10000, 10)
-  //from, until, factor
-  private val testArrays: Gen[Array[Int]] = NsGen.map(n => Array.fill(n)(Random.nextInt()))
-
   private val quickSortInstance = new QuickSort[Int]
+
+  private val testArrays: Gen[Array[Int]] = NsGen.map(n => Array.fill(n)(Random.nextInt()))
 
   override def measurer = MethodInvocationCount(
     InvocationCountMatcher.forName("ca.vgorcinschi.algorithms2_1.BaseSort", "less"))
@@ -36,9 +35,6 @@ object Ex2_3_6 extends Bench.OfflineReport {
 
 
   override val reporter = new LoggingReporter[Double]
-  override type SameType = this.type
 
   override def persistor: Persistor = Persistor.None
-
-  override def aggregator: Aggregator[Double] = Aggregator.median
 }
