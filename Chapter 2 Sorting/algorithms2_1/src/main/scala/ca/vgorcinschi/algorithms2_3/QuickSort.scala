@@ -25,14 +25,14 @@ class QuickSort[T: ClassTag : Ordering] extends BaseSort[T] {
     val pivot = a(lo) //partitioning item
 
     def scan(index: Int, direction: Direction): Int = direction match {
-      case Left() => if (less(a(index), pivot) && index != hi) scan(index + 1, direction) else index
-      case Right() => if (less(a(index), pivot) && index != hi) scan(index - 1, direction) else index
+      case Left => if (less(a(index), pivot) && index != hi) scan(index + 1, direction) else index
+      case Right => if (less(a(index), pivot) && index != hi) scan(index - 1, direction) else index
     }
 
     while (i < j) {
       //scan right, scan left, check for scan complete, and exchange
-      i = scan(i + 1, Left())
-      j = scan(j - 1, Right())
+      i = scan(i + 1, Left)
+      j = scan(j - 1, Right)
       if (i < j) exch(a, i, j)
     }
 
@@ -45,9 +45,7 @@ class QuickSort[T: ClassTag : Ordering] extends BaseSort[T] {
 object QuickSort {
 
   abstract class Direction
-
-  case class Left() extends Direction
-
-  case class Right() extends Direction
+  object Left extends Direction
+  object Right extends Direction
 
 }
