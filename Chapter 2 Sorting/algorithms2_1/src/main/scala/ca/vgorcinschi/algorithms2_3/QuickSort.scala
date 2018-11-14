@@ -26,7 +26,7 @@ class QuickSort[T: ClassTag : Ordering] extends BaseSort[T] {
 
     def scan(index: Int, direction: Direction): Int = direction match {
       case Left => if (less(a(index), pivot) && index != hi) scan(index + 1, direction) else index
-      case Right => if (less(a(index), pivot) && index != hi) scan(index - 1, direction) else index
+      case Right => if (less(pivot, a(index)) && index != hi) scan(index - 1, direction) else index
     }
 
     while (i < j) {
@@ -45,7 +45,9 @@ class QuickSort[T: ClassTag : Ordering] extends BaseSort[T] {
 object QuickSort {
 
   abstract class Direction
+
   object Left extends Direction
+
   object Right extends Direction
 
 }
