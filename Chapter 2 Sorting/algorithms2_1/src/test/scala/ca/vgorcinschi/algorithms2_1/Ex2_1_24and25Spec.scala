@@ -1,14 +1,13 @@
 package ca.vgorcinschi.algorithms2_1
 
 import ca.vgorcinschi.BaseSpec
+import Ex2_1_24and25Spec._
 
 class Ex2_1_24and25Spec extends BaseSpec{
 
-  val sortString = "EASYQUESTION"
   private val insertionSort = new InsertionSort[Char]
   private val optimizedIS = new Ex2_1_25[Char]
   private val sentinelIS = new SentinelInsertionSort[Char]
-  def targetArray: Array[Char] = sortString.toCharArray
   def resultingArray(alg: BaseSort[Char]): Array[Char] = alg.sort(targetArray)
 
   "Basic Insertion Sort" should "correctly sort \"EasyQuestion\"" in {
@@ -22,4 +21,10 @@ class Ex2_1_24and25Spec extends BaseSpec{
   "Sentinel Insertion Sort" should "correctly sort \"EasyQuestion\"" in {
     resultingArray(sentinelIS).mkString shouldEqual sortString.sorted
   }
+}
+
+object Ex2_1_24and25Spec {
+  val sortString = "EASYQUESTION"
+  def targetArray: Array[Char] = sortString.toCharArray
+
 }

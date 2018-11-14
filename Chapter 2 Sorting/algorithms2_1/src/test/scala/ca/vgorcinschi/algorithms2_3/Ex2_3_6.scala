@@ -1,5 +1,6 @@
 package ca.vgorcinschi.algorithms2_3
 
+import ca.vgorcinschi.algorithms2_1.BaseSort
 import org.scalameter.Bench
 import org.scalameter.Measurer.MethodInvocationCount
 import org.scalameter.api.{LoggingReporter, _}
@@ -16,7 +17,7 @@ object Ex2_3_6 extends Bench.OfflineReport {
   private val testArrays: Gen[Array[Int]] = NsGen.map(n => Array.fill(n)(Random.nextInt()))
 
   override def measurer = MethodInvocationCount(
-    InvocationCountMatcher.forName("ca.vgorcinschi.algorithms2_1.BaseSort", "less"))
+    InvocationCountMatcher.forName(classOf[BaseSort[_]].getName, "less"))
     .map(v => v.copy(value = v.value.valuesIterator.sum))
 
   override val executor = SeparateJvmsExecutor(
@@ -24,7 +25,7 @@ object Ex2_3_6 extends Bench.OfflineReport {
   Aggregator.min[Double],
   measurer)
 
-  performance of "QuickSort" in {
+  performance of quickSortInstance.getClass.getSimpleName in {
     measure method "less" in {
       using(testArrays) in {
         sampleArray =>
@@ -32,7 +33,6 @@ object Ex2_3_6 extends Bench.OfflineReport {
       }
     }
   }
-
 
   override val reporter = new LoggingReporter[Double]
 
