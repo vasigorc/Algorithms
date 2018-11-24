@@ -1,21 +1,6 @@
 package ca.vgorcinschi.algorithms2_3
 
-import ca.vgorcinschi.MethodInvocationCountTemplate
-import ca.vgorcinschi.algorithms2_1.BaseSort
-import org.scalameter.api._
-
-import scala.util.Random
-
-object Ex2_3_6 extends {
-
-  val classUnderTest = classOf[BaseSort[_]].getName
-  val methodName = "less"
-
-} with MethodInvocationCountTemplate {
-
-  private val NsGen: Gen[Int] = Gen.exponential("Ns")(100, 10000, 10)
-  private val quickSortInstance = new QuickSort[Int]
-  private val testArrays: Gen[Array[Int]] = NsGen.map(n => Array.fill(n)(Random.nextInt()))
+object Ex2_3_6 extends BaseSortComparesCount {
 
   performance of quickSortInstance.getClass.getSimpleName in {
     measure method methodName in {
