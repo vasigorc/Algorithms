@@ -6,10 +6,12 @@ import org.scalameter.api._
 
 import scala.util.Random
 
-object Ex2_3_6 extends MethodInvocationCountTemplate {
+object Ex2_3_6 extends {
 
   val classUnderTest = classOf[BaseSort[_]].getName
   val methodName = "less"
+
+} with MethodInvocationCountTemplate {
 
   private val NsGen: Gen[Int] = Gen.exponential("Ns")(100, 10000, 10)
   private val quickSortInstance = new QuickSort[Int]
@@ -23,6 +25,7 @@ object Ex2_3_6 extends MethodInvocationCountTemplate {
       }
     }
   }
+}
 
 //  ::Benchmark QuickSort.less::
 //    cores: 8
@@ -35,4 +38,3 @@ object Ex2_3_6 extends MethodInvocationCountTemplate {
 //  Parameters(Ns -> 100): 680.0 #  2NlnN = 921
 //  Parameters(Ns -> 1000): 11611.0 #  2NlnN = 13815
 //  Parameters(Ns -> 10000): 164166.0 # 2NlnN = 184206
-}
