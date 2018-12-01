@@ -23,5 +23,5 @@ class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
 
   private def partition(nuts: Vector[T], bolts: Vector[T]): Int = ???
   def sort(): Vector[(T, T)] = ???
-  private def sort(nuts: Vector[T], bolts: Vector[T], hi: Int, lo: Int): Vector[(T, T)] = ???
+  private def sort(nuts: Vector[T], bolts: Vector[T], hi: Int, lo: Int): Vector[T] = ???
 }
