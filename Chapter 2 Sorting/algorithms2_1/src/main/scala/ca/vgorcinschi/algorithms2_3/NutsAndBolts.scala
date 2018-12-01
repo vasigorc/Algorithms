@@ -1,5 +1,6 @@
 package ca.vgorcinschi.algorithms2_3
 
+
 /*
   Exercise 2.3.15 Nuts and bolts. (G. J. E. Rawlins) You have a mixed pile of N nuts and N bolts and need to quickly
   find the corresponding pairs of nuts and bolts. Each nut matches exactly one bolt, and each bolt matches exactly one
@@ -18,7 +19,9 @@ package ca.vgorcinschi.algorithms2_3
   solves the problem has depth at least log (n!) = Theta (n log n). This is a lower bound for the expected number of
   comparisons in any randomized algorithm.
  */
-object NutsAndBolts extends App {
+class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
 
-
+  private def partition(nuts: Vector[T], bolts: Vector[T]): Int = ???
+  def sort(): Vector[(T, T)] = ???
+  private def sort(nuts: Vector[T], bolts: Vector[T], hi: Int, lo: Int): Vector[(T, T)] = ???
 }
