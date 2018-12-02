@@ -26,8 +26,7 @@ class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
 
   /**
     *
-    * @param nuts
-    * @param bolts
+    * @param array - can be bolts or nuts
     * @return the new pivot
     */
   private def partition(array: Vector[T], pivot: T, lo: Int, hi: Int): Int = ???
