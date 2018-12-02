@@ -1,6 +1,6 @@
 package ca.vgorcinschi.algorithms2_3
 
-
+import scala.collection.immutable.Vector
 /*
   Exercise 2.3.15 Nuts and bolts. (G. J. E. Rawlins) You have a mixed pile of N nuts and N bolts and need to quickly
   find the corresponding pairs of nuts and bolts. Each nut matches exactly one bolt, and each bolt matches exactly one
@@ -21,7 +21,14 @@ package ca.vgorcinschi.algorithms2_3
  */
 class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
 
-  private def partition(nuts: Vector[T], bolts: Vector[T]): Int = ???
   def sort(): Vector[(T, T)] = ???
   private def sort(nuts: Vector[T], bolts: Vector[T], hi: Int, lo: Int): Vector[T] = ???
+
+  /**
+    *
+    * @param nuts
+    * @param bolts
+    * @return the new pivot
+    */
+  private def partition(array: Vector[T], pivot: T, lo: Int, hi: Int): Int = ???
 }
