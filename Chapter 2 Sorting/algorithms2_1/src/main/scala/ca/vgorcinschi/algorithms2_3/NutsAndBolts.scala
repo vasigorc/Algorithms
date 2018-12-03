@@ -1,6 +1,8 @@
 package ca.vgorcinschi.algorithms2_3
 
 import scala.collection.immutable.Vector
+import Ordered._
+import scala.annotation.tailrec
 /*
   Exercise 2.3.15 Nuts and bolts. (G. J. E. Rawlins) You have a mixed pile of N nuts and N bolts and need to quickly
   find the corresponding pairs of nuts and bolts. Each nut matches exactly one bolt, and each bolt matches exactly one
@@ -26,8 +28,31 @@ class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
 
   /**
     *
-    * @param array - can be bolts or nuts
+    * @param vector - can be bolts or nuts
+    * @param pivot - a bolt or a nut
+    * @param lo - start
+    * @param hi - end
     * @return the new pivot
     */
-  private def partition(array: Vector[T], pivot: T, lo: Int, hi: Int): Int = ???
+  private def partition(vector: Vector[T], pivot: T, lo: Int, hi: Int): Int = {
+
+    @tailrec
+    def loop(i: Int, j: Int, a: Vector[T]): (Vector[T], Int) ={
+      if (j >= hi) (a, i)
+      else if (a(j) < pivot) {
+        loop(i + 1, j, swap(a, i, j))
+      } else if (a(j).equals(pivot)) {
+        loop(i, j - 1, swap(a, j, i))
+      } else
+        loop(i, j + 1, a)
+    }
+
+    val (updatedVector, newPivot) = loop(lo, lo, vector)
+    ???
+  }
+
+  private def swap(vector: Vector[T], indexA: Int, indexB: Int): Vector[T] = {
+    val temp1 = vector(indexA)
+    vector.updated(indexA, vector(indexB)).updated(indexB, temp1)
+  }
 }
