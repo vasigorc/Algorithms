@@ -63,19 +63,30 @@ class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
     def loop(i: Int, j: Int, a: Vector[T]): (Vector[T], Int) = {
       if (j >= hi) return (a, i)
       a(j) match {
-        case below if below < pivot => loop(i + 1, j, swap(a, i, j))
-        case same if same == pivot => loop(i, j - 1, swap(a, j, i))
+        case below if below < pivot => loop(i + 1, j, exch(a, i, j))
+        case same if same == pivot => loop(i, j - 1, exch(a, j, i))
         case _ => loop(i, j + 1, a)
       }
     }
 
     val (updatedVector, newPivotIndex) = loop(lo, lo, input)
     //swap values at high and newPivot
-    (swap(updatedVector, newPivotIndex, hi), newPivotIndex)
+    (exch(updatedVector, newPivotIndex, hi), newPivotIndex)
   }
 
-  private def swap(vector: Vector[T], indexA: Int, indexB: Int): Vector[T] = {
+  /**
+    * exchages values at two indexes from the passed-in vector
+    * @param initial vector
+    * @param indexA - first index for swaping values
+    * @param indexB - second index for swaping values
+    * @return - copy of the initial vector with two values swapped
+    */
+  private def exch(vector: Vector[T], indexA: Int, indexB: Int): Vector[T] = {
     val temp1 = vector(indexA)
     vector.updated(indexA, vector(indexB)).updated(indexB, temp1)
   }
+}
+
+object NutsAndBolts {
+  def apply[T : Ordering](nuts: Vector[T], bolts: Vector[T]): NutsAndBolts[T] = new NutsAndBolts[T](nuts, bolts)
 }
