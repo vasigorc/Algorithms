@@ -24,23 +24,44 @@ import scala.annotation.tailrec
  */
 class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
 
-  def sort(): Vector[(T, T)] = ???
+  require(nuts.size == bolts.size, "Sizes of bolts and nuts vectors should be equal")
 
-  private def sort(nuts: Vector[T], bolts: Vector[T], hi: Int, lo: Int): Vector[T] = ???
+  def sort(): Vector[(T, T)] = {
+    sort(nuts, bolts, 0, nuts.size - 1)
+  }
+
+  /**
+    * since the method will call itself recursively we need the ability to
+    * pass lower and upper indexes (for partitioning)
+    *
+    * @param nuts  - vector containing nuts
+    * @param bolts - vector containing bolts
+    * @param hi    - upper limit index
+    * @param lo    - bottom limit index
+    * @return a vector of zipped nuts and bolts
+    */
+  private def sort(nuts: Vector[T], bolts: Vector[T], hi: Int, lo: Int): Vector[(T, T)] = {
+    if (lo >= hi) return nuts zip bolts
+
+    val (newNuts, pivot) = partition(nuts, bolts(hi), lo, hi)
+    val (newBolts, _) = partition(bolts, nuts(pivot), lo, hi)
+
+    sort(newNuts, newBolts, lo, pivot - 1) ++ sort(newNuts, newBolts, pivot + 1, hi)
+  }
 
   /**
     *
-    * @param vector - can be bolts or nuts
-    * @param pivot  - a bolt or a nut
-    * @param lo     - start
-    * @param hi     - end
-    * @return the new pivot
+    * @param input - can be bolts or nuts
+    * @param pivot - a bolt or a nut
+    * @param lo    - start
+    * @param hi    - end
+    * @return passed-in vector sorted with passed-in pivot + the new pivot index
     */
-  private def partition(vector: Vector[T], pivot: T, lo: Int, hi: Int): (Vector[T], Int) = {
+  private def partition(input: Vector[T], pivot: T, lo: Int, hi: Int): (Vector[T], Int) = {
 
     @tailrec
     def loop(i: Int, j: Int, a: Vector[T]): (Vector[T], Int) = {
-      if (j >= hi) (a, i)
+      if (j >= hi) return (a, i)
       a(j) match {
         case below if below < pivot => loop(i + 1, j, swap(a, i, j))
         case same if same == pivot => loop(i, j - 1, swap(a, j, i))
@@ -48,7 +69,7 @@ class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
       }
     }
 
-    val (updatedVector, newPivotIndex) = loop(lo, lo, vector)
+    val (updatedVector, newPivotIndex) = loop(lo, lo, input)
     //swap values at high and newPivot
     (swap(updatedVector, newPivotIndex, hi), newPivotIndex)
   }
