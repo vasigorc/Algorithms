@@ -15,7 +15,7 @@ class NutsAndBoltsTest extends BaseSpec {
   behavior of "NutsAndBoltsTest"
 
   it should "sort" in new TestBuilder {
-    instance.sort()
+    instance.sort().foreach { case (nut, bolt) => nut shouldEqual bolt }
   }
 
 }
