@@ -40,7 +40,7 @@ class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
     * @param lo    - bottom limit index
     * @return a vector of zipped nuts and bolts
     */
-  private def sort(nuts: Vector[T], bolts: Vector[T], hi: Int, lo: Int): Vector[(T, T)] = {
+  private def sort(nuts: Vector[T], bolts: Vector[T], lo: Int, hi: Int): Vector[(T, T)] = {
     if (lo >= hi) return nuts zip bolts
 
     val (newNuts, pivot) = partition(nuts, bolts(hi), lo, hi)
