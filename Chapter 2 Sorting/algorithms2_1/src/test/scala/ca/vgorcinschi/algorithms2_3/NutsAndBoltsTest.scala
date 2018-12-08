@@ -26,6 +26,8 @@ class NutsAndBoltsTest extends BaseSpec {
 
 
   it should "match ints" in new IntBased {
-    instance sort() foreach {case (nut, bolt) => nut shouldEqual bolt}
+    instance sort() foreach {case (nut, bolt) =>
+      info(s" $nut : $bolt")
+      nut shouldEqual bolt}
   }
 }

@@ -61,7 +61,7 @@ class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
 
     @tailrec
     def loop(i: Int, j: Int, a: Vector[T]): (Vector[T], Int) = {
-      if (j >= hi) return (a, i)
+      if (j < i || j >= hi) return (a, i)
       a(j) match {
         case below if below < pivot => loop(i + 1, j + 1, exch(a, i, j))
         case same if same == pivot => loop(i, j - 1, exch(a, j, i))
