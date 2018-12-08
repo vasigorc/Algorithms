@@ -44,7 +44,7 @@ class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
     if (lo >= hi) return nuts zip bolts
 
     val (newNuts, pivot) = partition(nuts, bolts(hi), lo, hi)
-    val (newBolts, _) = partition(bolts, nuts(pivot), lo, hi)
+    val (newBolts, _) = partition(bolts, newNuts(pivot), lo, hi)
 
     sort(newNuts, newBolts, lo, pivot - 1) ++ sort(newNuts, newBolts, pivot + 1, hi)
   }
@@ -60,23 +60,24 @@ class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
   private def partition(input: Vector[T], pivot: T, lo: Int, hi: Int): (Vector[T], Int) = {
 
     @tailrec
-    def loop(i: Int, j: Int, a: Vector[T]): (Vector[T], Int) = {
-      if (j < i || j >= hi) return (a, i)
-      a(j) match {
-        case below if below < pivot => loop(i + 1, j + 1, exch(a, i, j))
-        case same if same == pivot => loop(i, j - 1, exch(a, j, i))
-        case _ => loop(i, j + 1, a)
+    def loop(smaller: Int, equal: Int, larger: Int, a: Vector[T]): (Vector[T], Int) = {
+      if (equal >= larger) return (a, smaller)
+      a(equal) match {
+        case below if below < pivot => loop(smaller + 1, equal + 1, larger, exch(a, smaller, equal))
+        case same if same == pivot => loop(smaller, equal + 1, larger, a)
+        case _ => loop(smaller, equal, larger - 1, a)
       }
     }
 
-    val (updatedVector, newPivotIndex) = loop(lo, lo + 1, input)
+    val (updatedVector, newPivotIndex) = loop(lo, lo, hi, input)
     //swap values at high and newPivot
     (exch(updatedVector, newPivotIndex, hi), newPivotIndex)
   }
 
   /**
     * exchages values at two indexes from the passed-in vector
-    * @param initial vector
+    *
+    * @param vector vector
     * @param indexA - first index for swaping values
     * @param indexB - second index for swaping values
     * @return - copy of the initial vector with two values swapped
@@ -88,5 +89,5 @@ class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
 }
 
 object NutsAndBolts {
-  def apply[T : Ordering](nuts: Vector[T], bolts: Vector[T]): NutsAndBolts[T] = new NutsAndBolts[T](nuts, bolts)
+  def apply[T: Ordering](nuts: Vector[T], bolts: Vector[T]): NutsAndBolts[T] = new NutsAndBolts[T](nuts, bolts)
 }

@@ -9,13 +9,13 @@ class NutsAndBoltsTest extends BaseSpec {
   trait CharBased {
     private val nuts = Vector[Char]('#', '$', '^', '&', '*')
     private val bolts = Random.shuffle(nuts)
-    val instance = NutsAndBolts[Char](nuts, bolts)
+    val instance: NutsAndBolts[Char] = NutsAndBolts[Char](nuts, bolts)
   }
 
   trait IntBased {
     private val nuts = Vector.fill(10)(Random.nextInt(100))
     private val bolts = Random.shuffle(nuts)
-    val instance = NutsAndBolts[Int](nuts, bolts)
+    val instance: NutsAndBolts[Int] = NutsAndBolts[Int](nuts, bolts)
   }
 
   behavior of "NutsAndBoltsTest"
@@ -25,9 +25,10 @@ class NutsAndBoltsTest extends BaseSpec {
   }
 
 
-  it should "match ints" in new IntBased {
-    instance sort() foreach {case (nut, bolt) =>
+  it should "match integers" in new IntBased {
+    instance sort() foreach { case (nut, bolt) =>
       info(s" $nut : $bolt")
-      nut shouldEqual bolt}
+      nut shouldEqual bolt
+    }
   }
 }
