@@ -63,13 +63,13 @@ class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
     def loop(i: Int, j: Int, a: Vector[T]): (Vector[T], Int) = {
       if (j >= hi) return (a, i)
       a(j) match {
-        case below if below < pivot => loop(i + 1, j, exch(a, i, j))
+        case below if below < pivot => loop(i + 1, j + 1, exch(a, i, j))
         case same if same == pivot => loop(i, j - 1, exch(a, j, i))
         case _ => loop(i, j + 1, a)
       }
     }
 
-    val (updatedVector, newPivotIndex) = loop(lo, lo, input)
+    val (updatedVector, newPivotIndex) = loop(lo, lo + 1, input)
     //swap values at high and newPivot
     (exch(updatedVector, newPivotIndex, hi), newPivotIndex)
   }
