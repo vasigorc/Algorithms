@@ -3,6 +3,7 @@ package ca.vgorcinschi.algorithms2_3
 import scala.collection.immutable.Vector
 import Ordered._
 import scala.annotation.tailrec
+import scala.math._
 
 /*
   Exercise 2.3.15 Nuts and bolts. (G. J. E. Rawlins) You have a mixed pile of N nuts and N bolts and need to quickly
@@ -27,7 +28,7 @@ class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
   require(nuts.size == bolts.size, "Sizes of bolts and nuts vectors should be equal")
 
   def sort(): Vector[(T, T)] = {
-    sort(nuts, bolts, 0, nuts.size - 1)
+    sort(nuts, bolts)
   }
 
   /**
@@ -36,17 +37,19 @@ class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
     *
     * @param nuts  - vector containing nuts
     * @param bolts - vector containing bolts
-    * @param hi    - upper limit index
-    * @param lo    - bottom limit index
     * @return a vector of zipped nuts and bolts
     */
-  private def sort(nuts: Vector[T], bolts: Vector[T], lo: Int, hi: Int): Vector[(T, T)] = {
-    if (lo >= hi) return nuts zip bolts
+  private def sort(nuts: Vector[T], bolts: Vector[T]): Vector[(T, T)] = {
+    if (nuts.size <= 1) return nuts zip bolts
+
+    val lo = 0
+    val hi = max(lo, nuts.size - 1)
 
     val (newNuts, pivotIndex) = partition(nuts, bolts(hi), lo, hi)
     val (newBolts, _) = partition(bolts, newNuts(pivotIndex), lo, hi)
 
-    sort(newNuts, newBolts, lo, pivotIndex - 1) ++ sort(newNuts, newBolts, pivotIndex + 1, hi)
+    sort(newNuts.slice(lo, pivotIndex), newBolts.slice(lo, pivotIndex)) ++
+      sort(newNuts.slice(pivotIndex, hi + 1), newBolts.slice(pivotIndex, hi + 1))
   }
 
   /**
@@ -69,20 +72,7 @@ class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
       }
     }
 
-    //    @tailrec
-    //    def loop(i: Int, j: Int, a: Vector[T]): (Vector[T], Int) = {
-    //      if (j >= hi) return (a, i)
-    //      a(j) match {
-    //        case below if below < pivot => loop(i + 1, j + 1, exch(a, i, j))
-    //        case same if same == pivot => loop(i, j + 1, exch(a, i, j))
-    //        case _ => loop(i, j + 1, a)
-    //      }
-    //    }
-
-    val (updatedVector, newPivotIndex) = loop(lo, lo, hi, input)
-    //swap values at high and newPivot
-    (updatedVector, newPivotIndex)
-//    (exch(updatedVector, newPivotIndex, hi), newPivotIndex)
+    loop(lo, lo, hi, input)
   }
 
   /**

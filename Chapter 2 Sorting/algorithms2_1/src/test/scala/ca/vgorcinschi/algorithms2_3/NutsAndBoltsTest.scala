@@ -20,8 +20,11 @@ class NutsAndBoltsTest extends BaseSpec {
 
   behavior of "NutsAndBoltsTest"
 
-  ignore should "match chars" in new CharBased {
-    instance sort() foreach { case (nut, bolt) => nut shouldEqual bolt }
+  it should "match chars" in new CharBased {
+    instance sort() foreach { case (nut, bolt) =>
+      info(s"$nut : $bolt")
+      nut shouldEqual bolt
+    }
   }
 
 
