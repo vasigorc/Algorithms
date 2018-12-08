@@ -43,10 +43,10 @@ class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
   private def sort(nuts: Vector[T], bolts: Vector[T], lo: Int, hi: Int): Vector[(T, T)] = {
     if (lo >= hi) return nuts zip bolts
 
-    val (newNuts, pivot) = partition(nuts, bolts(hi), lo, hi)
-    val (newBolts, _) = partition(bolts, newNuts(pivot), lo, hi)
+    val (newNuts, pivotIndex) = partition(nuts, bolts(hi), lo, hi)
+    val (newBolts, _) = partition(bolts, newNuts(pivotIndex), lo, hi)
 
-    sort(newNuts, newBolts, lo, pivot - 1) ++ sort(newNuts, newBolts, pivot + 1, hi)
+    sort(newNuts, newBolts, lo, pivotIndex - 1) ++ sort(newNuts, newBolts, pivotIndex + 1, hi)
   }
 
   /**
@@ -61,17 +61,28 @@ class NutsAndBolts[T: Ordering](nuts: Vector[T], bolts: Vector[T]) {
 
     @tailrec
     def loop(smaller: Int, equal: Int, larger: Int, a: Vector[T]): (Vector[T], Int) = {
-      if (equal >= larger) return (a, smaller)
+      if (equal > larger) return (a, smaller)
       a(equal) match {
         case below if below < pivot => loop(smaller + 1, equal + 1, larger, exch(a, smaller, equal))
         case same if same == pivot => loop(smaller, equal + 1, larger, a)
-        case _ => loop(smaller, equal, larger - 1, a)
+        case _ => loop(smaller, equal, larger - 1, exch(a, equal, larger))
       }
     }
 
+    //    @tailrec
+    //    def loop(i: Int, j: Int, a: Vector[T]): (Vector[T], Int) = {
+    //      if (j >= hi) return (a, i)
+    //      a(j) match {
+    //        case below if below < pivot => loop(i + 1, j + 1, exch(a, i, j))
+    //        case same if same == pivot => loop(i, j + 1, exch(a, i, j))
+    //        case _ => loop(i, j + 1, a)
+    //      }
+    //    }
+
     val (updatedVector, newPivotIndex) = loop(lo, lo, hi, input)
     //swap values at high and newPivot
-    (exch(updatedVector, newPivotIndex, hi), newPivotIndex)
+    (updatedVector, newPivotIndex)
+//    (exch(updatedVector, newPivotIndex, hi), newPivotIndex)
   }
 
   /**
