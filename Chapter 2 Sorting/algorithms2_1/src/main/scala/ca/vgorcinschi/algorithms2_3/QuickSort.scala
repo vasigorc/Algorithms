@@ -13,18 +13,18 @@ class QuickSort[T: ClassTag : Ordering] extends BaseSort[T] {
     sort(Random.shuffle(a.toList).toArray, 0, a.length - 1)
   }
 
-  private def sort(a: Array[T], lo: Int, hi: Int): Array[T] = {
+  protected def sort(a: Array[T], lo: Int, hi: Int): Array[T] = {
     if (hi <= lo) return a
     val j: Int = partition(a, lo, hi)
     sort(a, lo, j - 1)
     sort(a, j + 1, hi)
   }
 
-  private def partition(a: Array[T], lo: Int, hi: Int): Int = {
+  protected def partition(a: Array[T], lo: Int, hi: Int): Int = {
     var (i, j) = (lo, hi + 1) //left and right scan indices
     val pivot = a(lo) //partitioning item
 
-    def scan(index: Int, direction: Direction): Int = direction match {
+    def scan(index: Int, direction: Scan): Int = direction match {
       case Left => if (less(a(index), pivot) && index != hi) scan(index + 1, direction) else index
       case Right => if (less(pivot, a(index)) && index != lo) scan(index - 1, direction) else index
     }
@@ -44,10 +44,10 @@ class QuickSort[T: ClassTag : Ordering] extends BaseSort[T] {
 
 object QuickSort {
 
-  sealed trait Direction
+  sealed trait Scan
 
-  object Left extends Direction
+  object Left extends Scan
 
-  object Right extends Direction
+  object Right extends Scan
 
 }
