@@ -6,7 +6,7 @@ import scala.reflect.ClassTag
 import scala.util.Random
 
 /**
-  * Exercise 2.3.17 Sentinels. Modify {@link QuickSort} to remove both bounds checks
+  * Exercise 2.3.17 Sentinels. Modify Quicksort to remove both bounds checks
   * in the inner while loops. The test against the left end of the subarray is redundant since
   * the partitioning item acts as a sentinel (pivot is never less than a(lo)). To enable removal
   * of the other test, put an item whose key is the largest in the whole array into a(a.length -1)
@@ -18,7 +18,7 @@ import scala.util.Random
 class SentinelsQuickSort[T: ClassTag : Ordering] extends QuickSort[T] {
 
   override def sort(a: Array[T]): Array[T] = {
-    assert(a.nonEmpty, s"${getClass.getSimpleName}.sort expects a non empty array as argument")
+    if(Option {a}.isDefined || a.length < 2) return a
     val shuffledArray = Random.shuffle(a.toList).toArray
     val arrayHighestValue = shuffledArray.max //complexity is O(N)
     exch(shuffledArray, shuffledArray.indexOf(arrayHighestValue), shuffledArray.length - 1) //complexity is O(3)
