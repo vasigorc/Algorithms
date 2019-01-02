@@ -8,6 +8,5 @@
 **/.idea
 
 # any targets
-#**/target
-**/algorithms2_1/project/target/
+**/target
 **/node_modules
