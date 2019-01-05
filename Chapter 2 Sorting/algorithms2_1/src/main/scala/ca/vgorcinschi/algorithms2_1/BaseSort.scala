@@ -26,3 +26,14 @@ abstract class BaseSort [T : Ordering]{
     true
   }
 }
+
+object BaseSort {
+  import Ordered._
+  def min[T : Ordering](v: T, w: T): T = {
+    if(v < w) v else w
+  }
+
+  def max[T : Ordering](v: T, w: T): T = {
+    if(v > w) v else w
+  }
+}
