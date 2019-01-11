@@ -26,7 +26,7 @@ class Ex2_2_25 [T : ClassTag : Ordering] extends BaseSort[T]{
       To partition the target array into equal segments we need to find the almost exact length of a segment, i.e: e/k | round
       Last segment will always be a little longer/shorter for an odd e or an odd k - which is ok
      */
-    val divisor: Int = max(round(e.toDouble/k).toInt, 1)
+    val divisor: Int = math.max(round(e.toDouble/k).toInt, 1)
 
     val indices: List[Int] = indicesGen(e, divisor) toList //generate list of "milestones"
     var previous = indices.head

@@ -1,7 +1,6 @@
 package ca.vgorcinschi.algorithms2_3
 
 import ca.vgorcinschi.algorithms2_1.BaseSort
-import ca.vgorcinschi.algorithms2_1.BaseSort.{max, min}
 
 import scala.util.Random
 
@@ -22,7 +21,7 @@ trait MedianOfPartitioning [T] {
     * @param a - target array
     * @param sampleArray - size should be equal to @{link MEDIAN_OF}
     */
-  protected def patchArray(a: Array[T], sampleArray: Array[T]) (implicit ev: T <:< Ordering[T]): Unit = {
+  protected def patchArray(a: Array[T], sampleArray: Array[T]): Unit = {
     val (minVal, maxVal) = ((sampleArray.head, sampleArray.head) /: sampleArray) { case ((tempMin, tempMax), current) =>
       (min(tempMin, current), max(tempMax, current))
     }

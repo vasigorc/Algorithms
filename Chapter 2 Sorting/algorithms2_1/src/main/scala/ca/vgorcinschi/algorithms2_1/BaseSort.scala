@@ -3,11 +3,11 @@ package ca.vgorcinschi.algorithms2_1
 import edu.princeton.cs.algs4.StdOut
 
 abstract class BaseSort [T : Ordering]{
+  import Ordered._
 
   def sort(a: Array[T]):Array[T]
 
   def less(v: T, w: T):Boolean = {
-    import Ordered._
     v < w
   }
 
@@ -25,15 +25,12 @@ abstract class BaseSort [T : Ordering]{
     }
     true
   }
-}
 
-object BaseSort {
-  import Ordered._
-  def min[T : Ordering](v: T, w: T): T = {
+  def min(v: T, w: T): T = {
     if(v < w) v else w
   }
 
-  def max[T : Ordering](v: T, w: T): T = {
+  def max(v: T, w: T): T = {
     if(v > w) v else w
   }
 }
