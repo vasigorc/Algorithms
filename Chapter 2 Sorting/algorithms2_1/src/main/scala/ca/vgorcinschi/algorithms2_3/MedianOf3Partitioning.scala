@@ -1,8 +1,6 @@
 package ca.vgorcinschi.algorithms2_3
 
 import scala.reflect.ClassTag
-import scala.util.Random
-import ca.vgorcinschi.algorithms2_1.BaseSort._
 
 /**
   * Exercise 2.3.18 Median-of-3 partitioning. Add median-of-3 partitioning to quicksort, as described in the text
@@ -15,24 +13,18 @@ import ca.vgorcinschi.algorithms2_1.BaseSort._
   * @param ev$2
   * @tparam T
   */
-class MedianOf3Partitioning[T: ClassTag : Ordering] extends QuickSort[T] {
+class MedianOf3Partitioning[T: ClassTag : Ordering] extends QuickSort[T] with MedianOfPartitioning[T] {
+
+  protected val MEDIAN_OF = 3
 
   override protected def sort(a: Array[T], lo: Int, hi: Int): Array[T] = {
-    def getSample(a: Array[T]): Array[T] = {
-      val sampleArrayOffset = Random.nextInt(a.length - 3)
-      val sampleArray: Array[T] = a.slice(sampleArrayOffset, sampleArrayOffset + 3)
-      val minMax: (T, T) = ((sampleArray.head, sampleArray.head) /: sampleArray) { case ((minV, maxV), current) =>
-        (min(minV, current), max(maxV, current))
-      }
-      minMax
-      ???
-    }
 
-    if (a.length <= 3)
+    if (hi <= lo || a.length <= MEDIAN_OF)
       super.sort(a, lo, hi)
-    val sampleOf3Array = getSample(a)
 
-    ???
+    patchArray(a, getSample(a, MEDIAN_OF))
+    val j = partition(a, lo, hi)
+    sort(a, lo, j - 1)
+    sort(a, j + 1, hi)
   }
-
 }
