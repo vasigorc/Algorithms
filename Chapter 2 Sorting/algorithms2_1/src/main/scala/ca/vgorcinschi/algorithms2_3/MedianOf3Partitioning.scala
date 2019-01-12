@@ -24,7 +24,7 @@ class MedianOf3Partitioning[T: ClassTag : Ordering] extends QuickSort[T] with Me
       val j = partition(a, lo, hi)
       sort(a, lo, j - 1)
       sort(a, j + 1, hi)
-    } else return super.sort(a, lo, hi)
+    } else super.sort(a, lo, hi)
 
   }
 }
