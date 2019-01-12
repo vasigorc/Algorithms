@@ -11,14 +11,14 @@ import scala.reflect.ClassTag
   *
   * @param ev$1
   * @param ev$2
-  * @tparam T
+  * @tparam T must be Comparable and needs runtime type information for Array
   */
 class MedianOf3Partitioning[T: ClassTag : Ordering] extends QuickSort[T] with MedianOfPartitioning[T] {
 
   protected val MEDIAN_OF = 3
 
   override protected def sort(a: Array[T], lo: Int, hi: Int): Array[T] = {
-    if (hi > lo || (hi - lo) > MEDIAN_OF) {
+    if ((hi - lo) > MEDIAN_OF) {
       val sampleArray = getSample(a.slice(lo, hi), MEDIAN_OF)
       patchArray(a, lo, hi, sampleArray)
       val j = partition(a, lo, hi)

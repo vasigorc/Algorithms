@@ -10,8 +10,8 @@ class MedianOf3PartitioningSpec extends BaseSpec {
 
   it should "sort" in {
     val medianOf3Partitioning = new MedianOf3Partitioning[Char]
-    val maybeSortedArray = medianOf3Partitioning sort(testCase)
-    maybeSortedArray shouldBe sorted
+    val maybeSortedArray = medianOf3Partitioning sort testCase
+    maybeSortedArray shouldEqual testCase.sorted
   }
 
 }
