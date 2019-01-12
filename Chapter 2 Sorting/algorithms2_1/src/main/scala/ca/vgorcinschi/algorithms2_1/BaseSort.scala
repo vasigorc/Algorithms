@@ -1,6 +1,6 @@
 package ca.vgorcinschi.algorithms2_1
 
-import edu.princeton.cs.algs4.StdOut
+import ca.vgorcinschi.algorithms_1.StdOut
 
 abstract class BaseSort [T : Ordering]{
   import Ordered._
