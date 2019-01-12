@@ -11,7 +11,6 @@ trait MedianOfPartitioning [T] {
   protected val MEDIAN_OF: Int
 
   protected def getSample(a: Array[T], medianOf: Int): Array[T] = {
-    //TODO what if a.length is < medianOf
     val sampleArrayOffset = Random.nextInt(a.length - medianOf)
     a.slice(sampleArrayOffset, sampleArrayOffset + medianOf)
   }
