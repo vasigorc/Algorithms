@@ -19,7 +19,7 @@ trait MedianOfPartitioning [T] {
     * Mutate the main array to have at its head the smallest value from sample
     * array and at its last index the biggest value from sample array
     * @param a - target array
-    * @param sampleArray - size should be equal to @{link MEDIAN_OF}
+    * @param sampleArray - size should be equal to {@link MEDIAN_OF}
     */
   protected def patchArray(a: Array[T], sampleArray: Array[T]): Unit = {
     val (minVal, maxVal) = ((sampleArray.head, sampleArray.head) /: sampleArray) { case ((tempMin, tempMax), current) =>
