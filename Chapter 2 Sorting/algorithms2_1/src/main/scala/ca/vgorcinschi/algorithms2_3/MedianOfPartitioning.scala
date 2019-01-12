@@ -11,6 +11,7 @@ trait MedianOfPartitioning [T] {
   protected val MEDIAN_OF: Int
 
   protected def getSample(a: Array[T], medianOf: Int): Array[T] = {
+    //TODO what if a.length is < medianOf
     val sampleArrayOffset = Random.nextInt(a.length - medianOf)
     a.slice(sampleArrayOffset, sampleArrayOffset + medianOf)
   }
@@ -21,11 +22,11 @@ trait MedianOfPartitioning [T] {
     * @param a - target array
     * @param sampleArray - size should be equal to {@link MEDIAN_OF}
     */
-  protected def patchArray(a: Array[T], sampleArray: Array[T]): Unit = {
+  def patchArray(a: Array[T], lo: Int, hi: Int, sampleArray: Array[T]): Unit = {
     val (minVal, maxVal) = ((sampleArray.head, sampleArray.head) /: sampleArray) { case ((tempMin, tempMax), current) =>
       (min(tempMin, current), max(tempMax, current))
     }
-    exch(a, a.indexOf(minVal), 0)
-    exch(a, a.indexOf(maxVal), a.length - 1)
+    exch(a, a.indexOf(minVal), lo)
+    exch(a, a.indexOf(maxVal), hi)
   }
 }
