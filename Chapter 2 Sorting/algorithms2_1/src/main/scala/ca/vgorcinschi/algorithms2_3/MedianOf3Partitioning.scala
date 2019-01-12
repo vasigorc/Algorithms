@@ -22,7 +22,7 @@ class MedianOf3Partitioning[T: ClassTag : Ordering] extends QuickSort[T] with Me
     if (hi <= lo || a.length <= MEDIAN_OF)
       super.sort(a, lo, hi)
 
-    patchArray(a, getSample(a, MEDIAN_OF))
+    patchArray(a, getSample(a.slice(lo, hi), MEDIAN_OF))
     val j = partition(a, lo, hi)
     sort(a, lo, j - 1)
     sort(a, j + 1, hi)
