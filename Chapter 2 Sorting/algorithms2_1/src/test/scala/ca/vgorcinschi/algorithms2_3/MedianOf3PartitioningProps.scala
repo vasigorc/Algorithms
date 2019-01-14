@@ -1,20 +1,20 @@
 package ca.vgorcinschi.algorithms2_3
 
-import ca.vgorcinschi.Gens
-import org.scalatest.prop.GeneratorDrivenPropertyChecks
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.MustMatchers._
+import org.scalatest.WordSpec
+import org.scalatest.prop.PropertyChecks
 
-class MedianOf3PartitioningProps extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks with Gens {
+class MedianOf3PartitioningProps extends WordSpec with PropertyChecks {
 
-  private val medianOf3Partitioning = new MedianOf3Partitioning[Int]
-
-  implicit override val generatorDrivenConfig: PropertyCheckConfiguration = PropertyCheckConfig(minSuccessful = 1, maxDiscarded = 500, workers = 1)
-
-  behavior of "sort"
-
-  it should "sort array of ints from 0 to 100" in {
-    forAll(arraysGen){  a: Array[Int] =>
-      info(s"${a.mkString(",")}")
-    medianOf3Partitioning.sort(a) shouldEqual a.sorted }
+  "sort method" must {
+    "sort any Int array" in {
+      forAll { (l: List[Int]) =>
+        whenever(l.nonEmpty) {
+          val intArray: Array[Int] = l.toArray
+          val maybeSorted = new MedianOf3Partitioning[Int].sort(l.toArray)
+          maybeSorted must equal (intArray.sorted)
+        }
+      }
+    }
   }
 }
