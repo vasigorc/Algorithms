@@ -25,7 +25,7 @@ class MedianOf3Partitioning[T: ClassTag : Ordering] extends QuickSort[T] with Me
       if (less(a(hi), a(center))) exch(a, center, hi)
       //move pivot at position hi - 1
       exch(a, center, hi - 1)
-      a(hi - 1)
+      hi - 1
     }
 
     if ((hi - lo) > MEDIAN_OF) {
