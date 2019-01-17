@@ -45,7 +45,7 @@ trait MedianOfPartitioning [T] {
       if (i < j) exch(a, i, j)
     }
 
-    exch(a, lo, j) // put pivot into a(j)
+    exch(a, a.indexOf(pivot), j) // put pivot into a(j)
     j // with a(lo..j-1) <= a(j) <= a(j+1..hi)
   }
 }
