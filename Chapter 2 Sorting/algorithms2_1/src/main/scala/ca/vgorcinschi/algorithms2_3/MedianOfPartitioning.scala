@@ -45,6 +45,11 @@ trait MedianOfPartitioning [T] {
       if (i < j) exch(a, i, j)
     }
 
+    /*
+      We might need to have a better way to track change of pivot index
+      than a potential N moves using `indexOf`. One approach is to skip
+      hi - 1 in `scan` and do exch(a, hi -1, j) in the end
+     */
     exch(a, a.indexOf(pivot), j) // put pivot into a(j)
     j // with a(lo..j-1) <= a(j) <= a(j+1..hi)
   }
