@@ -11,6 +11,10 @@ abstract class BaseSort [T : Ordering]{
     v < w
   }
 
+  def less(a: Array[T], vIndex: Int, wIndex: Int): Boolean = {
+    less(a(vIndex), a(wIndex))
+  }
+
   def exch(a: Array[T], i: Int, j: Int): Unit = {
     val t = a(i)
     a(i) = a(j)
