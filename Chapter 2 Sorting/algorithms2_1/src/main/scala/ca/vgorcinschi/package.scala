@@ -15,7 +15,8 @@ package object vgorcinschi {
 
     def nIndicesSubarray(subArraySize: Int, from: Int = 0, to: Int = N): Array[Int] = {
       validateIndicesSubArraySize(subArraySize, from, to)
-      val sampleArrayOffset = from + Random.nextInt(to - (from + subArraySize))
+      //nextInt is exclusive, so need to add + 1
+      val sampleArrayOffset = from + Random.nextInt(to + 1 - (from + subArraySize))
       sampleArrayOffset until sampleArrayOffset + subArraySize toArray
     }
 

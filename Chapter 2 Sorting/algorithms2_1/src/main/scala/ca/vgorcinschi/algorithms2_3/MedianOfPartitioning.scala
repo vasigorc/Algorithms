@@ -4,6 +4,7 @@ import ca.vgorcinschi.algorithms2_1.BaseSort
 import ca.vgorcinschi.algorithms2_3.MedianOfPartitioning._
 import ca.vgorcinschi.algorithms2_3.QuickSort._
 
+import scala.annotation.tailrec
 import scala.language.postfixOps
 
 trait MedianOfPartitioning[T] {
@@ -12,8 +13,7 @@ trait MedianOfPartitioning[T] {
 
   protected val MEDIAN_OF: Int
 
-
-  def patchArray(a: Array[T], lo: Int, hi: Int): Int = {
+  def patchArrayAndGetPivot(a: Array[T], lo: Int, hi: Int): Int = {
 
     import ca.vgorcinschi.ArrayOps
     //return a new Median with adjusted min and max values
@@ -30,13 +30,26 @@ trait MedianOfPartitioning[T] {
     }
 
     val sampleArray: Array[Int] = a.nIndicesSubarray(MEDIAN_OF, lo, hi)
-    val median: Median = (Median(sampleArray.head, sampleArray.head) /: sampleArray) { case (acc, elem) => medianReductionFunction(acc, elem) }
+    val median: Median = (Median(sampleArray.head, sampleArray.head) /: sampleArray.tail) { case (acc, elem) => medianReductionFunction(acc, elem) }
     var pivot = getMedianPivot(sampleArray, median)
 
     exch(a, median.indexOfMinValue, lo)
-    if (lo == pivot) pivot = median.indexOfMinValue
-    exch(a, median.indexOfMaxValue, hi)
-    if (hi == pivot) pivot = median.indexOfMaxValue
+    if (lo == pivot) {
+      pivot = median.indexOfMinValue
+    }
+    /*
+      if indexOfMaxValue was at lo, new item at indexOfMinValue
+      has actually become the largest value from the sample array
+      (despite what it's name implies)
+     */
+    if (lo == median.indexOfMaxValue) {
+      exch(a, median.indexOfMinValue, hi)
+    } else {
+      exch(a, median.indexOfMaxValue, hi)
+    }
+    if (hi == pivot) {
+      pivot = median.indexOfMaxValue
+    }
     //move pivot at position hi - 1
     exch(a, pivot, hi - 1)
     hi - 1
@@ -46,9 +59,10 @@ trait MedianOfPartitioning[T] {
     var (i, j) = (lo, hi - 1) //left and right scan indices
 
     //removed bound checks
+    @tailrec
     def scan(index: Int, direction: Scan): Int = direction match {
       case Left => if (less(a(index), a(pivotIndex))) scan(index + 1, direction) else index
-      case Right => if (index >= 0 && less(a(pivotIndex), a(index))) scan(index - 1, direction) else index
+      case Right => if (less(a(pivotIndex), a(index))) scan(index - 1, direction) else index
     }
 
     while (i < j) {
