@@ -1,6 +1,7 @@
 package ca.vgorcinschi.algorithms2_3
 
 import scala.reflect.ClassTag
+import ca.vgorcinschi._
 
 /**
   * Exercise 2.3.20 Nonrecursive quicksort. Implement a nonrecursive version of quicksort based on a main
@@ -10,7 +11,13 @@ import scala.reflect.ClassTag
   */
 object NonrecursiveQuicksort {
 
-  def sort[T: ClassTag : Ordering](a: Array[T]): Array[T] ={
+  def sort[T: ClassTag : Ordering](a: Array[T]): Array[T] = {
+    if (a == null || a.length - 1 <= 1 || isSorted(a)) return a
+    val N = a.length - 1
+
+    val pivot = a(0)
+    val lo = a(1)
+    val hi = a(N)
     ???
   }
 }
