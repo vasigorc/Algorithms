@@ -15,16 +15,13 @@ class Ex2_1_11[T : ClassTag : Ordering] extends BaseSort[T]{
     val N = a.length
     val sequence: Array[Int] = sequenceStream(N).toArray //1, 4, 13, 40, 121, 364, 1093, ...
 
-    def tryExch(j: Int, gap: Int):Unit = j match {
-      case _ if j >= gap && less(a(j), a(j - gap)) =>
-        exch(a, j, j-gap)
-        tryExch(j-gap, gap)
-      case _ =>
-    }
-
     for (gap <- sequence.reverse){
       for (i <- gap until N){
-        tryExch(i, gap)
+        var j = i
+        while (j >= gap && less(a(j), a(j - gap))) {
+          exch(a, j, j - gap)
+          j = j - gap
+        }
       }
     }
     a
@@ -36,25 +33,24 @@ class Ex2_1_11[T : ClassTag : Ordering] extends BaseSort[T]{
     Stream.iterate(startIndex)(h => 3*h +1).takeUntil(_ < N/3)
   }
 
-  /*
+  /**
     below method is introduced to support Ex2_2_12
     the gist is to shellsort only subarray.
     no return value - method violates referential transparency
    */
   def sort(a: Array[T], start: Int, end: Int): Unit ={
-    val N = end
     val sequence: Array[Int] = sequenceStream(end-start).toArray //1, 4, etc
 
-    def tryExch(j: Int, gap: Int):Unit = j match {
+    def whileExch(j: Int, gap: Int):Unit = j match {
       case _ if j >= start+gap && less(a(j), a(j - gap)) =>
         exch(a, j, j-gap)
-        tryExch(j-gap, gap)
+        whileExch(j-gap, gap)
       case _ =>
     }
 
     for (gap <- sequence.reverse){
       for (i <- start+gap to end){
-        tryExch(i, gap)
+        whileExch(i, gap)
       }
     }
   }
