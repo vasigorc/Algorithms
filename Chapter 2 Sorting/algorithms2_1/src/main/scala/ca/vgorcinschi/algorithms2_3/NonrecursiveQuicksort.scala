@@ -17,14 +17,23 @@ class NonrecursiveQuicksort[T: ClassTag : Ordering] extends QuickSort[T] {
 
   override def sort(a: Array[T]): Array[T] = {
     if (a == null || a.length - 1 <= 1 || isSorted(a)) return a
-    val N = a.length - 1
 
+    val N = a.length - 1
     indicesStack = List((1, N))
 
     while (indicesStack.nonEmpty) {
       val (lo, hi) = indicesStack.head
+      indicesStack = indicesStack.tail
       val nextPivot = partition(a, lo, hi)
+
+      if (lo < nextPivot - 1) {
+        indicesStack = (lo, nextPivot - 1) :: indicesStack
+      }
+
+      if (nextPivot + 1 < hi) {
+        indicesStack = (nextPivot + 1, hi) :: indicesStack
+      }
     }
-    ???
+    a
   }
 }
