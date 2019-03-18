@@ -1,6 +1,6 @@
 package ca.vgorcinschi.algorithms2_1
 
-import ca.vgorcinschi.algorithms_1.Stopwatch
+import ca.vgorcinschi.algorithms1.Stopwatch
 
 import scala.util.Random
 

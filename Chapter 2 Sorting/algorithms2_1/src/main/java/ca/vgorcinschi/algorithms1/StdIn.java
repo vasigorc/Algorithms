@@ -1,4 +1,4 @@
-package ca.vgorcinschi.algorithms_1;
+package ca.vgorcinschi.algorithms1;
 
 /******************************************************************************
  *  Compilation:  javac StdIn.java
