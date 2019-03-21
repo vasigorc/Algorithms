@@ -24,7 +24,7 @@ abstract class BaseSort [T : Ordering]{
   def show(a: Array[T]): Unit = a.foreach(t => StdOut.print(t+" ")); StdOut.println()
 
   def isSorted(a: Array[T]): Boolean = {
-    for(i <- 1 to a.length){
+    for(i <- 1 until a.length){
       if(less(a(i), a(i-1))) false
     }
     true
