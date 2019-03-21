@@ -16,10 +16,10 @@ class NonrecursiveQuicksort[T: ClassTag : Ordering] extends QuickSort[T] {
   private var indicesStack = List[(Int, Int)]()
 
   override def sort(a: Array[T]): Array[T] = {
-    if (a == null || a.length - 1 <= 1 || isSorted(a)) return a
+    if (a == null || a.length <= 1) return a
 
     val N = a.length - 1
-    indicesStack = List((1, N))
+    indicesStack = List((0, N))
 
     while (indicesStack.nonEmpty) {
       val (lo, hi) = indicesStack.head
