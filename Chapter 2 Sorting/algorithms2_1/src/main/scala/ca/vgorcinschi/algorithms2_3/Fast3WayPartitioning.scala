@@ -6,7 +6,7 @@ import scala.reflect.ClassTag
 import scala.util.Random
 
 /**
-  * Exercise 2.3.22 Fast 3-way-partitioning. (J. Bentley and D. McIlroy) Implement an entropy-optimal sort based on
+  * Exercise 2.3.22 Fast 3-way-partitioning. (J. Bentley and D. McIlroy) Implement an entropy-optimal sortHelper based on
   * keeping items with equal keys at bpth left and right ends of the subarray. Maintain indices p and q such that
   * a(lo..p-1) and a(q+1..hi) are all equal to a(lo), and index i such that a(p..i-1) are all less than a(lo), and
   * an index j such that a(j+1..q) are all greater than a(lo). Add to the inner partitioning loop code to swap
@@ -15,6 +15,7 @@ import scala.util.Random
   * to swap the items with equal keys into position. Note: This code complements the code given in the text, in the
   * sense that it does extra swaps for keys equal to the partitioning item's key, while the code in the text does extra
   * swaps for keys that are not equal to the partitioning item's key.
+  *
   * @param classTag$T - provides runtime information about generic type, required for having array of ordered items
   * @param ordering$T - makes sure that generic type is [[Ordered]]
   * @tparam T - generic type
@@ -23,15 +24,16 @@ class Fast3WayPartitioning[T: ClassTag : Ordering] extends BaseSort[T] {
 
   override def sort(a: Array[T]): Array[T] = {
     val shuffledArray = Random.shuffle(a.toSeq).toArray
-    sort(shuffledArray, 0, a.length - 1)
+    sortHelper(shuffledArray)
   }
 
-  private def sort(array: Array[T], lo: Int, hi: Int): Array[T] = {
+  private def sortHelper(array: Array[T]): Array[T] = {
+    val (lo, hi) = (0, array.length - 1)
     if (hi <= lo) return array
     val pivot: T = array(lo)
-    var (p, i, q, j) = (lo, lo + 1, hi, hi)
+    var (p, i, j, q) = (lo, lo + 1, hi, hi - 1)
 
-    //partition loop
+    //partition phase
     while (i < j) {
       //first change for the left edge (the i part)
       val iValue = array(i)
@@ -60,6 +62,20 @@ class Fast3WayPartitioning[T: ClassTag : Ordering] extends BaseSort[T] {
         }
       }
     }
-    ???
+    //swap phase
+    while (p >= lo) {
+      exch(array, i, p)
+      p -= 1
+      i -= 1
+    }
+    while (q <= hi) {
+      exch(array, j, q)
+      j += 1
+      q += 1
+    }
+    val lt = array.slice(lo, j)
+    val eq = array.slice(j, i)
+    val gt = array.slice(i, hi)
+    sortHelper(lt) ++ eq ++ sortHelper(gt)
   }
 }
