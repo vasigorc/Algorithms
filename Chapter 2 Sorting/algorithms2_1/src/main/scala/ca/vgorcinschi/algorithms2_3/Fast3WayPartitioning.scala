@@ -31,7 +31,7 @@ class Fast3WayPartitioning[T: ClassTag : Ordering] extends BaseSort[T] {
     val (lo, hi) = (0, array.length - 1)
     if (hi <= lo) return array
     val pivot: T = array(lo)
-    var (p, i, j, q) = (lo, lo + 1, hi, hi - 1)
+    var (p, i, j, q) = (lo, lo + 1, hi, hi)
 
     //partition phase
     while (i < j) {
@@ -63,19 +63,22 @@ class Fast3WayPartitioning[T: ClassTag : Ordering] extends BaseSort[T] {
       }
     }
     //swap phase
-    while (p >= lo) {
-      exch(array, i, p)
-      p -= 1
-      i -= 1
+    //we don't need to move pivot after "less than" part if pivot is the smallest element
+    if (less(array(j), pivot)) {
+      while (p >= lo) {
+        exch(array, i, p)
+        p -= 1
+        i -= 1
+      }
+      while (q < hi) {
+        exch(array, j, q)
+        j += 1
+        q += 1
+      }
     }
-    while (q <= hi) {
-      exch(array, j, q)
-      j += 1
-      q += 1
-    }
-    val lt = array.slice(lo, j)
-    val eq = array.slice(j, i)
-    val gt = array.slice(i, hi)
+    val lt = array.slice(lo, j + 1)
+    val eq = array.slice(j + 1, i + 1)
+    val gt = array.slice(i + 1, hi)
     sortHelper(lt) ++ eq ++ sortHelper(gt)
   }
 }
