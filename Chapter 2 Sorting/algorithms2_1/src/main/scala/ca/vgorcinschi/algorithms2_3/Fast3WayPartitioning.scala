@@ -75,10 +75,13 @@ class Fast3WayPartitioning[T: ClassTag : Ordering] extends BaseSort[T] {
         j += 1
         q += 1
       }
+      val lt = array.slice(lo, i + 1)
+      val eq = array.slice(i + 1, j + 1)
+      val gt = array.slice(j + 1, hi + 1)
+      return sortHelper(lt) ++ eq ++ sortHelper(gt)
     }
-    val lt = array.slice(lo, j + 1)
-    val eq = array.slice(j + 1, i + 1)
-    val gt = array.slice(i + 1, hi)
-    sortHelper(lt) ++ eq ++ sortHelper(gt)
+    val eq = array.slice(lo, p + 1) ++ array.slice(q + 1, hi + 1)
+    val gt = array.slice(p + 1, q + 1)
+    eq ++ sortHelper(gt)
   }
 }
