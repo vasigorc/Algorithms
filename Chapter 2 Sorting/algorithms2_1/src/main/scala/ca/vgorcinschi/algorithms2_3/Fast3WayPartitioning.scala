@@ -71,7 +71,7 @@ class Fast3WayPartitioning[T: ClassTag : Ordering] extends BaseSort[T] {
       }
     }
 
-    i = if(less(array, i - 1, i)) i - 1 else i
+    i = adjustLtThreshold(array, i, p)
     j = i + 1
     //swap phase
     //we don't need to move pivot after "less than" part if pivot is the smallest element
@@ -89,12 +89,17 @@ class Fast3WayPartitioning[T: ClassTag : Ordering] extends BaseSort[T] {
         q += 1
       }
       val lt = array.slice(lo, i + 1)
-      val eq = array.slice(i + 1, j + 1)
-      val gt = array.slice(j + 1, hi + 1)
+      val eq = array.slice(i + 1, j)
+      val gt = array.slice(j, hi + 1)
       return sortHelper(lt) ++ eq ++ sortHelper(gt)
     }
     val eq = array.slice(lo, p + 1) ++ array.slice(q + 1, hi + 1)
     val gt = array.slice(p + 1, q + 1)
     eq ++ sortHelper(gt)
+  }
+
+  private def adjustLtThreshold(array: Array[T], i: Int, p: Int) = {
+    if (i -1 == p) i
+    else if (less(array, i - 1, i)) i - 1 else i
   }
 }
