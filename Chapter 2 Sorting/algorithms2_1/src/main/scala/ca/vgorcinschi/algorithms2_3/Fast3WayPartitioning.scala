@@ -37,6 +37,14 @@ class Fast3WayPartitioning[T: ClassTag : Ordering] extends BaseSort[T] {
     while (i < j) {
       //first change for the left edge (the i part)
       val iValue = array(i)
+      /*
+        the problem is that with this and with line
+        61 potentially is that i and j are always equal
+        after this phase whereas i must always = j - 1
+        NB: points still need to cross
+        do maybe if i + 1 == j then j -= 1 else i += 1
+        and on line 60 if j - 1 == i then i += 1 else j -= 1
+       */
       if (less(iValue, pivot)) i += 1
       else if (less(pivot, iValue)) {
         exch(array, i, j)
@@ -48,8 +56,8 @@ class Fast3WayPartitioning[T: ClassTag : Ordering] extends BaseSort[T] {
         i += 1
       }
       if (i < j) {
-        val jValue = array(j)
         //then compare for the right edge (the j part)
+        val jValue = array(j)
         if (less(pivot, jValue)) j -= 1
         else if (less(jValue, pivot)) {
           exch(array, i, j)
@@ -62,15 +70,20 @@ class Fast3WayPartitioning[T: ClassTag : Ordering] extends BaseSort[T] {
         }
       }
     }
+
+    i = if(less(array, i - 1, i)) i - 1 else i
+    j = i + 1
     //swap phase
     //we don't need to move pivot after "less than" part if pivot is the smallest element
-    if (less(array(j), pivot)) {
+    if (less(array(p + 1), pivot)) {
       while (p >= lo) {
+        println(s"Current array: ${array.mkString(", ")}, i is $i")
         exch(array, i, p)
         p -= 1
         i -= 1
       }
       while (q < hi) {
+        println(s"Current array: ${array.mkString(", ")}, i is $i")
         exch(array, j, q)
         j += 1
         q += 1
