@@ -11,6 +11,10 @@ abstract class BaseSort [T : Ordering]{
     v < w
   }
 
+  def equal(a: Array[T], vIndex: Int, wIndex: Int): Boolean = {
+    a(vIndex) == a(wIndex)
+  }
+
   def less(a: Array[T], vIndex: Int, wIndex: Int): Boolean = {
     less(a(vIndex), a(wIndex))
   }
