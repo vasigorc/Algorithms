@@ -24,74 +24,28 @@ class Fast3WayPartitioning[T: ClassTag : Ordering] extends BaseSort[T] {
 
   override def sort(a: Array[T]): Array[T] = {
     val shuffledArray = Random.shuffle(a.toSeq).toArray
-    sortHelper(shuffledArray)
+    qSort(shuffledArray)
   }
 
-  private def sortHelper(array: Array[T]): Array[T] = {
+  private def qSort(array: Array[T]): Array[T] = {
     val (lo, hi) = (0, array.length - 1)
     if (hi <= lo) return array
-    val pivot: T = array(lo)
-    var (p, i, j) = (lo, lo + 1, hi)
-    var q = if (equal(array, lo, hi)) hi else array.length
 
-    //1. partition phase
-    while (i < j) {
-      //first change for the left edge (the i part)
-      val iValue = array(i)
-      if (less(iValue, pivot)) i += 1
-      else if (less(pivot, iValue)) {
-        exch(array, i, j)
-        j -= 1
-      }
-      else {
-        p += 1
-        exch(array, p, i)
-        i += 1
-      }
-      if (i < j) {
-        //then compare for the right edge (the j part)
-        val jValue = array(j)
-        if (less(pivot, jValue)) j -= 1
-        else if (less(jValue, pivot)) {
-          exch(array, i, j)
-          i += 1
-        }
-        else {
-          q -= 1
-          exch(array, j, q)
-          j -= 1
-        }
+    val pivot = array.head
+
+    def loop(source: Array[T], accumulator: ArraySections): ArraySections = {
+      if (source.isEmpty) return accumulator
+      val tail = source.tail
+      source.head match {
+        case v if v == pivot => loop(tail, accumulator copy(equ = accumulator.equ :+ pivot))
+        case v if less(v, pivot) => loop(tail, accumulator copy(lt = accumulator.lt :+ v))
+        case v @ _ => loop(tail, accumulator copy(gt = accumulator.gt :+ v))
       }
     }
 
-    i = adjustLtThreshold(array, i, p)
-    j = i + 1
-    //2. swap phase
-    //we don't need to move pivot after "less than" part if pivot is the smallest element
-    if (less(array(p + 1), pivot)) {
-      while (p >= lo) {
-        exch(array, i, p)
-        p -= 1
-        i -= 1
-      }
-      //problem if q == hi
-      while (q <= hi) {
-        exch(array, j, q)
-        j += 1
-        q += 1
-      }
-      val lt = array.slice(lo, i + 1)
-      val eq = array.slice(i + 1, j)
-      val gt = array.slice(j, hi + 1)
-      return sortHelper(lt) ++ eq ++ sortHelper(gt)
-    }
-    val eq = array.slice(lo, p + 1) ++ array.slice(q + 1, hi + 1)
-    val gt = array.slice(p + 1, q + 1)
-    eq ++ sortHelper(gt)
+    val arraySections = loop(array.tail, ArraySections(equ = Array(pivot)))
+    qSort(arraySections.lt) ++ arraySections.equ ++ qSort(arraySections.gt)
   }
 
-  private def adjustLtThreshold(array: Array[T], i: Int, p: Int) = {
-    if (i -1 == p) i
-    else if (less(array, i - 1, i)) i - 1 else i
-  }
+  case class ArraySections(lt: Array[T] = Array.empty, equ: Array[T], gt: Array[T] = Array.empty)
 }
