@@ -32,7 +32,7 @@ class Fast3WayPartitioning[T: ClassTag : Ordering] extends BaseSort[T] {
     if (hi <= lo) return array
     val pivot: T = array(lo)
     var (p, i, j) = (lo, lo + 1, hi)
-    var q = if (equal(array, lo, hi)) hi else hi + 1
+    var q = if (equal(array, lo, hi)) hi else array.length
 
     //1. partition phase
     while (i < j) {
