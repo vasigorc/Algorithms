@@ -3,7 +3,7 @@ package ca.vgorcinschi.algorithms2_3
 import scala.reflect.ClassTag
 
 /**
-  * Exercise 2.3.18 Median-of-3 partitioning. Add median-of-3 partitioning to quicksort, as described in the text
+  * Exercise 2.3.18 MinMax-of-3 partitioning. Add median-of-3 partitioning to quicksort, as described in the text
   * (see page 296). Run doubling tests to determine the effectiveness of the change.
   * From page 296: ...is to use the median of a small sample of items taken from the subarray as the partitioning item.
   * ...As a bonus, we can use the sample items as sentinels at the ends of the array and remove both 

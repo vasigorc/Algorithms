@@ -1,9 +1,6 @@
 package ca.vgorcinschi.algorithms2_3
 
-import ca.vgorcinschi.algorithms2_1.BaseSort
-
 import scala.reflect.ClassTag
-import scala.util.Random
 
 /**
   * Exercise 2.3.22 Fast 3-way-partitioning. (J. Bentley and D. McIlroy) Implement an entropy-optimal sortHelper based on
@@ -20,32 +17,12 @@ import scala.util.Random
   * @param ordering$T - makes sure that generic type is [[Ordered]]
   * @tparam T - generic type
   */
-class Fast3WayPartitioning[T: ClassTag : Ordering] extends BaseSort[T] {
+class Fast3WayPartitioning[T: ClassTag : Ordering] extends FastWayPartitioning[T] {
 
-  override def sort(a: Array[T]): Array[T] = {
-    val shuffledArray = Random.shuffle(a.toSeq).toArray
-    qSort(shuffledArray)
-  }
-
-  private def qSort(array: Array[T]): Array[T] = {
+  override protected def cutoffPredicate: Array[T] => Boolean = array => {
     val (lo, hi) = (0, array.length - 1)
-    if (hi <= lo) return array
-
-    val pivot = array.head
-
-    def loop(source: Array[T], accumulator: ArraySections): ArraySections = {
-      if (source.isEmpty) return accumulator
-      val tail = source.tail
-      source.head match {
-        case v if v == pivot => loop(tail, accumulator copy(equ = accumulator.equ :+ pivot))
-        case v if less(v, pivot) => loop(tail, accumulator copy(lt = accumulator.lt :+ v))
-        case v @ _ => loop(tail, accumulator copy(gt = accumulator.gt :+ v))
-      }
-    }
-
-    val arraySections = loop(array.tail, ArraySections(equ = Array(pivot)))
-    qSort(arraySections.lt) ++ arraySections.equ ++ qSort(arraySections.gt)
+    hi <= lo
   }
 
-  case class ArraySections(lt: Array[T] = Array.empty, equ: Array[T], gt: Array[T] = Array.empty)
+  override protected def cutoffAction: Array[T] => Array[T] = array => array
 }

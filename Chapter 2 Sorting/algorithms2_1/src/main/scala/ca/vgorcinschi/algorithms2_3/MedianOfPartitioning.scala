@@ -16,42 +16,37 @@ trait MedianOfPartitioning[T] {
   def patchArrayAndGetPivot(a: Array[T], lo: Int, hi: Int): Int = {
 
     import ca.vgorcinschi.ArrayOps
-    //return a new Median with adjusted min and max values
-    def medianReductionFunction = (median: Median, elem: Int) => {
+    //return a new MinMax with adjusted min and max values
+    def medianReductionFunction = (median: MinMax, index: Int) => {
       var newMedian = median
-      if (less(a, elem, median.indexOfMinValue)) newMedian = median copy (indexOfMinValue = elem)
-      if (less(a, median.indexOfMaxValue, elem)) newMedian = median copy (indexOfMaxValue = elem)
+      if (less(a, index, median.indexOfMinValue)) newMedian = median copy (indexOfMinValue = index)
+      if (less(a, median.indexOfMaxValue, index)) newMedian = median copy (indexOfMaxValue = index)
       newMedian
     }
 
-    //return the first element from the sample array which is not in the median
-    def getMedianPivot(sampleArray: Array[Int], median: Median) = {
-      sampleArray diff Array(median.indexOfMaxValue, median.indexOfMinValue) head
-    }
+    val sampleArray: Array[Int] = a.subArrayOfSize(MEDIAN_OF, lo, hi)
+    val minMax: MinMax = (MinMax(sampleArray.head, sampleArray.head) /: sampleArray.tail) { case (acc, elem) => medianReductionFunction(acc, elem) }
+    var pivotIndex: Int = getMedian(sampleArray, minMax)
 
-    val sampleArray: Array[Int] = a.nIndicesSubarray(MEDIAN_OF, lo, hi)
-    val median: Median = (Median(sampleArray.head, sampleArray.head) /: sampleArray.tail) { case (acc, elem) => medianReductionFunction(acc, elem) }
-    var pivot = getMedianPivot(sampleArray, median)
-
-    exch(a, median.indexOfMinValue, lo)
-    if (lo == pivot) {
-      pivot = median.indexOfMinValue
+    exch(a, minMax.indexOfMinValue, lo)
+    if (lo == pivotIndex) {
+      pivotIndex = minMax.indexOfMinValue
     }
     /*
       if indexOfMaxValue was at lo, new item at indexOfMinValue
       has actually become the largest value from the sample array
       (despite what it's name implies)
      */
-    if (lo == median.indexOfMaxValue) {
-      exch(a, median.indexOfMinValue, hi)
+    if (lo == minMax.indexOfMaxValue) {
+      exch(a, minMax.indexOfMinValue, hi)
     } else {
-      exch(a, median.indexOfMaxValue, hi)
+      exch(a, minMax.indexOfMaxValue, hi)
     }
-    if (hi == pivot) {
-      pivot = median.indexOfMaxValue
+    if (hi == pivotIndex) {
+      pivotIndex = minMax.indexOfMaxValue
     }
-    //move pivot at position hi - 1
-    exch(a, pivot, hi - 1)
+    //move pivotIndex at position hi - 1
+    exch(a, pivotIndex, hi - 1)
     hi - 1
   }
 
@@ -79,5 +74,10 @@ trait MedianOfPartitioning[T] {
 }
 
 object MedianOfPartitioning {
-  case class Median (indexOfMinValue: Int, indexOfMaxValue: Int)
+  case class MinMax(indexOfMinValue: Int, indexOfMaxValue: Int)
+
+  //return the first element from the sample array which is not in the minMax
+  def getMedian(sampleArray: Array[Int], median: MinMax): Int = {
+    sampleArray diff Array(median.indexOfMaxValue, median.indexOfMinValue) head
+  }
 }

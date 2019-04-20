@@ -13,14 +13,14 @@ package object vgorcinschi {
 
     private val N = a.length - 1
 
-    def nIndicesSubarray(subArraySize: Int, from: Int = 0, to: Int = N): Array[Int] = {
-      validateIndicesSubArraySize(subArraySize, from, to)
+    def subArrayOfSize(subArraySize: Int, from: Int = 0, to: Int = N): Array[Int] = {
+      validateIndicesSubArray(subArraySize, from, to)
       //nextInt is exclusive, so need to add + 1
-      val sampleArrayOffset = from + Random.nextInt(to + 1 - (from + subArraySize))
-      sampleArrayOffset until sampleArrayOffset + subArraySize toArray
+      val offset = from + Random.nextInt(to + 1 - (from + subArraySize))
+      offset until offset + subArraySize toArray
     }
 
-    private def validateIndicesSubArraySize(subArraySize: Int, from: Int, to: Int): Unit = {
+    private def validateIndicesSubArray(subArraySize: Int, from: Int, to: Int): Unit = {
       //Note that the TARGETED_SEGMENT can potentially  be the entire length of array a
       val TARGETED_SEGMENT: Int = to - from
 
