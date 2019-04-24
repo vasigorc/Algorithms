@@ -24,11 +24,11 @@ package object vgorcinschi {
       //Note that the TARGETED_SEGMENT can potentially  be the entire length of array a
       val TARGETED_SEGMENT: Int = to - from
 
-      require(to <= N, () => s"""The required "to" bound ($to) is outside target array's available upper bound: $N""")
+      require(to <= N + 1, () => s"""The required "to" bound ($to) is outside target array's available upper bound: $N""")
       require(Seq(subArraySize, from, to) forall (_ >= 0), () => s"this method doesn't accept negative integers as " +
         s"arguments")
       require(to >= from, () => s""""from"($from) can not be bigger than "to"($to)""")
-      require(TARGETED_SEGMENT > subArraySize, () => s"Cannot generate a sub-array of requested size $subArraySize." +
+      require(TARGETED_SEGMENT >= subArraySize, () => s"Cannot generate a sub-array of requested size $subArraySize." +
         s"Targeted segment $TARGETED_SEGMENT is less.")
     }
   }

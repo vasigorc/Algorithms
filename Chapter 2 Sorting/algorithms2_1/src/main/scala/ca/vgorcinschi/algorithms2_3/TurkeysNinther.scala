@@ -27,13 +27,13 @@ class TurkeysNinther[T: ClassTag : Ordering] extends FastWayPartitioning[T] {
 
   override protected def pivotSwap(array: Array[T]): Unit = {
     val (lo, hi) = (0, array.length - 1)
-    val partitionSize = hi / 3
+    val partitionSize = array.length / 3
 
     def curriedSubArraySize: (Int, Int) => Array[Int] = (from, to) => array.subArrayOfSize(3, from, to)
 
     val firstTripple: Array[Int] = curriedSubArraySize(lo, partitionSize)
     val secondTripple: Array[Int] = curriedSubArraySize(partitionSize, 2 * partitionSize)
-    val lastTripple: Array[Int] = curriedSubArraySize(2 * partitionSize, hi)
+    val lastTripple: Array[Int] = curriedSubArraySize(2 * partitionSize, hi + 1)
 
     val medianIndex = medianOf(array,
       Array(medianOf(array, firstTripple),
