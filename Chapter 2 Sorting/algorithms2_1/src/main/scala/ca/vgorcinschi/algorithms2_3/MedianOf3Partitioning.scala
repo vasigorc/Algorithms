@@ -19,7 +19,8 @@ class MedianOf3Partitioning[T: ClassTag : Ordering] extends QuickSort[T] with Me
 
   override protected def sort(a: Array[T], lo: Int, hi: Int): Array[T] = {
     if ((hi - lo) > MEDIAN_OF) {
-      val j = partition(a, lo, hi, patchArrayAndGetPivot(a, lo, hi))
+      patchArray(a, lo, hi)
+      val j = partition(a, lo, hi)
       sort(a, lo, j - 1)
       sort(a, j + 1, hi)
     } else super.sort(a, lo, hi)
