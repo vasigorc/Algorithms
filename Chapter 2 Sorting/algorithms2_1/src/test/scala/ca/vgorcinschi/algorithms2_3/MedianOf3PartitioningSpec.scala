@@ -40,4 +40,9 @@ class MedianOf3PartitioningSpec extends BaseSpec {
     private val intsArray: Array[Int] = medianOf3Partitioning sort Array(1, 1, 100, 20, 52, 1, 5)
     intsArray shouldEqual intsArray.sorted
   }
+
+  it should "sort one error case array discovered with property based check" in new IntMedianBuilder {
+    private val intsArray: Array[Int] = medianOf3Partitioning sort Array(100, -4, 100, 0, 1, 19, 100, 10, 60, 16)
+    intsArray shouldEqual intsArray.sorted
+  }
 }
