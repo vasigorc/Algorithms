@@ -29,7 +29,7 @@ class SampleSort[T: ClassTag : Ordering](val sampleSize: Int = 30) extends Quick
     val pivot: Int = partition(sampleArray, 0, sampleArray.length - 1)
     val searchTree: SearchTree = buildTree(sampleArray, pivot)
     val nonPartitionedRemainder = a.slice(0, sampleArrayIndices.head) ++ a.slice(sampleArrayIndices.last, a.length - 1)
-    val finalTree = (searchTree /: nonPartitionedRemainder) ((tree, elem) => tree.nest(elem))
+    val finalTree = (searchTree /: nonPartitionedRemainder) (_ nest _)
     finalTree.arrays() flatMap sort
   }
 
@@ -46,7 +46,7 @@ class SampleSort[T: ClassTag : Ordering](val sampleSize: Int = 30) extends Quick
     def arrays(): Array[Array[T]] = Array(lt, median, gt)
   }
 
-  object SearchTree {
+  private object SearchTree {
     def buildTree(sample: Array[T], pivot: Int): SearchTree = {
       //do not look beyond pivot since sample is guaranteed to be partitioned
       val lastLessThenValueIndex: Int = sample.lastIndexWhere(_ < sample(pivot), pivot)
@@ -57,5 +57,5 @@ class SampleSort[T: ClassTag : Ordering](val sampleSize: Int = 30) extends Quick
     }
 
     def apply(lt: Array[T], median: Array[T], gt: Array[T]): SearchTree = new SearchTree(lt, median, gt)
-  }qZZ
+  }
 }
