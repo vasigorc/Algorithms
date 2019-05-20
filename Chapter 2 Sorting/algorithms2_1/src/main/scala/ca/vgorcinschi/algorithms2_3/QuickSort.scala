@@ -9,7 +9,8 @@ import QuickSort._
 class QuickSort[T: ClassTag : Ordering] extends BaseSort[T] {
 
   override def sort(a: Array[T]): Array[T] = {
-    if(Option {a}.isEmpty || a.length <= 1) return a
+    require(a != null, "Passed-in array should not be null")
+    if(a.length <= 1) return a
     sort(Random.shuffle(a.toList).toArray, 0, a.length - 1)
   }
 
