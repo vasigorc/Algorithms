@@ -2,6 +2,7 @@ package ca
 
 import scala.annotation.tailrec
 import scala.collection.immutable.Queue
+import scala.language.postfixOps
 import scala.reflect.ClassTag
 import scala.util.Random
 

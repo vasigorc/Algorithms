@@ -26,20 +26,22 @@ class SampleSort[T: ClassTag : Ordering](val sampleSize: Int = 30) extends Quick
     val sampleArrayIndices: Array[Int] = a.subArrayOfSize(sampleSize)
     val sampleArray: Array[T] = sampleArrayIndices map (a(_))
 
-    val pivot: Int = partition(sampleArray, 0, sampleArray.length - 1)
-    val searchTree: SearchTree = buildTree(sampleArray, pivot)
-    val nonPartitionedRemainder = a.slice(0, sampleArrayIndices.head) ++ a.slice(sampleArrayIndices.last, a.length - 1)
+    val sortedSampleArray: Array[T] = sort(sampleArray, 0, sampleArray.length - 1)
+    val searchTree: SearchTree = buildTree(sortedSampleArray, sampleSize / 2)
+    val nonPartitionedRemainder = a.slice(0, sampleArrayIndices.head) ++ a.slice(sampleArrayIndices.last + 1, a.length)
     val finalTree = (searchTree /: nonPartitionedRemainder) (_ nest _)
-    finalTree.arrays() flatMap sort
+
+    if (finalTree.lt.isEmpty && finalTree.gt.isEmpty) finalTree.median
+    else finalTree.arrays() flatMap sort
   }
 
-  private class SearchTree(lt: Array[T], median: Array[T], gt: Array[T]) {
-    //hear median is guaranteed to be non null and non empty based off the partitioning in sortHelper
+  case class SearchTree(lt: Array[T], median: Array[T], gt: Array[T]) {
+    //here median is guaranteed to be non null and non empty based off the partitioning in sortHelper
     private val pivot: T = median.head
 
     def nest(value: T): SearchTree = {
       if (value < pivot) SearchTree(lt :+ value, median, gt)
-      if (value > pivot) SearchTree(lt, median, gt :+ value)
+      else if (value > pivot) SearchTree(lt, median, gt :+ value)
       else SearchTree(lt, median :+ value, gt)
     }
 
@@ -49,13 +51,11 @@ class SampleSort[T: ClassTag : Ordering](val sampleSize: Int = 30) extends Quick
   private object SearchTree {
     def buildTree(sample: Array[T], pivot: Int): SearchTree = {
       //do not look beyond pivot since sample is guaranteed to be partitioned
-      val lastLessThenValueIndex: Int = sample.lastIndexWhere(_ < sample(pivot), pivot)
+      val lt = sample.takeWhile(_ < sample(pivot))
       //only look from pivot and up
-      val medianAndGt: (Array[T], Array[T]) = sample.slice(pivot, sample.length - 1) partition (_ == sample(pivot))
-      val lt = sample.slice(0, lastLessThenValueIndex)
+      val medianAndGt: (Array[T], Array[T]) = sample.slice(lt.length, sample.length) partition (_ == sample(pivot))
       SearchTree(lt, medianAndGt._1, medianAndGt._2)
     }
-
-    def apply(lt: Array[T], median: Array[T], gt: Array[T]): SearchTree = new SearchTree(lt, median, gt)
   }
+
 }
