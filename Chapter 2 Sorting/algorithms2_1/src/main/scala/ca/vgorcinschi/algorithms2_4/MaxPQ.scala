@@ -27,7 +27,7 @@ class MaxPQ[Key: ClassTag : Ordering](val capacity: Int = 10) {
     val maxValue = max()
     N -= 1
     exch(1, N)
-    pq = pq.init //avoid loitering
+    Array.copy(pq, 0, pq, 0, N) //avoid loitering (do not copy last element) - expensive! O(N)
     sink(1)
     maxValue
   }
