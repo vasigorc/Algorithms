@@ -11,14 +11,16 @@ class MaxPQ[Key: ClassTag : Ordering](val capacity: Int = 10) {
 
   import Ordered._
 
-  private var pq: Array[Key] = new Array(capacity)
+  private implicit def optToKey(maybeKey: Option[Key]): Key = maybeKey.get
+
+  private var pq: Array[Option[Key]] = new Array(capacity)
   //nr. of keys present in the queue
   private var N: Int = 0
 
   //insert a key into a Priority Queue
   def insert(v: Key): Unit = {
     N += 1
-    pq(N) = v
+    pq(N) = Some(v)
     swim(N)
   }
 
@@ -27,7 +29,7 @@ class MaxPQ[Key: ClassTag : Ordering](val capacity: Int = 10) {
     val maxValue = max()
     N -= 1
     exch(1, N)
-    Array.copy(pq, 0, pq, 0, N) //avoid loitering (do not copy last element) - expensive! O(N)
+    pq(N) = None //avoid loitering
     sink(1)
     maxValue
   }
