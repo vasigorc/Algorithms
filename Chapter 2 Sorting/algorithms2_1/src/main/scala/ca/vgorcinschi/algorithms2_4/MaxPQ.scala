@@ -61,6 +61,7 @@ class MaxPQ[Key: ClassTag : Ordering](val capacity: Int = 10) {
           x + 1
         } else x
         if (!less(k, j)) return
+        exch(k, j)
         innerLoop(j)
       case _ =>
     }
