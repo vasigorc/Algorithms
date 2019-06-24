@@ -13,9 +13,9 @@ class MaxPQ[Key: ClassTag : Ordering](val capacity: Int = 10) {
 
   private implicit def optToKey(maybeKey: Option[Key]): Key = maybeKey.get
 
-  private var pq: Array[Option[Key]] = new Array(capacity)
+  protected var pq: Array[Option[Key]] = Array.fill(capacity)(None)
   //nr. of keys present in the queue
-  private var N: Int = 0
+  protected var N: Int = 0
 
   //insert a key into a Priority Queue
   def insert(v: Key): Unit = {
@@ -27,9 +27,9 @@ class MaxPQ[Key: ClassTag : Ordering](val capacity: Int = 10) {
   //return and remove the largest key
   def delMax(): Key = {
     val maxValue = max()
-    N -= 1
     exch(1, N)
-    pq(N) = None //avoid loitering
+    N -= 1
+    pq(N + 1) = None //avoid loitering
     sink(1)
     maxValue
   }
