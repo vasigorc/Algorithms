@@ -18,15 +18,20 @@ class ResizableMaxPQSpec extends BaseSpec {
 
   behavior of "ResizableMaxPQSpec"
 
-  it should "insert" in new IntPQBuilder {
+  it should "resizable on insert" in new IntPQBuilder {
     add(100)
     instance.size() shouldEqual(100)
   }
 
-  it should "delMax" in new IntPQBuilder {
+  it should "resizable on insert and then delMax" in new IntPQBuilder {
     add(100)
     remove(100)
     instance.size() shouldEqual(0)
   }
 
+  "delMax" should "always dequeue the largest value" in new IntPQBuilder {
+    add(100)
+    private val ints: Seq[Int] = remove(100)
+    ints.reverse shouldBe sorted
+  }
 }
