@@ -8,7 +8,9 @@ import scala.reflect.ClassTag
   * two to traverse down the tree and one to traverse up the tree. Your implementation should guarantee
   * logarithmic running time per operation, even if no maximum priority-queue size is known ahead time.
   */
-class PQExplicitLinks[Key: ClassTag : Ordering] {
+class PQExplicitLinks[Key](implicit tag: ClassTag[Key],
+                           override protected val cmp: Ordering[_ >: Key])
+  extends MaxPQ[Key] {
 
   private case class Node(left: Option[Key], right: Option[Key], parent: Option[Key])
 
@@ -16,4 +18,13 @@ class PQExplicitLinks[Key: ClassTag : Ordering] {
     def empty(): Node = Node(None, None, None)
   }
 
+  override def insert(v: Key): Unit = ???
+
+  override def max(): Key = ???
+
+  override def delMax(): Key = ???
+
+  override def isEmpty(): Boolean = ???
+
+  override def size(): Int = ???
 }
