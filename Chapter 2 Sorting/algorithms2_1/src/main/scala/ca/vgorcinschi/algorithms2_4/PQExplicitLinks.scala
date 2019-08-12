@@ -12,11 +12,9 @@ class PQExplicitLinks[Key](implicit tag: ClassTag[Key],
                            override protected val cmp: Ordering[_ >: Key])
   extends MaxPQ[Key] {
 
-  private case class Node(left: Option[Key], right: Option[Key], parent: Option[Key])
-
-  private object Node {
-    def empty(): Node = Node(None, None, None)
-  }
+  private case class Node(left: Option[Key] = None,
+                          right: Option[Key] = None,
+                          parent: Option[Key] = None)
 
   override def insert(v: Key): Unit = ???
 
