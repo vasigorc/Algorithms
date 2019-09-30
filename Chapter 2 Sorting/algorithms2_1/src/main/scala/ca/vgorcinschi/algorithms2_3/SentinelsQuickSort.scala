@@ -1,7 +1,5 @@
 package ca.vgorcinschi.algorithms2_3
 
-import ca.vgorcinschi.algorithms2_3.QuickSort._
-
 import scala.reflect.ClassTag
 import scala.util.Random
 
@@ -30,7 +28,7 @@ class SentinelsQuickSort[T: ClassTag : Ordering] extends QuickSort[T] {
     val pivot = a(lo) //partitioning item
 
     //removed bound checks
-    def scan(index: Int, direction: Scan): Int = direction match {
+    def scan(index: Int, direction: Direction): Int = direction match {
       case Left => if (less(a(index), pivot)) scan(index + 1, direction) else index
       case Right => if (less(pivot, a(index))) scan(index - 1, direction) else index
     }
