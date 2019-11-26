@@ -1,6 +1,6 @@
 package ca.vgorcinschi.algorithms2_4
 
-import ca.vgorcinschi.algorithms2_3.Direction
+import ca.vgorcinschi.algorithms2_3.{Direction, LeftDirection, RightDirection}
 
 import scala.language.postfixOps
 
@@ -17,6 +17,7 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
   // also is the maxNode
   private var root: Option[Node] = None
   private var last: Option[Node] = None
+
   case class GreaterSmallerNodes(greater: Node, smaller: Node)
 
   override def insert(value: Key): Unit = {
@@ -88,14 +89,13 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
   }
 
   private def rearrangePq(): Unit = {
-                                  (root, last) match {
+    (root, last) match {
       case (Some(rootNode), Some(lastNode)) =>
         root = Some(rootNode copy (value = lastNode.value))
-        // remove the last element from the tree
-        root = pqInit()
+        // remove the last element from the tree (pqInit())
         // at this point heap order is violated
         // and order needs to be restored
-        val leafNodeOfRestoredTree = sink(root.get)
+        root = pqInit().map(sink)
       case (_, None) => root = None
     }
   }
@@ -111,20 +111,27 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     directionedNode map (nextNode => sinkHelper(sinkNode, nextNode._1, nextNode._2)) getOrElse sinkNode
   }
 
-  // TODO use greater child method on Node cc level
-  // nextNode is the child of acc?
   private def sinkHelper(nextNode: Node, acc: Node, nextNodeDirection: Direction): Node = {
+    // TODO calling sink (l. 120) could be redundant, as heaps should be balanced trees, i.e
+    // a single branch could not have children
+    // further improvement could be to enforce it through type system i.e. Tree, Leaf, Empty instead of Node
+    def treatLeafCase(child: Node, childNodeDirection: Direction) = {
+      if (cmp.lt(nextNode.value, child.value)) {
+        val GreaterSmallerNodes(greater, smaller) = swapNodes(child, nextNode)
+        acc.addChild(
+          greater.addChild(sink(smaller), childNodeDirection), nextNodeDirection
+        )
+      } else acc
+    }
+
     nextNode match {
       // passed-in nextNode is a leaf => return accumulator
       case Node(_, None, None, _) => acc
-      // only the right node is a leaf
-      case Node(_, None, Some(rightChild), _) =>
-        if (cmp.lt(nextNode.value, rightChild.value)) {
-          val GreaterSmallerNodes(greater, smaller) = swapNodes(rightChild, nextNode)
-          acc.addChild(greater.copy (right = Some(sink(smaller))), nextNodeDirection)
-        } else acc
+      case Node(_, None, Some(rightChild), _) => treatLeafCase(rightChild, RightDirection)
+      case Node(_, Some(leftChild), None, _) => treatLeafCase(leftChild, LeftDirection)
     }
   }
+
   /**
     * Method that swaps the values of the passed-in nodes
     *
@@ -139,16 +146,16 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
       // greaterNode is left child
       case Node(_, Some(x), _, _) if x == greaterNode =>
         val swappedNode = smallerNode.copy(
-        value = greaterValue,
-        left = Some(greaterNode copy (value = smallerNode.value))
-    )
+          value = greaterValue,
+          left = Some(greaterNode copy (value = smallerNode.value))
+        )
         GreaterSmallerNodes(swappedNode, swappedNode.left.orNull)
       // greaterNode is right child
       case Node(_, _, Some(x), _) if x == greaterNode =>
         val swappedNode = smallerNode.copy(
-        value = greaterValue,
-        right = Some(greaterNode copy (value = smallerNode.value))
-    )
+          value = greaterValue,
+          right = Some(greaterNode copy (value = smallerNode.value))
+        )
         GreaterSmallerNodes(swappedNode, swappedNode.right.orNull)
     }
   }
