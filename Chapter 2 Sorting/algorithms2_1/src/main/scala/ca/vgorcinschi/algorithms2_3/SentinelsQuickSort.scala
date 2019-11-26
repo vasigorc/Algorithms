@@ -29,14 +29,14 @@ class SentinelsQuickSort[T: ClassTag : Ordering] extends QuickSort[T] {
 
     //removed bound checks
     def scan(index: Int, direction: Direction): Int = direction match {
-      case Left => if (less(a(index), pivot)) scan(index + 1, direction) else index
-      case Right => if (less(pivot, a(index))) scan(index - 1, direction) else index
+      case LeftDirection => if (less(a(index), pivot)) scan(index + 1, direction) else index
+      case RightDirection => if (less(pivot, a(index))) scan(index - 1, direction) else index
     }
 
     while (i < j) {
       //scan right, scan left, check for scan complete, and exchange
-      i = scan(i + 1, Left)
-      j = scan(j - 1, Right)
+      i = scan(i + 1, LeftDirection)
+      j = scan(j - 1, RightDirection)
       if (i < j) exch(a, i, j)
     }
 

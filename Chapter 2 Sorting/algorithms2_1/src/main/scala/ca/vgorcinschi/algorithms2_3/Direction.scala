@@ -4,13 +4,13 @@ import scala.util.Random
 
 sealed trait Direction
 
-object Left extends Direction
+object LeftDirection extends Direction
 
-object Right extends Direction
+object RightDirection extends Direction
 
 object Direction {
   def randomDirection: Direction = {
-    if (Random.nextDouble() < 0.5) return Left
-    Right
+    if (Random.nextDouble() < 0.5) return LeftDirection
+    RightDirection
   }
 }
