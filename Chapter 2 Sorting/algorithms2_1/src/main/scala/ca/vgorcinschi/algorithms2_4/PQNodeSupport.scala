@@ -12,9 +12,9 @@ trait PQNodeSupport[Key] {
 
     def size(): Int = {
       val childrenSize: Int = (left, right) match {
-        case (Some(_), Some(_)) => left.size + right.size
-        case (Some(_), None) => left.size
-        case (None, Some(_)) => right.size
+        case (Some(ln), Some(rn)) => ln.size + rn.size
+        case (Some(ln), None) => ln.size
+        case (None, Some(rn)) => rn.size
         case _ => 0
       }
       1 + childrenSize
