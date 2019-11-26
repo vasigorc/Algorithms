@@ -44,7 +44,7 @@ trait PQMetricsCollector[Key] extends PQNodeSupport[Key] {
   var swimCounter: Int = 0
   var sinkCounter: Int = 0
 
-  abstract override def sink(node: Node): Unit = {
+  abstract override def sink(node: Node): Node = {
     sinkCounter += 1
     super.sink(node)
   }

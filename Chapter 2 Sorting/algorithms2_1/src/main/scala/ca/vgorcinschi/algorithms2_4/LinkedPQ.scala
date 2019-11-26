@@ -1,5 +1,7 @@
 package ca.vgorcinschi.algorithms2_4
 
+import ca.vgorcinschi.algorithms2_3.Direction
+
 import scala.language.postfixOps
 
 
@@ -15,6 +17,7 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
   // also is the maxNode
   private var root: Option[Node] = None
   private var last: Option[Node] = None
+  case class GreaterSmallerNodes(greater: Node, smaller: Node)
 
   override def insert(value: Key): Unit = {
     N += 1
@@ -24,10 +27,10 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
 
   /**
     * The purpose of this helper method is to recursively look
-    * for a leaf in the shortest path while maintaining the existing
+    * for a leaf on the shortest path while maintaining the existing
     * tree structure
     *
-    * @param maybeNextNode - this should be existing greaterNode
+    * @param maybeNextNode - next node on the path
     * @param value
     * @return current tree with new greaterNode appended as per described above
     */
@@ -72,19 +75,6 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     // decrease the size
     N -= 1
 
-    def rearrangePq(): Unit = {
-      (root, last) match {
-        case (Some(rootNode), Some(lastNode)) =>
-          root = Some(rootNode copy (value = lastNode.value))
-          // remove the last element from the tree
-          root = pqInit()
-          // at this point heap order is violated
-          // and order needs to be restored
-          root = Some(sink(rootNode))
-        case (_, None) => root = None
-      }
-    }
-
     N match {
       case 0 =>
         root = None
@@ -97,39 +87,69 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     maxValue
   }
 
-
-  /**
-    * Top-down reheapify (sink) implementation
-    *
-    * @param topNode - violates heap order
-    */
-  override def sink(topNode: Node): Node = {
-
-    ???
+  private def rearrangePq(): Unit = {
+                                  (root, last) match {
+      case (Some(rootNode), Some(lastNode)) =>
+        root = Some(rootNode copy (value = lastNode.value))
+        // remove the last element from the tree
+        root = pqInit()
+        // at this point heap order is violated
+        // and order needs to be restored
+        val leafNodeOfRestoredTree = sink(root.get)
+      case (_, None) => root = None
+    }
   }
 
   /**
+    * Top-down re-heapify (sink) implementation
+    *
+    * @param sinkNode
+    */
+  override def sink(sinkNode: Node): Node = {
+    val directionedNode = sinkNode.greaterChild()
+    // the passed-in `sinkNode` is typically the root which acts as an accumulator
+    directionedNode map (nextNode => sinkHelper(sinkNode, nextNode._1, nextNode._2)) getOrElse sinkNode
+  }
+
+  // TODO use greater child method on Node cc level
+  // nextNode is the child of acc?
+  private def sinkHelper(nextNode: Node, acc: Node, nextNodeDirection: Direction): Node = {
+    nextNode match {
+      // passed-in nextNode is a leaf => return accumulator
+      case Node(_, None, None, _) => acc
+      // only the right node is a leaf
+      case Node(_, None, Some(rightChild), _) =>
+        if (cmp.lt(nextNode.value, rightChild.value)) {
+          val GreaterSmallerNodes(greater, smaller) = swapNodes(rightChild, nextNode)
+          acc.addChild(greater.copy (right = Some(sink(smaller))), nextNodeDirection)
+        } else acc
+    }
+  }
+  /**
     * Method that swaps the values of the passed-in nodes
     *
-    * @param greaterNode - bigger greaterNode in child position
+    * @param greaterNode
     * @param smallerNode
-    * @return ex-smallerNode with swapped to greater value
+    * @return both pair of the swap nodes
     */
-  def exchNodes(greaterNode: Node, smallerNode: Node): Node = {
+  def swapNodes(greaterNode: Node, smallerNode: Node): GreaterSmallerNodes = {
     val greaterValue = greaterNode.value
+
     smallerNode match {
       // greaterNode is left child
       case Node(_, Some(x), _, _) if x == greaterNode =>
-        smallerNode copy(
-          value = greaterValue,
-          left = Some(greaterNode copy (value = smallerNode.value))
-        )
+        val swappedNode = smallerNode.copy(
+        value = greaterValue,
+        left = Some(greaterNode copy (value = smallerNode.value))
+    )
+        GreaterSmallerNodes(swappedNode, swappedNode.left.orNull)
       // greaterNode is right child
       case Node(_, _, Some(x), _) if x == greaterNode =>
-        smallerNode copy(
-          value = greaterValue,
-          right = Some(greaterNode copy (value = smallerNode.value))
-        )
+        val swappedNode = smallerNode.copy(
+        value = greaterValue,
+        right = Some(greaterNode copy (value = smallerNode.value))
+    )
+        GreaterSmallerNodes(swappedNode, swappedNode.right.orNull)
     }
   }
 
@@ -143,7 +163,7 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
   override def swim(node: Node): Node = {
     node.parent match {
       case Some(smallerParentNode) if cmp.gt(node.value, smallerParentNode.value) =>
-        val reorderedNode: Node = exchNodes(node, smallerParentNode)
+        val reorderedNode: Node = swapNodes(node, smallerParentNode).greater
         swim(reorderedNode)
       case Some(largerParentNode) => swim(largerParentNode)
       case None => node
@@ -171,6 +191,8 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
 
     // last parent node in the stream should be the new root
     // if the stream is empty return None
+    // TODO: test that the pf really tries to get the last parent (should be the
+    // TODO:  one that violates heap order)
     parentNodeStreams.applyOrElse(parentNodeStreams.size - 1, (_: Int) => None)
   }
 }
