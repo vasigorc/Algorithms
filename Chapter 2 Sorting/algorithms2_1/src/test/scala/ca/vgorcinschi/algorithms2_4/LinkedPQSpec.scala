@@ -39,18 +39,42 @@ class LinkedPQSpec extends BaseSpec {
   }
 }
 
-trait PQMetricsCollector[Key] extends PQNodeSupport[Key] {
+/**
+  * Attention! This hook is not designed to be thread-safe if the same
+  * [[LinkedPQ]] object is accessed by multiple threads
+  * @tparam Key
+  */
+sealed trait PQMetricsCollector[Key] extends LinkedPQ[Key] {
 
   var swimCounter: Int = 0
   var sinkCounter: Int = 0
 
-  abstract override def sink(node: Node): Node = {
-    sinkCounter += 1
-    super.sink(node)
+  // insert part
+  override def insert(value: Key): Unit = {
+    // reset counter on every call
+    swimCounter = 0
+    super.insert(value)
   }
 
-  abstract override def swim(node: Node): Node = {
+  override protected def insertHelper(maybeNextNode: Option[Node], value: Key): Node = {
+    swimCounter += 1
+    super.insertHelper(maybeNextNode, value)
+  }
+
+  override def swim(node: Node): Node = {
     swimCounter += 1
     super.swim(node)
+  }
+
+  // delMax part
+  override def delMax(): Key = {
+    // reset counter on every call
+    sinkCounter = 0
+    super.delMax()
+  }
+
+  override def sink(node: Node): Node = {
+    sinkCounter += 1
+    super.sink(node)
   }
 }

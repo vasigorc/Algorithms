@@ -1,6 +1,7 @@
 package ca.vgorcinschi.algorithms2_4
 
 import ca.vgorcinschi.algorithms2_3.{Direction, LeftDirection, RightDirection}
+import com.google.common.annotations.VisibleForTesting
 
 import scala.language.postfixOps
 
@@ -35,7 +36,8 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     * @param value
     * @return current tree with new greaterNode appended as per described above
     */
-  private def insertHelper(maybeNextNode: Option[Node], value: Key): Node = maybeNextNode match {
+  @VisibleForTesting
+  protected def insertHelper(maybeNextNode: Option[Node], value: Key): Node = maybeNextNode match {
     case None =>
       last = Some(Node(value = value))
       last.orNull
@@ -95,7 +97,7 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
         // remove the last element from the tree (pqInit())
         // at this point heap order is violated
         // and order needs to be restored
-        root = pqInit().map(sink)
+        root = pqInit() map sink
       case (_, None) => root = None
     }
   }
