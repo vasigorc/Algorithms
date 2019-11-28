@@ -22,7 +22,7 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
 
   override def insert(value: Key): Unit = {
     N += 1
-    root = Some(insert(root, value))
+    last = Some(insertHelper(root, value))
     root = Some(swim(last.get))
   }
 
@@ -35,7 +35,7 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     * @param value
     * @return current tree with new greaterNode appended as per described above
     */
-  private def insert(maybeNextNode: Option[Node], value: Key): Node = maybeNextNode match {
+  private def insertHelper(maybeNextNode: Option[Node], value: Key): Node = maybeNextNode match {
     case None =>
       last = Some(Node(value = value))
       last.orNull
@@ -45,10 +45,10 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
       val rightSize = nextNode.right.map(_.size()).getOrElse(0)
 
       val result = if (leftSize <= rightSize) {
-        val insertedNode = insert(nextNode.left, value)
+        val insertedNode = insertHelper(nextNode.left, value)
         nextNode.copy(left = Some(insertedNode.copy(parent = Some(nextNode))))
       } else {
-        val insertedNode = insert(nextNode.right, value)
+        val insertedNode = insertHelper(nextNode.right, value)
         nextNode.copy(right = Some(insertedNode.copy(parent = Some(nextNode))))
       }
       result
