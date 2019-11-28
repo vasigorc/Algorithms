@@ -114,7 +114,6 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
   }
 
   private def sinkHelper(nextNode: Node, acc: Node, nextNodeDirection: Direction): Node = {
-    // a single branch could not have children
     // further improvement could be to enforce it through type system i.e. Tree, Branch, Leaf, Empty instead of Node
     def branchCase(child: Node, childNodeDirection: Direction) = {
       if (cmp.lt(nextNode.value, child.value)) {
