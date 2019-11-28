@@ -83,12 +83,12 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
       case 1 =>
         root = last
         last = None
-      case _ => rearrangePq()
+      case _ => rearrangePqAfterDelete()
     }
     maxValue
   }
 
-  private def rearrangePq(): Unit = {
+  private def rearrangePqAfterDelete(): Unit = {
     (root, last) match {
       case (Some(rootNode), Some(lastNode)) =>
         root = Some(rootNode copy (value = lastNode.value))
