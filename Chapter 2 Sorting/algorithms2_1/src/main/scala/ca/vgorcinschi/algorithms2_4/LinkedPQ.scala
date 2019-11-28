@@ -109,7 +109,6 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     */
   override def sink(sinkNode: Node): Node = {
     val directionedNode = sinkNode.greaterChild()
-    // the passed-in `sinkNode` is typically the root which acts as an accumulator
     directionedNode map (nextNode => sinkHelper(sinkNode, nextNode._1, nextNode._2)) getOrElse sinkNode
   }
 
@@ -117,7 +116,7 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     // further improvement could be to enforce it through type system i.e. Tree, Branch, Leaf, Empty instead of Node
     def branchCase(child: Node, childNodeDirection: Direction) = {
       if (cmp.lt(nextNode.value, child.value)) {
-        val GreaterSmallerNodes(greater, smaller) = swapNodes(child, nextNode)
+        val GreaterSmallerNodes(greater, smaller) = swapNodeValues(child, nextNode)
         acc.addChild(
           greater.addChild(sink(smaller), childNodeDirection), nextNodeDirection
         )
@@ -140,7 +139,7 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     * @param smallerNode
     * @return both pair of the swap nodes
     */
-  def swapNodes(greaterNode: Node, smallerNode: Node): GreaterSmallerNodes = {
+  def swapNodeValues(greaterNode: Node, smallerNode: Node): GreaterSmallerNodes = {
     val greaterValue = greaterNode.value
 
     smallerNode match {
@@ -171,7 +170,7 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
   override def swim(node: Node): Node = {
     node.parent match {
       case Some(smallerParentNode) if cmp.gt(node.value, smallerParentNode.value) =>
-        val reorderedNode: Node = swapNodes(node, smallerParentNode).greater
+        val reorderedNode: Node = swapNodeValues(node, smallerParentNode).greater
         swim(reorderedNode)
       case Some(largerParentNode) => swim(largerParentNode)
       case None => node
