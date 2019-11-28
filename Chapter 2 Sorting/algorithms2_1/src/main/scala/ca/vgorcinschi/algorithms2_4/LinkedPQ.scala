@@ -163,8 +163,6 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
   /**
     * It is a necessity to continue swimming up even in the
     * event of no swap - in order to update the [[root]]
-    * updated
-    *
     * @param node
     */
   override def swim(node: Node): Node = {
@@ -177,11 +175,6 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     }
   }
 
-  /**
-    * while loop stream equivalent
-    *
-    * @return copy of this PQ without last element
-    */
   private def pqInit(): Option[Node] = {
     import ca.vgorcinschi._
 
