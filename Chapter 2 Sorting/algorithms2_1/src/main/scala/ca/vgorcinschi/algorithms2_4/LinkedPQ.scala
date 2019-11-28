@@ -114,10 +114,9 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
   }
 
   private def sinkHelper(nextNode: Node, acc: Node, nextNodeDirection: Direction): Node = {
-    // TODO calling sink (l. 120) could be redundant, as heaps should be balanced trees, i.e
     // a single branch could not have children
     // further improvement could be to enforce it through type system i.e. Tree, Branch, Leaf, Empty instead of Node
-    def treatLeafCase(child: Node, childNodeDirection: Direction) = {
+    def branchCase(child: Node, childNodeDirection: Direction) = {
       if (cmp.lt(nextNode.value, child.value)) {
         val GreaterSmallerNodes(greater, smaller) = swapNodes(child, nextNode)
         acc.addChild(
@@ -129,9 +128,9 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     nextNode match {
       // passed-in nextNode is a leaf => return accumulator
       case Node(_, None, None, _) => acc
-      case Node(_, None, Some(rightChild), _) => treatLeafCase(rightChild, RightDirection)
-      case Node(_, Some(leftChild), None, _) => treatLeafCase(leftChild, LeftDirection)
-      case _ => nextNode.greaterChild().map(child => treatLeafCase(child._1, child._2)).orNull
+      case Node(_, None, Some(rightChild), _) => branchCase(rightChild, RightDirection)
+      case Node(_, Some(leftChild), None, _) => branchCase(leftChild, LeftDirection)
+      case _ => nextNode.greaterChild().map(child => branchCase(child._1, child._2)).orNull
     }
   }
 
