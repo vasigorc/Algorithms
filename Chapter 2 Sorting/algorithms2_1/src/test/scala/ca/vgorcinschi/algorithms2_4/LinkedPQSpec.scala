@@ -26,7 +26,7 @@ class LinkedPQSpec extends BaseSpec {
 
   behavior of "insert"
 
-  ignore should "increase size by one" in new IntPQBuilder {
+  it should "increase size by one" in new IntPQBuilder {
     instance.insert(42)
     instance.size() shouldEqual 1
   }
@@ -35,7 +35,7 @@ class LinkedPQSpec extends BaseSpec {
     1 to 100 foreach { _ =>
       instance.insert(Random.nextInt(1000))
     }
-    math.log(instance.size()) shouldEqual instance.swimCounter
+    instance.swimCounter should be <= math.log(instance.size()).toInt
   }
 }
 
@@ -44,7 +44,7 @@ class LinkedPQSpec extends BaseSpec {
   * [[LinkedPQ]] object is accessed by multiple threads
   * @tparam Key
   */
-sealed trait PQMetricsCollector[Key] extends LinkedPQ[Key] {
+trait PQMetricsCollector[Key] extends LinkedPQ[Key] {
 
   var swimCounter: Int = 0
   var sinkCounter: Int = 0

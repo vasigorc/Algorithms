@@ -5,7 +5,6 @@ import com.google.common.annotations.VisibleForTesting
 
 import scala.language.postfixOps
 
-
 /**
   * Ex 2.4.24 Priority queue with explicit links. Implement a priority queue using a heap-ordered binary
   * tree, but use a triply linked structure instead of an array. You will need three links per greaterNode:
@@ -68,7 +67,6 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     * @return
     */
   override def delMax(): Key = {
-    // guard pattern
     if (root.isEmpty) {
       throw new NullPointerException
     }
