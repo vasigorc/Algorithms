@@ -12,7 +12,18 @@ class LinkedPQSpec extends BaseSpec {
 
   behavior of "delMax"
 
-  it should "return the highest value and decrease size by one"
+  it should "return the highest value" in new IntPQBuilder {
+    // generate a list of random inputs
+    val randomInput: List[Int] = (1 to 100).map(_ => Random.nextInt(1000)).toList
+
+    // populate pq
+    randomInput.foreach(instance.insert)
+
+    // check that both highest value is removed every time and that the size is decreased by one
+    randomInput.sorted.reverse.foreach(n => n shouldEqual instance.delMax())
+  }
+
+  it should "decrease size by one" in new IntPQBuilder {}
 
   it should "throw IllegalArgumentException when PQ is empty"
 
@@ -35,7 +46,7 @@ class LinkedPQSpec extends BaseSpec {
     1 to 100 foreach { _ =>
       instance.insert(Random.nextInt(1000))
     }
-    instance.swimCounter should be <= math.log(instance.size()).toInt
+    instance.swimCounter should be <= 2 * math.log(instance.size()).toInt
   }
 }
 
@@ -56,9 +67,9 @@ trait PQMetricsCollector[Key] extends LinkedPQ[Key] {
     super.insert(value)
   }
 
-  override protected def insertHelper(maybeNextNode: Option[Node], value: Key): Node = {
+  override protected def insertHelper(maybeNextNode: Option[Node], maybeParentNode: Option[Node], value: Key): Node = {
     swimCounter += 1
-    super.insertHelper(maybeNextNode, value)
+    super.insertHelper(maybeNextNode, maybeParentNode, value)
   }
 
   override def swim(node: Node): Node = {
