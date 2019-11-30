@@ -46,10 +46,10 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
       val rightSize = nextNode.right.map(_.size()).getOrElse(0)
 
       val result = if (leftSize <= rightSize) {
-        val insertedNode = insertHelper(nextNode.left, Some(nextNode), value)
+        val insertedNode = insertHelper(nextNode.left, maybeNextNode, value)
         nextNode.copy(left = Some(insertedNode.copy(parent = Some(nextNode))))
       } else {
-        val insertedNode = insertHelper(nextNode.right, Some(nextNode), value)
+        val insertedNode = insertHelper(nextNode.right, maybeNextNode, value)
         nextNode.copy(right = Some(insertedNode.copy(parent = Some(nextNode))))
       }
       result
