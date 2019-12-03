@@ -2,7 +2,12 @@ package ca.vgorcinschi.algorithms2_4
 
 import ca.vgorcinschi.algorithms2_3.{Direction, LeftDirection, RightDirection}
 
+import scala.language.higherKinds
+
 trait PQNodeSupport[Key] {
+
+  // classes that implement PQNodeSupport must also extend MaxPQ
+  self: MaxPQ[Key] =>
 
   implicit protected val cmp: Ordering[_ >: Key]
 
@@ -34,6 +39,8 @@ trait PQNodeSupport[Key] {
       case LeftDirection => this.copy(left = Some(childNode))
       case RightDirection => this.copy(right = Some(childNode))
     }
+
+    def lift[U[_]](f: Node => U[Node]): U[Node] = f(this)
   }
 
   def swim(s: Node): Node

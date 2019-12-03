@@ -22,7 +22,7 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
 
   override def insert(value: Key): Unit = {
     N += 1
-    root = Some(insertHelper(root, None, value))
+    root = Some(insertHelper(root, n => Some(n.copy(parent = root)), value))
     root = Some(swim(last.get))
   }
 
@@ -36,9 +36,11 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     * @return current tree with new greaterNode appended as per described above
     */
   @VisibleForTesting
-  protected def insertHelper(maybeNextNode: Option[Node], maybeParentNode: Option[Node], value: Key): Node = maybeNextNode match {
+  protected def insertHelper(maybeNextNode: Option[Node], transformChild: Node => Option[Node],
+                             value: Key): Node = maybeNextNode match {
     case None =>
-      last = Some(Node(value = value, parent = maybeParentNode))
+      val bareNode = transformChild(Node(value = value))
+      last = bareNode
       last.orNull
     case Some(nextNode) =>
       // compare left and right sizes to see where to go
@@ -46,11 +48,15 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
       val rightSize = nextNode.right.map(_.size()).getOrElse(0)
 
       val result = if (leftSize <= rightSize) {
-        val insertedNode = insertHelper(nextNode.left, maybeNextNode, value)
-        nextNode.copy(left = Some(insertedNode.copy(parent = Some(nextNode))))
+        val insertedNode = insertHelper(nextNode.left, node =>
+            node.copy(parent = nextNode.addChild(node, LeftDirection).lift(Some(_))).lift(Some(_)),
+          value)
+        nextNode.copy(left = Some(insertedNode))
       } else {
-        val insertedNode = insertHelper(nextNode.right, maybeNextNode, value)
-        nextNode.copy(right = Some(insertedNode.copy(parent = Some(nextNode))))
+        val insertedNode = insertHelper(nextNode.right, node =>
+          node.copy(parent = nextNode.addChild(node, RightDirection).lift(Some(_))).lift(Some(_)),
+          value)
+        nextNode.copy(right = Some(insertedNode))
       }
       result
   }
@@ -106,8 +112,8 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     * @param sinkNode
     */
   override def sink(sinkNode: Node): Node = {
-    val directionedNode = sinkNode.greaterChild()
-    directionedNode map (nextNode => sinkHelper(sinkNode, nextNode._1, nextNode._2)) getOrElse sinkNode
+    val directedNode: Option[(Node, Direction)] = sinkNode.greaterChild()
+    directedNode map (nextNode => sinkHelper(sinkNode, nextNode._1, nextNode._2)) getOrElse sinkNode
   }
 
   private def sinkHelper(nextNode: Node, acc: Node, nextNodeDirection: Direction): Node = {
