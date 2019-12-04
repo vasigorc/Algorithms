@@ -67,7 +67,7 @@ trait PQMetricsCollector[Key] extends LinkedPQ[Key] {
     super.insert(value)
   }
 
-  override protected def insertHelper(maybeNextNode: Option[Node], transformChild: Node => Option[Node], value: Key): Node = {
+  override protected def insertHelper(maybeNextNode: Option[Node], transformChild: Node => Node, value: Key): Node = {
     swimCounter += 1
     super.insertHelper(maybeNextNode, transformChild, value)
   }

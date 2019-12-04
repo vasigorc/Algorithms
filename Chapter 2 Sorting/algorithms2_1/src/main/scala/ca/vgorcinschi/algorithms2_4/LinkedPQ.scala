@@ -7,7 +7,7 @@ import scala.language.postfixOps
 
 /**
   * Ex 2.4.24 Priority queue with explicit links. Implement a priority queue using a heap-ordered binary
-  * tree, but use a triply linked structure instead of an array. You will need three links per greaterNode:
+  * tree, but use a triply linked structure instead of an array. You will need three links per childNode:
   * two to traverse down the tree and one to traverse up the tree. Your implementation should guarantee
   * logarithmic running time per operation, even if no maximum priority-queue size is known ahead time.
   */
@@ -22,7 +22,7 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
 
   override def insert(value: Key): Unit = {
     N += 1
-    root = Some(insertHelper(root, n => Some(n.copy(parent = root)), value))
+    root = Some(insertHelper(root, n => n.copy(parent = root), value))
     root = Some(swim(last.get))
   }
 
@@ -33,14 +33,14 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     *
     * @param maybeNextNode - next node on the path
     * @param value
-    * @return current tree with new greaterNode appended as per described above
+    * @return current tree with new childNode appended as per described above
     */
   @VisibleForTesting
-  protected def insertHelper(maybeNextNode: Option[Node], transformChild: Node => Option[Node],
+  protected def insertHelper(maybeNextNode: Option[Node], transformChild: Node => Node,
                              value: Key): Node = maybeNextNode match {
     case None =>
       val bareNode = transformChild(Node(value = value))
-      last = bareNode
+      last = Some(bareNode)
       last.orNull
     case Some(nextNode) =>
       // compare left and right sizes to see where to go
@@ -49,13 +49,11 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
 
       val result = if (leftSize <= rightSize) {
         val insertedNode = insertHelper(nextNode.left, node =>
-            node.copy(parent = nextNode.addChild(node, LeftDirection).lift(Some(_))).lift(Some(_)),
-          value)
+            node.copy(parent = nextNode.addChild(node, LeftDirection).lift(Some(_))), value)
         nextNode.copy(left = Some(insertedNode))
       } else {
         val insertedNode = insertHelper(nextNode.right, node =>
-          node.copy(parent = nextNode.addChild(node, RightDirection).lift(Some(_))).lift(Some(_)),
-          value)
+          node.copy(parent = nextNode.addChild(node, RightDirection).lift(Some(_))), value)
         nextNode.copy(right = Some(insertedNode))
       }
       result
@@ -68,7 +66,7 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
 
   /**
     * remove the greatest key from the tree
-    * which should be root greaterNode's value
+    * which should be root childNode's value
     *
     * @return
     */
@@ -139,26 +137,26 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
   /**
     * Method that swaps the values of the passed-in nodes
     *
-    * @param greaterNode
-    * @param smallerNode
+    * @param childNode
+    * @param parentNode
     * @return both pair of the swap nodes
     */
-  def swapNodeValues(greaterNode: Node, smallerNode: Node): GreaterSmallerNodes = {
-    val greaterValue = greaterNode.value
+  def swapNodeValues(childNode: Node, parentNode: Node): GreaterSmallerNodes = {
+    val greaterValue = childNode.value
 
-    smallerNode match {
-      // greaterNode is left child
-      case Node(_, Some(x), _, _) if x == greaterNode =>
-        val swappedNode = smallerNode.copy(
+    parentNode match {
+      // childNode is left child
+      case Node(_, Some(x), _, _) if x == childNode =>
+        val swappedNode = parentNode.copy(
           value = greaterValue,
-          left = Some(greaterNode copy (value = smallerNode.value))
+          left = Some(childNode copy (value = parentNode.value))
         )
         GreaterSmallerNodes(swappedNode, swappedNode.left.orNull)
-      // greaterNode is right child
-      case Node(_, _, Some(x), _) if x == greaterNode =>
-        val swappedNode = smallerNode.copy(
+      // childNode is right child
+      case Node(_, _, Some(x), _) if x == childNode =>
+        val swappedNode = parentNode.copy(
           value = greaterValue,
-          right = Some(greaterNode copy (value = smallerNode.value))
+          right = Some(childNode copy (value = parentNode.value))
         )
         GreaterSmallerNodes(swappedNode, swappedNode.right.orNull)
     }
