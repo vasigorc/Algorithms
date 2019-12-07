@@ -22,7 +22,7 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
 
   override def insert(value: Key): Unit = {
     N += 1
-    root = Some(insertHelper(root, n => n.copy(parent = root), value))
+    root = insertHelper(root, n => n.copy(parent = root), value)
     root = Some(swim(last.get))
   }
 
@@ -37,11 +37,11 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     */
   @VisibleForTesting
   protected def insertHelper(maybeNextNode: Option[Node], transformChild: Node => Node,
-                             value: Key): Node = maybeNextNode match {
+                             value: Key): Option[Node] = maybeNextNode match {
     case None =>
       val bareNode = transformChild(Node(value = value))
       last = Some(bareNode)
-      last.orNull
+      last
     case Some(nextNode) =>
       // compare left and right sizes to see where to go
       val leftSize = nextNode.left.map(_.size()).getOrElse(0)
@@ -50,11 +50,11 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
       val result = if (leftSize <= rightSize) {
         val insertedNode = insertHelper(nextNode.left, node =>
             node.copy(parent = nextNode.addChild(node.copy(parent = Some(nextNode)), LeftDirection).lift(Some(_))), value)
-        insertedNode.parent.get
+        insertedNode.flatMap(_.parent)
       } else {
         val insertedNode = insertHelper(nextNode.right, node =>
           node.copy(parent = nextNode.addChild(node.copy(parent = Some(nextNode)), RightDirection).lift(Some(_))), value)
-        insertedNode.parent.get
+        insertedNode.flatMap(_.parent)
       }
       result
   }
