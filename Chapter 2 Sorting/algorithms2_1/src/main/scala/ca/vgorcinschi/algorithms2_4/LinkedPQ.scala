@@ -50,13 +50,14 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
       val result = if (leftSize <= rightSize) {
         val insertedNode = insertHelper(nextNode.left, node =>
             node.copy(parent = nextNode.addChild(node.copy(parent = Some(nextNode)), LeftDirection).lift(Some(_))), value)
-        insertedNode.flatMap(_.parent)
+        insertedNode
       } else {
         val insertedNode = insertHelper(nextNode.right, node =>
           node.copy(parent = nextNode.addChild(node.copy(parent = Some(nextNode)), RightDirection).lift(Some(_))), value)
-        insertedNode.flatMap(_.parent)
+        insertedNode
       }
-      result
+      // since we need to return recursively the parent of the inserted node
+      result.flatMap(_.parent)
   }
 
   override def max(): Key = root match {
