@@ -43,7 +43,7 @@ class LinkedPQSpec extends BaseSpec {
   }
 
   it should "guarantee logarithmic running time" in new IntPQBuilder {
-    1 to 100 foreach { _ =>
+    1 to 10 foreach { _ =>
       instance.insert(Random.nextInt(1000))
     }
     instance.swimCounter should be <= 2 * math.log(instance.size()).toInt

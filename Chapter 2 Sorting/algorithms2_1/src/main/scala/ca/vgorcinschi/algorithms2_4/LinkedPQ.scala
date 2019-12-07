@@ -49,12 +49,12 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
 
       val result = if (leftSize <= rightSize) {
         val insertedNode = insertHelper(nextNode.left, node =>
-            node.copy(parent = nextNode.addChild(node, LeftDirection).lift(Some(_))), value)
-        nextNode.copy(left = Some(insertedNode))
+            node.copy(parent = nextNode.addChild(node.copy(parent = Some(nextNode)), LeftDirection).lift(Some(_))), value)
+        insertedNode.parent.get
       } else {
         val insertedNode = insertHelper(nextNode.right, node =>
-          node.copy(parent = nextNode.addChild(node, RightDirection).lift(Some(_))), value)
-        nextNode.copy(right = Some(insertedNode))
+          node.copy(parent = nextNode.addChild(node.copy(parent = Some(nextNode)), RightDirection).lift(Some(_))), value)
+        insertedNode.parent.get
       }
       result
   }
@@ -169,7 +169,7 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     */
   override def swim(node: Node): Node = {
     node.parent match {
-      case Some(smallerParentNode) if cmp.gt(node.value, smallerParentNode.value) =>
+      case Some(smallerParentNode) if cmp.lt(smallerParentNode.value, node.value) =>
         val reorderedNode: Node = swapNodeValues(node, smallerParentNode).greater
         swim(reorderedNode)
       case Some(largerParentNode) => swim(largerParentNode)
