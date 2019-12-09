@@ -57,7 +57,7 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
         insertedNode
       }
       // since we need to return recursively the parent of the inserted node
-      result.flatMap(_.parent)
+      maybeParentOrSelf(result)
   }
 
   override def max(): Key = root match {
@@ -163,6 +163,10 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     }
   }
 
+  def maybeParentOrSelf: Option[Node] => Option[Node] = maybeChildNode => {
+    maybeChildNode flatMap (node => node.parent)
+  }
+
   /**
     * It is a necessity to continue swimming up even in the
     * event of no swap - in order to update the [[root]]
@@ -180,10 +184,6 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
 
   private def pqInit(): Option[Node] = {
     import ca.vgorcinschi._
-
-    def maybeParentOrSelf: Option[Node] => Option[Node] = maybeChildNode => {
-      maybeChildNode flatMap (node => node.parent)
-    }
 
     // set the last node to its parent
     last = maybeParentOrSelf(last)
