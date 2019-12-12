@@ -46,7 +46,7 @@ class LinkedPQSpec extends BaseSpec {
     1 to 10 foreach { _ =>
       instance.insert(Random.nextInt(1000))
     }
-    instance.swimCounter should be <= 2 * math.log(instance.size()).toInt
+    instance.insertStepsCounter should be <= 2 * math.log(instance.size()).toInt
   }
 }
 
@@ -58,30 +58,35 @@ class LinkedPQSpec extends BaseSpec {
   */
 trait PQMetricsCollector[Key] extends LinkedPQ[Key] {
 
-  var swimCounter: Int = 0
-  var sinkCounter: Int = 0
+  var insertStepsCounter: Int = 0
+  var deleteStepsCounter: Int = 0
 
   // insert part
   override def insert(value: Key): Unit = {
     // reset counter on every call
-    swimCounter = 0
+    insertStepsCounter = 0
     super.insert(value)
   }
 
+  override protected def insertHelper(nextTree: Tree[Key], value: Key): Branch[Key] = {
+    insertStepsCounter +=1
+    super.insertHelper(nextTree, value)
+  }
+
   override def swim[U <: Tree[Key]](tree: U): Tree[Key] = {
-    swimCounter += 1
+    insertStepsCounter += 1
     super.swim(tree)
   }
 
   // delMax part
   override def delMax(): Key = {
     // reset counter on every call
-    sinkCounter = 0
+    deleteStepsCounter = 0
     super.delMax()
   }
 
   override def sink(branch: Tree[T]): Unit = {
-    sinkCounter += 1
+    deleteStepsCounter += 1
     super.sink(branch)
   }
 }
