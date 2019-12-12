@@ -1,7 +1,5 @@
 package ca.vgorcinschi.algorithms2_4
 
-import ca.vgorcinschi.algorithms2_3.{Direction, LeftDirection, RightDirection}
-
 import scala.language.higherKinds
 
 trait PQNodeSupport[Key] {
@@ -11,39 +9,85 @@ trait PQNodeSupport[Key] {
 
   implicit protected val cmp: Ordering[_ >: Key]
 
-  case class Node(value: Key, left: Option[Node] = None,
-             right: Option[Node] = None,
-             parent: Option[Node] = None) {
+  type T = Key
 
-    def size(): Int = {
-      val childrenSize: Int = (left, right) match {
-        case (Some(ln), Some(rn)) => ln.size + rn.size
-        case (Some(ln), None) => ln.size()
-        case (None, Some(rn)) => rn.size()
-        case _ => 0
-      }
-      1 + childrenSize
+  import Tree._
+
+  /**
+    * [[Tree]] implementation, especially it's
+    * equality part, is mostly based on the example from Ch. 30
+    * of Odersky, Spoon, Venner's "Programming in Scala"
+    *
+    * @tparam T
+    */
+  sealed trait Tree[+T] {
+    def elem: T
+
+    def left: Tree[T]
+
+    def right: Tree[T]
+
+    def parent: Option[Tree[T]]
+
+    def size: Int
+
+    def >[K >: T](that: Tree[K])(implicit ev: K <:< Key): Boolean = {
+      if (this == that) false
+      else if (that == EmptyTree) false
+      else if (this == EmptyTree) true
+      else if (cmp.gt(this.elem, that.elem)) true
+      else false
     }
-
-    def greaterChild() : Option[(Node, Direction)] = {
-      (left, right) match {
-        case (None, None) => None
-        case (_, None) => left.flatMap(n => Some((n, LeftDirection)))
-        case (None, _) => right.flatMap(n => Some((n, RightDirection)))
-        case (Some(l), Some(r)) => if (cmp.gt(l.value,r.value)) left.flatMap(n => Some((n, LeftDirection)))
-                                   else right.flatMap(n => Some((n, RightDirection)))
-      }
-    }
-
-    def addChild(childNode: Node, direction: Direction): Node = direction match {
-      case LeftDirection => this.copy(left = Some(childNode))
-      case RightDirection => this.copy(right = Some(childNode))
-    }
-
-    def lift[U[_]](f: Node => U[Node]): U[Node] = f(this)
   }
 
-  def swim(s: Node): Node
+  object EmptyTree extends Tree[Nothing] {
+    override def elem: Nothing = fail("EmptyTree.elem")
 
-  def sink(s: Node): Node
+    override def left: Tree[Nothing] = fail("EmptyTree.left")
+
+    override def right: Tree[Nothing] = fail("EmptyTree.right")
+
+    override def parent: Option[Tree[Nothing]] = fail("EmptyTree.parent")
+
+    override def size: Int = 0
+  }
+
+  final class Branch[T](
+                         var elem: T,
+                         var left: Tree[T],
+                         var right: Tree[T],
+                         var parent: Option[Tree[T]]
+                       ) extends Tree[T] {
+
+    override def equals(other: Any): Boolean = other match {
+      case that: Branch[_] => (that canEqual this) &&
+        this.elem == that.elem &&
+        this.left == that.left &&
+        this.right == that.right &&
+        this.parent == that.parent &&
+        this.size == that.size
+      case _ => false
+    }
+
+    def canEqual(other: Any): Boolean = other.isInstanceOf[Branch[_]]
+
+    override def hashCode(): Int = (elem, left, right, parent, size).##
+
+    override def size: Int = left.size + right.size + 1
+  }
+
+  object Tree {
+    def fail(message: String) = throw new NoSuchElementException(message)
+
+    def apply(elem: T,
+              left: Tree[T] = EmptyTree,
+              right: Tree[T] = EmptyTree,
+              parent: Option[Tree[T]] = None): Branch[T] = new Branch[T](elem, left, right, parent)
+
+    def greaterChild(tree: Tree[T]): Tree[T] = if (tree.right > tree.left) tree.right else tree.left
+  }
+
+  def swim[U <: Tree[Key]](tree: U): Tree[Key]
+
+  def sink(branch: Tree[T]): Unit
 }

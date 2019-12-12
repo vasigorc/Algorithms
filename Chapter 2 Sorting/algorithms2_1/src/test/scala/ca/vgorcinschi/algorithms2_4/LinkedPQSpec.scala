@@ -53,6 +53,7 @@ class LinkedPQSpec extends BaseSpec {
 /**
   * Attention! This hook is not designed to be thread-safe if the same
   * [[LinkedPQ]] object is accessed by multiple threads
+  *
   * @tparam Key
   */
 trait PQMetricsCollector[Key] extends LinkedPQ[Key] {
@@ -67,14 +68,9 @@ trait PQMetricsCollector[Key] extends LinkedPQ[Key] {
     super.insert(value)
   }
 
-  override protected def insertHelper(maybeNextNode: Option[Node], transformChild: Node => Node, value: Key): Node = {
+  override def swim[U <: Tree[Key]](tree: U): Tree[Key] = {
     swimCounter += 1
-    super.insertHelper(maybeNextNode, transformChild, value)
-  }
-
-  override def swim(node: Node): Node = {
-    swimCounter += 1
-    super.swim(node)
+    super.swim(tree)
   }
 
   // delMax part
@@ -84,8 +80,8 @@ trait PQMetricsCollector[Key] extends LinkedPQ[Key] {
     super.delMax()
   }
 
-  override def sink(node: Node): Node = {
+  override def sink(branch: Tree[T]): Unit = {
     sinkCounter += 1
-    super.sink(node)
+    super.sink(branch)
   }
 }
