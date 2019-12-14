@@ -49,6 +49,17 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     case _ => throw new NullPointerException
   }
 
+
+  def selectNewLast(parent: Tree[T]): Tree[T] = {
+    val longestBranch = Tree.longestBranch(parent.left, parent.right)
+
+    if (longestBranch == EmptyTree) {
+      return parent
+    }
+
+    selectNewLast(longestBranch)
+  }
+
   /**
     * remove the greatest key from the tree
     * which should be root childBranch's value
@@ -65,16 +76,24 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
       root = EmptyTree
       last = EmptyTree
     } else {
-      root = last
-      last = EmptyTree
-      root.asInstanceOf[Branch[T]].parent = None
+      root = Tree(last.elem, root.left, root.right)
+      removeLast()
       sink(root)
+      last = selectNewLast(root)
     }
     maxValue
   }
 
+  private def removeLast(): Unit = {
+    val maybeBeforeLast = last.parent
+    maybeBeforeLast.foreach {
+      beforeLast => if (beforeLast.left == last) beforeLast.left == EmptyTree else beforeLast.right == EmptyTree
+    }
+    last = EmptyTree
+  }
+
   override def sink(branch: Tree[T]): Unit = {
-    if (branch.left == EmptyTree || branch.right == EmptyTree) return
+    if (branch.left == EmptyTree && branch.right == EmptyTree) return
 
     val greaterChild: Tree[T] = Tree.greaterChild(branch)
 

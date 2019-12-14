@@ -33,8 +33,7 @@ trait PQNodeSupport[Key] {
 
     def >[K >: T](that: Tree[K])(implicit ev: K <:< Key): Boolean = {
       if (this == that) false
-      else if (that == EmptyTree) false
-      else if (this == EmptyTree) true
+      else if (that == EmptyTree || this == EmptyTree) false
       else if (cmp.gt(this.elem, that.elem)) true
       else false
     }
@@ -85,6 +84,13 @@ trait PQNodeSupport[Key] {
               parent: Option[Tree[T]] = None): Branch[T] = new Branch[T](elem, left, right, parent)
 
     def greaterChild(tree: Tree[T]): Tree[T] = if (tree.right > tree.left) tree.right else tree.left
+
+    def longestBranch(left: Tree[T], right: Tree[T]): Tree[T] = (left, right) match {
+      case (EmptyTree, EmptyTree) => EmptyTree
+      case (_, EmptyTree) => left
+      case (EmptyTree, _) => right
+      case _ => if (left.size > right.size) left else right
+    }
   }
 
   def swim[U <: Tree[Key]](tree: U): Tree[Key]
