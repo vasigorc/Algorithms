@@ -44,20 +44,43 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
       branch
   }
 
-  override def max(): Key = root match {
-    case b: Branch[T] => b.elem
-    case _ => throw new NullPointerException
-  }
-
-
-  def selectNewLast(parent: Tree[T]): Tree[T] = {
-    val longestBranch = Tree.longestBranch(parent.left, parent.right)
-
-    if (longestBranch == EmptyTree) {
-      return parent
+  def removeLastBranch(currentTree: Tree[T]): (Tree[T], T) = {
+    def shortenLeftBranch: (Tree[T], T) = {
+      val (updatedLeftBranch, removedElem) = removeLastBranch(currentTree.left)
+      if (updatedLeftBranch != EmptyTree) {
+        (Tree(currentTree.elem,
+          Tree(updatedLeftBranch.elem, updatedLeftBranch.left, updatedLeftBranch.right, Some(currentTree)),
+          currentTree.right, currentTree.parent),
+          removedElem)
+      } else {
+        (Tree(currentTree.elem, EmptyTree, currentTree.right, currentTree.parent),
+          removedElem)
+      }
     }
 
-    selectNewLast(longestBranch)
+    def shortenRightBranch: (Tree[T], T) = {
+      val (updatedRightBranch, removedElem) = removeLastBranch(currentTree.right)
+      if (updatedRightBranch != EmptyTree) {
+        (Tree(currentTree.elem, currentTree.left,
+          Tree(updatedRightBranch.elem, updatedRightBranch.left, updatedRightBranch.right, Some(currentTree)),
+          currentTree.parent),
+          removedElem)
+      } else {
+        (Tree(currentTree.elem, currentTree.left, EmptyTree, currentTree.parent),
+          removedElem)
+      }
+    }
+
+    if (currentTree.left == EmptyTree && currentTree.right == EmptyTree) {
+      return (EmptyTree, currentTree.elem)
+    }
+
+    if (currentTree.left.size > currentTree.right.size) shortenLeftBranch else shortenRightBranch
+  }
+
+  override def max(): Key = root match {
+    case EmptyTree => throw new NullPointerException
+    case _ => root.elem
   }
 
   /**
@@ -76,20 +99,24 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
       root = EmptyTree
       last = EmptyTree
     } else {
-      root = Tree(last.elem, root.left, root.right)
-      removeLast()
+      // FIXME creating duplicate entries @ last
+      val (shortenedTree, removedValue) = removeLastBranch(root)
+      root = Tree(removedValue, shortenedTree.left, shortenedTree.right)
+//      removeLast()
       sink(root)
       last = selectNewLast(root)
     }
     maxValue
   }
 
-  private def removeLast(): Unit = {
-    val maybeBeforeLast = last.parent
-    maybeBeforeLast.foreach {
-      beforeLast => if (beforeLast.left == last) beforeLast.left == EmptyTree else beforeLast.right == EmptyTree
+  def selectNewLast(parent: Tree[T]): Tree[T] = {
+    val longestBranch = Tree.longestBranch(parent.left, parent.right)
+
+    if (longestBranch == EmptyTree) {
+      return parent
     }
-    last = EmptyTree
+
+    selectNewLast(longestBranch)
   }
 
   override def sink(branch: Tree[T]): Unit = {

@@ -1,6 +1,6 @@
 package ca.vgorcinschi.algorithms2_4
 
-import scala.language.higherKinds
+import scala.language.postfixOps
 
 trait PQNodeSupport[Key] {
 
@@ -63,14 +63,15 @@ trait PQNodeSupport[Key] {
         this.elem == that.elem &&
         this.left == that.left &&
         this.right == that.right &&
-        this.parent == that.parent &&
+        // mapping is required to avoid StackOverflow
+        this.parent.map(_ elem) == that.parent.map(_ elem) &&
         this.size == that.size
       case _ => false
     }
 
     def canEqual(other: Any): Boolean = other.isInstanceOf[Branch[_]]
 
-    override def hashCode(): Int = (elem, left, right, parent, size).##
+    override def hashCode(): Int = (elem, left, right, parent.map(_ elem), size).##
 
     override def size: Int = left.size + right.size + 1
   }
@@ -81,7 +82,7 @@ trait PQNodeSupport[Key] {
     def apply(elem: T,
               left: Tree[T] = EmptyTree,
               right: Tree[T] = EmptyTree,
-              parent: Option[Tree[T]] = None): Branch[T] = new Branch[T](elem, left, right, parent)
+              parent: Option[Tree[T]] = None): Tree[T] = new Branch[T](elem, left, right, parent)
 
     def greaterChild(tree: Tree[T]): Tree[T] = if (tree.right > tree.left) tree.right else tree.left
 
