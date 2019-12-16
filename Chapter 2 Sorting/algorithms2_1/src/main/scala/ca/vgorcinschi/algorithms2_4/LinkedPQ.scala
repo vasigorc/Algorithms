@@ -102,7 +102,6 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
       // FIXME creating duplicate entries @ last
       val (shortenedTree, removedValue) = removeLastBranch(root)
       root = Tree(removedValue, shortenedTree.left, shortenedTree.right)
-//      removeLast()
       sink(root)
       last = selectNewLast(root)
     }
