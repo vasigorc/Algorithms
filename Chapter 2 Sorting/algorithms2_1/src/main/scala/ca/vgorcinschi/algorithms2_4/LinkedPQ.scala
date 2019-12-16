@@ -90,7 +90,6 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
     * @return
     */
   override def delMax(): Key = {
-
     val maxValue = max()
     // decrease the size
     N -= 1
@@ -99,7 +98,6 @@ class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
       root = EmptyTree
       last = EmptyTree
     } else {
-      // FIXME creating duplicate entries @ last
       val (shortenedTree, removedValue) = removeLastBranch(root)
       root = Tree(removedValue, shortenedTree.left, shortenedTree.right)
       sink(root)
