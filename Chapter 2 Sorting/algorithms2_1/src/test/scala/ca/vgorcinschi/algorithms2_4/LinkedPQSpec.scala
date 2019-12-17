@@ -14,7 +14,7 @@ class LinkedPQSpec extends BaseSpec {
 
   it should "return the highest value" in new IntPQBuilder {
     // generate a list of random inputs
-    val randomInput: List[Int] = (1 to 10).map(_ => Random.nextInt(1000)).toList
+    val randomInput: List[Int] = (1 to 100).map(_ => Random.nextInt(1000)).toList
 
     // populate pq
     randomInput.foreach(instance.insert)
