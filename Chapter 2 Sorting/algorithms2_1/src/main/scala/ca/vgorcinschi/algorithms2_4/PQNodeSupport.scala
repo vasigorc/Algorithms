@@ -34,8 +34,7 @@ trait PQNodeSupport[Key] {
     def >[K >: T](that: Tree[K])(implicit ev: K <:< Key): Boolean = {
       if (this == that) false
       else if (that == EmptyTree || this == EmptyTree) false
-      else if (cmp.gt(this.elem, that.elem)) true
-      else false
+      else cmp.gt(this.elem, that.elem)
     }
   }
 
