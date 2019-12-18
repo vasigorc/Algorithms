@@ -14,7 +14,7 @@ class LinkedPQSpec extends BaseSpec {
 
   it should "return the highest value" in new IntPQBuilder {
     // generate a list of random inputs
-    val randomInput: List[Int] = (1 to 100).map(_ => Random.nextInt(1000)).toList
+    val randomInput: List[Int] = randomIntList(listLength = 100)
 
     // populate pq
     randomInput.foreach(instance.insert)
@@ -23,9 +23,24 @@ class LinkedPQSpec extends BaseSpec {
     randomInput.sorted.reverse.foreach(n => n shouldEqual instance.delMax())
   }
 
-  it should "decrease size by one" in new IntPQBuilder {}
+  private def randomIntList(listLength: Int = 1, upperBound: Int = 1000): List[Int] = {
+    (1 to listLength).map(_ => Random.nextInt(upperBound)).toList
+  }
 
-  it should "throw IllegalArgumentException when PQ is empty"
+  it should "decrease size by one" in new IntPQBuilder {
+    // insert two items
+    randomIntList(listLength = 2).foreach(instance.insert)
+
+    // remove one item
+    instance.delMax()
+
+    // expected size should be 1
+    instance.size() shouldEqual  1
+  }
+
+  it should "throw IllegalArgumentException when PQ is empty" in new IntPQBuilder {
+    the [NullPointerException] thrownBy instance.delMax()
+  }
 
   it should "guarantee logarithmic running time"
 
