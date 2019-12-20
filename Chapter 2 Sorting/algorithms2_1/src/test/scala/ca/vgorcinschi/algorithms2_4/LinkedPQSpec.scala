@@ -42,11 +42,17 @@ class LinkedPQSpec extends BaseSpec {
     the [NullPointerException] thrownBy instance.delMax()
   }
 
-  it should "guarantee logarithmic running time"
+  // this should be moved into a property based class
+  ignore should "guarantee logarithmic running time"
 
   behavior of "max"
 
-  it should "return the highest value and leave size intact"
+  it should "return the highest value and leave size intact" in new IntPQBuilder {
+    val randomInts: List[Int] = randomIntList(listLength = 100)
+    randomInts foreach instance.insert
+
+    instance.max() shouldEqual randomInts.sorted.reverse.head
+  }
 
   it should "throw IllegalArgumentException when PQ is empty"
 
@@ -57,7 +63,8 @@ class LinkedPQSpec extends BaseSpec {
     instance.size() shouldEqual 1
   }
 
-  it should "guarantee logarithmic running time" in new IntPQBuilder {
+  // to be moved into a property based test class
+  ignore should "guarantee logarithmic running time" in new IntPQBuilder {
     1 to 10 foreach { _ =>
       instance.insert(Random.nextInt(1000))
     }
