@@ -4,10 +4,10 @@ import ca.vgorcinschi.BaseSpec
 
 import scala.util.Random
 
-class LinkedPQSpec extends BaseSpec {
+class MutableLinkedPQSpec extends BaseSpec {
 
   trait IntPQBuilder {
-    val instance = new LinkedPQ[Int] with PQMetricsCollector[Int]
+    val instance = new MutableLinkedPQ[Int] with PQMetricsCollector[Int]
   }
 
   behavior of "delMax"
@@ -74,11 +74,11 @@ class LinkedPQSpec extends BaseSpec {
 
 /**
   * Attention! This hook is not designed to be thread-safe if the same
-  * [[LinkedPQ]] object is accessed by multiple threads
+  * [[MutableLinkedPQ]] object is accessed by multiple threads
   *
   * @tparam Key
   */
-trait PQMetricsCollector[Key] extends LinkedPQ[Key] {
+trait PQMetricsCollector[Key] extends MutableLinkedPQ[Key] {
 
   var insertStepsCounter: Int = 0
   var deleteStepsCounter: Int = 0
