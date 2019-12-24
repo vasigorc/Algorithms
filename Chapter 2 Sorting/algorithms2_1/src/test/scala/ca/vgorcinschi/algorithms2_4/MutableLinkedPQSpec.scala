@@ -24,7 +24,7 @@ class LinkedPQSpec extends BaseSpec {
   }
 
   private def randomIntList(listLength: Int = 1, upperBound: Int = 1000): List[Int] = {
-    (1 to listLength).map(_ => Random.nextInt(upperBound)).toList
+    (1 to listLength map (_ => Random.nextInt(upperBound))).toList
   }
 
   it should "decrease size by one" in new IntPQBuilder {

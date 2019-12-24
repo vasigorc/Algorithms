@@ -10,7 +10,7 @@ import scala.language.postfixOps
   * two to traverse down the tree and one to traverse up the tree. Your implementation should guarantee
   * logarithmic running time per operation, even if no maximum priority-queue size is known ahead time.
   */
-class LinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
+class MutableLinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Key])
   extends MaxPQ[Key] with PQNodeSupport[Key] {
 
   private var root: Tree[Key] = EmptyTree
