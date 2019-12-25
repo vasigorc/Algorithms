@@ -43,7 +43,15 @@ class MutableLinkedPQSpec extends BaseSpec {
   }
 
   // this should be moved into a property based class
-  ignore should "guarantee logarithmic running time"
+  it should "guarantee logarithmic running time" in new IntPQBuilder {
+    1 to 10 foreach { _ =>
+      instance.insert(Random.nextInt(1000))
+    }
+
+    val sizeBeforeDelete = instance.size()
+    instance.delMax()
+    instance.deleteStepsCounter should be <= math.max(1, (sizeBeforeDelete / 2) - 1) * math.log(sizeBeforeDelete).toInt
+  }
 
   behavior of "max"
 
@@ -64,11 +72,13 @@ class MutableLinkedPQSpec extends BaseSpec {
   }
 
   // to be moved into a property based test class
-  ignore should "guarantee logarithmic running time" in new IntPQBuilder {
+  it should "guarantee logarithmic running time" in new IntPQBuilder {
     1 to 10 foreach { _ =>
       instance.insert(Random.nextInt(1000))
     }
-    instance.insertStepsCounter should be <= 2 * math.log(instance.size()).toInt
+    instance.insert(Random.nextInt(1000))
+
+    instance.insertStepsCounter should be <= math.max(1, (instance.size() / 2) - 1) * math.log(instance.size()).toInt
   }
 }
 
@@ -85,7 +95,6 @@ trait PQMetricsCollector[Key] extends MutableLinkedPQ[Key] {
 
   // insert part
   override def insert(value: Key): Unit = {
-    // reset counter on every call
     insertStepsCounter = 0
     super.insert(value)
   }
@@ -101,10 +110,16 @@ trait PQMetricsCollector[Key] extends MutableLinkedPQ[Key] {
   }
 
   // delMax part
+
   override def delMax(): Key = {
-    // reset counter on every call
     deleteStepsCounter = 0
+    // reset counter on every call
     super.delMax()
+  }
+
+  override def removeLastBranch(currentTree: Tree[T]): (Tree[T], T) = {
+    deleteStepsCounter += 1
+    super.removeLastBranch(currentTree)
   }
 
   override def sink(branch: Tree[T]): Unit = {
