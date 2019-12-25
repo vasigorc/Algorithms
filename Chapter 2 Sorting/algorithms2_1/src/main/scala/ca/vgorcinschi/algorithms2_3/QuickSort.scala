@@ -4,7 +4,6 @@ import ca.vgorcinschi.algorithms2_1.BaseSort
 
 import scala.reflect.ClassTag
 import scala.util.Random
-import QuickSort._
 
 class QuickSort[T: ClassTag : Ordering] extends BaseSort[T] {
 
@@ -25,30 +24,20 @@ class QuickSort[T: ClassTag : Ordering] extends BaseSort[T] {
     var (i, j) = (lo, hi + 1) //left and right scan indices
     val pivot = a(lo) //partitioning item
 
-    def scan(index: Int, direction: Scan): Int = direction match {
-      case Left => if (less(a(index), pivot) && index != hi) scan(index + 1, direction) else index
-      case Right => if (less(pivot, a(index)) && index != lo) scan(index - 1, direction) else index
+    def scan(index: Int, direction: Direction): Int = direction match {
+      case LeftDirection => if (less(a(index), pivot) && index != hi) scan(index + 1, direction) else index
+      case RightDirection => if (less(pivot, a(index)) && index != lo) scan(index - 1, direction) else index
     }
 
     while (i < j) {
       //scan right, scan left, check for scan complete, and exchange
-      i = scan(i + 1, Left)
-      j = scan(j - 1, Right)
+      i = scan(i + 1, LeftDirection)
+      j = scan(j - 1, RightDirection)
       if (i < j) exch(a, i, j)
     }
 
     exch(a, lo, j) // put pivot into a(j)
     j // with a(lo..j-1) <= a(j) <= a(j+1..hi)
   }
-
-}
-
-object QuickSort {
-
-  sealed trait Scan
-
-  object Left extends Scan
-
-  object Right extends Scan
 
 }

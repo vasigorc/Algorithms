@@ -15,10 +15,10 @@ trait MedianOfPartitioning[T] {
 
     import ca.vgorcinschi.ArrayOps
     //return a new MinMax with adjusted min and max values
-    def medianReductionFunction = (median: MinMax, index: Int) => {
+    def medianReductionFunction = (median: MinMax, indexOfArrayElement: Int) => {
       var newMedian = median
-      if (less(a, index, median.indexOfMinValue)) newMedian = median copy (indexOfMinValue = index)
-      if (less(a, median.indexOfMaxValue, index)) newMedian = median copy (indexOfMaxValue = index)
+      if (less(a, indexOfArrayElement, median.indexOfMinValue)) newMedian = median copy (indexOfMinValue = indexOfArrayElement)
+      if (less(a, median.indexOfMaxValue, indexOfArrayElement)) newMedian = median copy (indexOfMaxValue = indexOfArrayElement)
       newMedian
     }
 

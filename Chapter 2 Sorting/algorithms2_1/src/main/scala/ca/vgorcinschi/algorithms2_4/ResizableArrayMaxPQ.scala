@@ -9,21 +9,21 @@ import scala.reflect.ClassTag
   */
 class ResizableArrayMaxPQ[Key: ClassTag : Ordering] extends ArrayMaxPQ[Key]() {
 
-  private def arraySize = pq.length
+  private def arraySize = priorityQueue.length
   private def heapSize = N
   private def half = (size: Int) => size >> 1
 
   override def insert(v: Key): Unit = {
     // +1 because we're using index 1 heap
     if (arraySize == heapSize + 1) {
-      pq = pq ++ Array.fill(arraySize)(None)
+      priorityQueue = priorityQueue ++ Array.fill(arraySize)(None)
     }
     super.insert(v)
   }
 
   override def delMax(): Key = {
     if (heapSize + 1 < half(arraySize)) {
-      pq = pq slice(0, half(arraySize))
+      priorityQueue = priorityQueue slice(0, half(arraySize))
     }
     super.delMax()
   }
