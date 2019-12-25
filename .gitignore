@@ -8,5 +8,5 @@
 **/.idea
 
 # any targets
-#**/target
+**/target
 **/node_modules
