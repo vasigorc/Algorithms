@@ -101,19 +101,8 @@ class MutableLinkedPQ[Key](implicit override protected val cmp: Ordering[_ >: Ke
       val (shortenedTree, removedValue) = removeLastBranch(root)
       root = Tree(removedValue, shortenedTree.left, shortenedTree.right)
       sink(root)
-      last = selectNewLast(root)
     }
     maxValue
-  }
-
-  def selectNewLast(parent: Tree[T]): Tree[T] = {
-    val longestBranch = Tree.longestBranch(parent.left, parent.right)
-
-    if (longestBranch == EmptyTree) {
-      return parent
-    }
-
-    selectNewLast(longestBranch)
   }
 
   override def sink(branch: Tree[T]): Unit = {
