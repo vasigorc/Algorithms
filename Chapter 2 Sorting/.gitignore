@@ -7,3 +7,8 @@
 
 #directory files
 *.directory
+
+#metals and bloop files
+**.metals/
+.bloop/
+project/metals.sbt
