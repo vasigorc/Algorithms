@@ -36,7 +36,7 @@ class ArrayMaxPQ[Key](val capacity: Int = 10)(implicit tag: ClassTag[Key],
   //return the largest key
   def max(): Key = priorityQueue(1)
 
-  private def swim(key: Int): Unit = {
+  protected def swim(key: Int): Unit = {
     def innerLoop(k: Int): Unit = k match {
       case _ if k > 1 && less(k / 2, k) =>
         exch(k / 2, k)
@@ -47,7 +47,7 @@ class ArrayMaxPQ[Key](val capacity: Int = 10)(implicit tag: ClassTag[Key],
     innerLoop(key)
   }
 
-  private def sink(key: Int): Unit = {
+  protected def sink(key: Int): Unit = {
     def innerLoop(candidateIndex: Int): Unit = 2 * candidateIndex match {
       case left if left <= N =>
         val smallestChildIndex = if (left < N && less(left, left + 1)) {
@@ -62,7 +62,7 @@ class ArrayMaxPQ[Key](val capacity: Int = 10)(implicit tag: ClassTag[Key],
     innerLoop(key)
   }
 
-  private def less(i: Int, j: Int): Boolean = cmp.lt(priorityQueue(i), priorityQueue(j))
+  protected def less(i: Int, j: Int): Boolean = cmp.lt(priorityQueue(i), priorityQueue(j))
 
   private def exch(i: Int, j: Int): Unit = {
     val temp = priorityQueue(i)

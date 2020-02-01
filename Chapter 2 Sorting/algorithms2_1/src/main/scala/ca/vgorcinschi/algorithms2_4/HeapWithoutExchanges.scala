@@ -7,17 +7,24 @@ import scala.reflect.ClassTag
   * and swim() operations, the items are loaded and stored twice as often as necessary.
   * Give more efficient implementations that avoid this inefficiency, à la insertion
   * sort [[ca.vgorcinschi.algorithms2_1.Ex2_1_25]]
-  * @param capacity
   * @param tag
   * @param cmp
   * @tparam Key
   */
-class HeapWithoutExchanges [Key](val capacity: Int = 10)(implicit tag: ClassTag[Key],
+class HeapWithoutExchanges [Key](implicit tag: ClassTag[Key],
                                  override protected val cmp: Ordering[_ >: Key])
-                                 extends MaxPQ[Key]{
-  override def insert(v: Key): Unit = ???
+                                 extends ArrayMaxPQ[Key]{
 
-  override def max(): Key = ???
+  override protected def sink(key: Int): Unit = ???
 
-  override def delMax(): Key = ???
+  override protected def swim(key: Int): Unit = {
+    val movingPart = priorityQueue(key)
+    var k = key
+
+    while (k >1 && less(k / 2, k)) {
+      priorityQueue(k / 2) = priorityQueue(k)
+      k /= 2
+    }
+    priorityQueue(k) = movingPart
+  }
 }
