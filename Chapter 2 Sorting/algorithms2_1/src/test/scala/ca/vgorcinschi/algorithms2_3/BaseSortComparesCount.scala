@@ -8,8 +8,9 @@ import scala.util.Random
 
 trait BaseSortComparesCount extends {
   //pre-initialized fields are initialized before the superclass constructor is called
-  val classUnderTest = classOf[BaseSort[_]].getName
-  val methodName = "less"
+  // added `lazy` for early definitions
+  lazy val classUnderTest = classOf[BaseSort[_]].getName
+  lazy val methodName = "less"
 
 } with MethodInvocationCountTemplate {
   //test samples

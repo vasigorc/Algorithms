@@ -48,7 +48,7 @@ class Ex2_2_25 [T : ClassTag : Ordering] extends BaseSort[T]{
   @tailrec
   private def merge(cur: List[Array[T]], acc: Array[T]): Array[T] = cur match {
     case Nil => acc
-    case ab::Nil => acc ++: ab
+    case ab::Nil => acc ++ ab
     case _ =>
       import Ordered._
       val withIndex = cur.zipWithIndex
@@ -60,6 +60,7 @@ class Ex2_2_25 [T : ClassTag : Ordering] extends BaseSort[T]{
       merge(nextCur.filter(_.nonEmpty), acc :+ min._1.head)
   }
 
+  // default - two-way merge
   override def sort(a: Array[T]): Array[T] = ???
 }
 

@@ -50,12 +50,12 @@ class ArrayMaxPQ[Key](val capacity: Int = 10)(implicit tag: ClassTag[Key],
   protected def sink(key: Int): Unit = {
     def innerLoop(candidateIndex: Int): Unit = 2 * candidateIndex match {
       case left if left <= N =>
-        val smallestChildIndex = if (left < N && less(left, left + 1)) {
+        val biggestChildIndex = if (left < N && less(left, left + 1)) {
           left + 1
         } else left
-        if (!less(candidateIndex, smallestChildIndex)) return
-        exch(candidateIndex, smallestChildIndex)
-        innerLoop(smallestChildIndex)
+        if (!less(candidateIndex, biggestChildIndex)) return
+        exch(candidateIndex, biggestChildIndex)
+        innerLoop(biggestChildIndex)
       case _ =>
     }
 
