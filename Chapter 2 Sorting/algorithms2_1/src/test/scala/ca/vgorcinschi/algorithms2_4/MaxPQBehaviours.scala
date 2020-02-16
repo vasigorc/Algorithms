@@ -2,10 +2,10 @@ package ca.vgorcinschi.algorithms2_4
 
 import ca.vgorcinschi.BaseSpec
 
-trait MaxPQBehaviours[T <: Ordered[T], ImplLà <: MaxPQ[T]] {
+trait MaxPQBehaviours {
   self: BaseSpec =>
 
-  def nonEmptyMaxPQ(instanceSupplier: () => ImplLà, sortedInput: List[T]): Unit = {
+  def nonEmptyMaxPQ[T : Ordering, ImplLà <: MaxPQ[T]](instanceSupplier: () => ImplLà, sortedInput: List[T]): Unit = {
 
     val reverseSorted = sortedInput.reverse
     val max = reverseSorted.head
@@ -53,7 +53,7 @@ trait MaxPQBehaviours[T <: Ordered[T], ImplLà <: MaxPQ[T]] {
     }
   }
 
-  def emptyMaxPQ(instanceSupplier: () => ImplLà, sampleT: T): Unit = {
+  def emptyMaxPQ[T <: Ordered[T], ImplLà <: MaxPQ[T]](instanceSupplier: () => ImplLà, sampleT: T): Unit = {
 
     behavior of "size"
 
