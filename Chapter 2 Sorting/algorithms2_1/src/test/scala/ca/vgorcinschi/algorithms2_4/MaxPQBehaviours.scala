@@ -53,7 +53,7 @@ trait MaxPQBehaviours {
     }
   }
 
-  def emptyMaxPQ[T <: Ordered[T], ImplLà <: MaxPQ[T]](instanceSupplier: () => ImplLà, sampleT: T): Unit = {
+  def emptyMaxPQ[T : Ordering, ImplLà <: MaxPQ[T]](instanceSupplier: () => ImplLà, sampleT: T): Unit = {
 
     behavior of "size"
 
