@@ -2,30 +2,34 @@ package ca.vgorcinschi.algorithms2_4
 
 import ca.vgorcinschi.BaseSpec
 
+import scala.reflect.ClassTag
+
 trait MaxPQBehaviours {
   self: BaseSpec =>
 
-  def nonEmptyMaxPQ[T : Ordering, ImplLà <: MaxPQ[T]](instanceSupplier: () => ImplLà, sortedInput: List[T]): Unit = {
+  def nonEmptyMaxPQ[T : Ordering, ImplLà <: MaxPQ[T]](instanceSupplier: () => ImplLà, sortedInput: List[T])
+                                                     (implicit ctag: ClassTag[T]): Unit = {
 
+    val className = ctag.runtimeClass.asInstanceOf[Class[T]].getSimpleName
     val reverseSorted = sortedInput.reverse
     val max = reverseSorted.head
     val inputSize = reverseSorted.size
 
-    behavior of "size"
+    behavior of s"size for $className"
 
     it should s"be equal to ${sortedInput.size}" in {
       val instance = instanceSupplier()
       instance.size() shouldEqual sortedInput.size
     }
 
-    behavior of "max"
+    behavior of s"max for $className"
 
     it should s"return the expected $max" in {
       val instance = instanceSupplier()
       instance.max() shouldEqual max
     }
 
-    behavior of "delMax"
+    behavior of s"delMax for $className"
 
     it should "return the highest value until PQ is not empty" in {
       val instance = instanceSupplier()
@@ -38,7 +42,7 @@ trait MaxPQBehaviours {
       inputSize -1 shouldEqual instance.size()
     }
 
-    behavior of "insert"
+    behavior of s"insert for $className"
 
     it should "increase sie by 1" in {
       val instance = instanceSupplier()
@@ -53,23 +57,26 @@ trait MaxPQBehaviours {
     }
   }
 
-  def emptyMaxPQ[T : Ordering, ImplLà <: MaxPQ[T]](instanceSupplier: () => ImplLà, sampleT: T): Unit = {
+  def emptyMaxPQ[T : Ordering, ImplLà <: MaxPQ[T]](instanceSupplier: () => ImplLà, sampleT: T)
+                                                  (implicit ctag: ClassTag[T]): Unit = {
 
-    behavior of "size"
+    val className = ctag.runtimeClass.asInstanceOf[Class[T]].getSimpleName
+
+    behavior of s"size for $className"
 
     it should "be equal to 0" in {
       val instance = instanceSupplier()
       instance.size() shouldEqual 0
     }
 
-    behavior of "delMax"
+    behavior of s"delMax for $className"
 
     it should "throw NullPointerException when PQ is empty" in {
       val instance = instanceSupplier()
       the [NullPointerException] thrownBy instance.delMax()
     }
 
-    behavior of "insert"
+    behavior of s"insert for $className"
 
     it should "increase size by 1" in {
       val instance = instanceSupplier()
