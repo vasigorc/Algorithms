@@ -1,5 +1,6 @@
 package ca.vgorcinschi.algorithms2_4
 
+import scala.annotation.tailrec
 import scala.language.implicitConversions
 import scala.reflect.ClassTag
 
@@ -37,6 +38,7 @@ class ArrayMaxPQ[Key](val capacity: Int = 10)(implicit tag: ClassTag[Key],
   def max(): Key = priorityQueue(1)
 
   protected def swim(key: Int): Unit = {
+    @tailrec
     def innerLoop(k: Int): Unit = k match {
       case _ if k > 1 && less(k / 2, k) =>
         exch(k / 2, k)
@@ -48,14 +50,15 @@ class ArrayMaxPQ[Key](val capacity: Int = 10)(implicit tag: ClassTag[Key],
   }
 
   protected def sink(key: Int): Unit = {
-    def innerLoop(candidateIndex: Int): Unit = 2 * candidateIndex match {
+    @tailrec
+    def innerLoop(currentIndex: Int): Unit = 2 * currentIndex match {
       case left if left <= N =>
-        val biggestChildIndex = if (left < N && less(left, left + 1)) {
+        val largestValueIndex = if (left < N && less(left, left + 1)) {
           left + 1
         } else left
-        if (!less(candidateIndex, biggestChildIndex)) return
-        exch(candidateIndex, biggestChildIndex)
-        innerLoop(biggestChildIndex)
+        if (greater(currentIndex, largestValueIndex)) return
+        exch(currentIndex, largestValueIndex)
+        innerLoop(largestValueIndex)
       case _ =>
     }
 
@@ -64,7 +67,9 @@ class ArrayMaxPQ[Key](val capacity: Int = 10)(implicit tag: ClassTag[Key],
 
   protected def less(i: Int, j: Int): Boolean = cmp.lt(priorityQueue(i), priorityQueue(j))
 
-  private def exch(i: Int, j: Int): Unit = {
+  protected def greater: (Int, Int) => Boolean = (a: Int, b: Int) => !less(a, b)
+
+  protected def exch(i: Int, j: Int): Unit = {
     val temp = priorityQueue(i)
     priorityQueue(i) = priorityQueue(j)
     priorityQueue(j) = temp

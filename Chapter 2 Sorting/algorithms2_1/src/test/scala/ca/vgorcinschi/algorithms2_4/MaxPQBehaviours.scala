@@ -33,7 +33,10 @@ trait MaxPQBehaviours {
 
     it should "return the highest value until PQ is not empty" in {
       val instance = instanceSupplier()
-      reverseSorted.foreach(n => n shouldEqual instance.delMax())
+      reverseSorted.foreach { n =>
+        val currentMax = instance.delMax()
+        n shouldEqual currentMax
+      }
     }
 
     it should "decrease size by 1" in {
