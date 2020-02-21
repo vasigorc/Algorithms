@@ -1,7 +1,7 @@
 package ca.vgorcinschi.algorithms2_4
 
+import scala.annotation.tailrec
 import scala.reflect.ClassTag
-import util.control.Breaks._
 
 /**
  * Ex 2.4.26 Heap without exchanges. Because the exch() primitive is used in the sink()
@@ -18,30 +18,41 @@ class HeapWithoutExchanges[Key](implicit tag: ClassTag[Key],
   extends ArrayMaxPQ[Key] {
 
   override protected def sink(key: Int): Unit = {
-    val movingPart = priorityQueue(key)
-    var k = key
+    val movingGenre = priorityQueue(key)
 
-    breakable {
-      while (2 * k <= N) {
-        val left = 2 * k
-        val right = 2 * k + 1
-        val biggestChildIndex = if (left < N && less(left, right))  right  else left
-        if (!less(k, biggestChildIndex)) break
-        priorityQueue(biggestChildIndex) = priorityQueue(k)
-        k = biggestChildIndex
-      }
+    @tailrec
+    def innerLoop(currentIndex: Int, previousIndex: Int): Int = currentIndex match {
+      case left if left <= N =>
+        val largestValueIndex = if (left < N && less(left, left + 1)) left + 1 else left
+        if (greaterValue(movingGenre, priorityQueue(largestValueIndex))) return previousIndex
+        priorityQueue(previousIndex) = priorityQueue(largestValueIndex)
+        innerLoop(2 * largestValueIndex, largestValueIndex)
+      case _ => previousIndex
     }
-    priorityQueue(k) = movingPart
+
+    val insertIndexForTheMovingGenre = innerLoop(2 * key, key)
+    priorityQueue(insertIndexForTheMovingGenre) = movingGenre
   }
 
+  // reducing # of array references swap to max 1 per insert
   override protected def swim(key: Int): Unit = {
-    val movingPart = priorityQueue(key)
-    var k = key
+    val movingGenre = priorityQueue(key)
+    var (previousIndex, currentIndex) = (key, key)
 
-    while (k > 1 && less(k / 2, k)) {
-      priorityQueue(k / 2) = priorityQueue(k)
-      k /= 2
+    currentIndex /= 2
+    while (currentIndex > 0 && less(priorityQueue(currentIndex), movingGenre))  {
+      priorityQueue(previousIndex) = priorityQueue(currentIndex)
+      previousIndex = currentIndex
+      currentIndex /= 2
     }
-    priorityQueue(k) = movingPart
+    priorityQueue(previousIndex) = movingGenre
   }
+
+  def less(maybeA: Option[Key], maybeB: Option[Key]): Boolean = (maybeA, maybeB) match {
+    case (Some(a), Some(b)) => cmp.lt(a, b)
+    case (None, Some(_)) => true
+    case _ => false
+  }
+
+  private def greaterValue= (maybeA: Option[Key], maybeB: Option[Key]) => !less(maybeA, maybeB)
 }
