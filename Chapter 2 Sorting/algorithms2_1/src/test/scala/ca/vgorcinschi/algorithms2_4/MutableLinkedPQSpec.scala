@@ -38,7 +38,7 @@ class MutableLinkedPQSpec extends BaseSpec {
     instance.size() shouldEqual  1
   }
 
-  it should "throw IllegalArgumentException when PQ is empty" in new IntPQBuilder {
+  it should "throw NullPointerException when PQ is empty" in new IntPQBuilder {
     the [NullPointerException] thrownBy instance.delMax()
   }
 
