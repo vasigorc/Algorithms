@@ -23,12 +23,12 @@ trait BaseMaxPQSpec extends BaseSpec with MaxPQBehaviours {
   behavior of "non-empty PQ"
 
   it should behave like nonEmptyMaxPQ(() => nonEmptyCharMaxPQ, sortedCharsList)
-//  it should behave like nonEmptyMaxPQ(() => nonEmptyIntMaxPQ, sortedIntList)
-//  it should behave like nonEmptyMaxPQ(() => nonEmptyDoubleMaxPQ, sortedDoubleList)
+  it should behave like nonEmptyMaxPQ(() => nonEmptyIntMaxPQ, sortedIntList)
+  it should behave like nonEmptyMaxPQ(() => nonEmptyDoubleMaxPQ, sortedDoubleList)
 
   behavior of "empty PQ"
 
-//  it should behave like emptyMaxPQ(() => emptyCharMaxPQ, 'A')
-//  it should behave like emptyMaxPQ(() => emptyIntMaxPQ, 1)
-//  it should behave like emptyMaxPQ(() => emptyDoubleMaxPQ, 1d)
+  it should behave like emptyMaxPQ(() => emptyCharMaxPQ, 'A')
+  it should behave like emptyMaxPQ(() => emptyIntMaxPQ, 1)
+  it should behave like emptyMaxPQ(() => emptyDoubleMaxPQ, 1d)
 }

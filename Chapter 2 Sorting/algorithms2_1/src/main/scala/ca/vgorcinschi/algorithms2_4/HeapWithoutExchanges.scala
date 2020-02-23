@@ -30,22 +30,21 @@ class HeapWithoutExchanges[Key](implicit tag: ClassTag[Key],
       case _ => previousIndex
     }
 
-    val insertIndexForTheMovingGenre = innerLoop(2 * key, key)
-    priorityQueue(insertIndexForTheMovingGenre) = movingGenre
+    priorityQueue(innerLoop(2 * key, key)) = movingGenre
   }
 
   // reducing # of array references swap to max 1 per insert
   override protected def swim(key: Int): Unit = {
     val movingGenre = priorityQueue(key)
-    var (previousIndex, currentIndex) = (key, key)
 
-    currentIndex /= 2
-    while (currentIndex > 0 && less(priorityQueue(currentIndex), movingGenre))  {
-      priorityQueue(previousIndex) = priorityQueue(currentIndex)
-      previousIndex = currentIndex
-      currentIndex /= 2
+    @tailrec
+    def innerLoop(currentIndex: Int, previousIndex: Int): Int = currentIndex match {
+      case c if c > 0 && less(priorityQueue(c), movingGenre) =>
+        priorityQueue(previousIndex) = priorityQueue(c)
+        innerLoop(c / 2, c)
+      case _ => previousIndex
     }
-    priorityQueue(previousIndex) = movingGenre
+    priorityQueue(innerLoop(key /2, key)) = movingGenre
   }
 
   def less(maybeA: Option[Key], maybeB: Option[Key]): Boolean = (maybeA, maybeB) match {

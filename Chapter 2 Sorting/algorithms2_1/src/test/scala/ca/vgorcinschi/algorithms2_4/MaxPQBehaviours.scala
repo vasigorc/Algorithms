@@ -74,9 +74,9 @@ trait MaxPQBehaviours {
 
     behavior of s"delMax for $className"
 
-    it should "throw NullPointerException when PQ is empty" in {
+    it should "throw NoSuchElementException when PQ is empty" in {
       val instance = instanceSupplier()
-      the [NullPointerException] thrownBy instance.delMax()
+      the [NoSuchElementException] thrownBy instance.delMax()
     }
 
     behavior of s"insert for $className"
