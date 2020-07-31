@@ -11,11 +11,13 @@ lazy val root = (project in file(".")).
     libraryDependencies ++= {
       val scalaTestVersion = "3.0.5"
       val scalaCheckVersion = "1.14.0"
+      val catsVersion = "2.0.0"
       Seq(scalaTest % Test,
         "org.scalatest" %% "scalatest" % scalaTestVersion % "test",
         "org.scalacheck" %% "scalacheck" % scalaCheckVersion % "test",
         "com.storm-enroute" %% "scalameter" % "0.9",
-        "com.google.guava" % "guava" % "23.0"
+        "com.google.guava" % "guava" % "23.0",
+        "org.typelevel" %% "cats-core" % catsVersion
       )
     }
   )
