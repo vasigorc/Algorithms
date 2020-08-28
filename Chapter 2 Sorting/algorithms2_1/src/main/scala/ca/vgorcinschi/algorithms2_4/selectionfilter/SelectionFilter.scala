@@ -1,5 +1,15 @@
 package ca.vgorcinschi.algorithms2_4.selectionfilter
 
+import java.io.{BufferedReader, FileReader}
+import java.nio.file.{Files, Paths}
+
+import ca.vgorcinschi.algorithms2_4.ArrayMaxPQ
+import Parseable._
+import CoordinatePoint._
+
+import scala.annotation.tailrec
+import scala.io.StdIn
+
 /**
  * Exercise 2.4.28 Selection filter
  * Write a program similar to TopM that reads points (x, y, z)
@@ -9,30 +19,51 @@ package ca.vgorcinschi.algorithms2_4.selectionfilter
  */
 object SelectionFilter extends App {
 
-  case class CoordinatePoint(x: Double, y: Double, z: Double)
+  import Ordered._
 
-  object Origin extends CoordinatePoint(0d, 0d, 0d)
+  if (args.length == 0) {
+    System.err.println("ERROR: The name of the file containing "
+      + "points to be plotted is the single required argument "
+      + "to the program.")
+    System.exit(1)
+  }
+  private val fileName: String = args(0)
 
-  /**
-   * A [[CoordinatePoint]] is "bigger" than another if it is closer
-   * to the coordinates' origin point - [[Origin]] in
-   * @see [[https://en.wikipedia.org/wiki/Euclidean_distance#Three_dimensions Euclidean distance]]
-   */
-  implicit object OriginOrdering extends Ordering[CoordinatePoint] {
-
-    def euclideanDistance(point: CoordinatePoint): Double = {
-      math.sqrt(
-        math.pow(point.x - Origin.x, 2) +
-          math.pow(point.y - Origin.y, 2) +
-          math.pow(point.z - Origin.z, 2)
-      )
-    }
-
-    override def compare(x: CoordinatePoint, y: CoordinatePoint): Int = {
-      // inversing the parameters' order to get the smallest value win
-      euclideanDistance(y) compare euclideanDistance(x)
-    }
+  if (!Files.exists(Paths.get(fileName))) {
+    System.err.println(s"ERROR: File $fileName doesn't exist or you don't have necessary permissions to access to it")
+    System.exit(1)
   }
 
-}
+  private val max_allowable_pq_size = getMFromUser
+  lazy val instance = new ArrayMaxPQ[CoordinatePoint](max_allowable_pq_size)
 
+  private val bufferedReader = new BufferedReader(new FileReader(fileName))
+
+  // lazy stream, so each line will be read only when stream is consumed
+  private val streamOfMaybeCoordinatePoints: Stream[Either[String, CoordinatePoint]] = Stream
+    .continually(bufferedReader.readLine())
+    .takeWhile(_ != null)
+    .map(InputParser.parse[CoordinatePoint](_))
+
+  streamOfMaybeCoordinatePoints.foreach {
+    case Left(error_input) =>
+      System.err.println(s"ERROR: Symbol $error_input couldn't be parsed into an instance of ${CoordinatePoint.getClass.getSimpleName}")
+      System.exit(1)
+    case Right(point) =>
+      if (point > instance.max()) {
+        println(s"Dropping most distant Coordinate Point: ${instance.delMax()}")
+      }
+      instance.insert(point)
+  }
+
+  @tailrec
+  def getMFromUser: Int = {
+    print("Enter the desired size of the Priority Queue (Integer value):")
+    InputParser.parse[Int](StdIn.readLine()) match {
+      case Left(invalidInput) =>
+        println(s"$invalidInput is not an integer value!")
+        getMFromUser
+      case Right(value) => value
+    }
+  }
+}
