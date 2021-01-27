@@ -59,7 +59,7 @@ class ArrayMaxPQ[U : Ordering : ClassTag] private(private val priorityQueue: Arr
   private def recalculateArraySize(nextN: Int): Int = {
     val size = priorityQueue.length
 
-    if (size == nextN) return nextN * 2 
+    if (size == nextN) return nextN * 2
     else if (nextN > 0 && nextN == size / 4) return math.max(INITIAL_CAPACITY, size / 2)
     else size
   }
