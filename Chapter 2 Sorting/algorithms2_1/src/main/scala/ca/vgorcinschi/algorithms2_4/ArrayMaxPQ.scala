@@ -20,7 +20,6 @@ class ArrayMaxPQ[Key](val capacity: Int = 10)(implicit tag: ClassTag[Key],
   //insert a key into a Priority Queue
   def insert(v: Key): Unit = {
     N += 1
-    adjustArraySize(N)
     priorityQueue(N) = Some(v)
     swim(N)
   }
@@ -30,7 +29,6 @@ class ArrayMaxPQ[Key](val capacity: Int = 10)(implicit tag: ClassTag[Key],
     val maxValue = max()
     exch(1, N)
     N -= 1
-    adjustArraySize(N)
     priorityQueue(N + 1) = None //avoid loitering
     sink(1)
     maxValue
@@ -49,22 +47,6 @@ class ArrayMaxPQ[Key](val capacity: Int = 10)(implicit tag: ClassTag[Key],
     }
 
     innerLoop(key)
-  }
-
-  private def adjustArraySize(nextN: Int): Unit = {
-    var nextSize = priorityQueue.length
-
-    if (nextSize == nextN) {
-      nextSize = nextN * 2
-    } else if (nextN > 0 && nextN == nextSize / 4) {
-      nextSize = math.max(10, nextSize / 2)
-    }
-
-    if (nextSize != priorityQueue.length) {
-      val nextPriorityQueue = new Array[Option[Key]](nextSize)
-      Array.copy(priorityQueue, 1, nextPriorityQueue, 1, nextN - 1)
-      priorityQueue = nextPriorityQueue
-    }
   }
 
   protected def sink(key: Int): Unit = {
