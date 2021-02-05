@@ -25,4 +25,11 @@ object CoordinatePoint {
       euclideanDistance(y) compare euclideanDistance(x)
     }
   }
+
+  object ReverseOriginOrdering extends Ordering[CoordinatePoint] {
+
+    override def compare(x: CoordinatePoint, y: CoordinatePoint): Int = {
+      -1 * OriginOrdering.compare(x, y)
+    }
+  }
 }

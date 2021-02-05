@@ -8,6 +8,7 @@ import CoordinatePoint._
 
 import scala.annotation.tailrec
 import scala.io.StdIn
+import scala.reflect.classTag
 
 /** Exercise 2.4.28 Selection filter
   * Write a program similar to TopM that reads points (x, y, z)
@@ -19,14 +20,13 @@ object SelectionFilter extends App {
 
   import Ordered._
 
-  if (args.length == 0) {
-    System.err.println(
-      "ERROR: The name of the file containing "
-        + "points to be plotted is the single required argument "
-        + "to the program."
-    )
+  if (args.isEmpty) {
+    System.err.println("""ERROR: The name of the file containing 
+         points to be plotted is the single required argument
+         to the program.""")
     System.exit(1)
   }
+
   private val fileName: String = args(0)
 
   if (!Files.exists(Paths.get(fileName))) {
@@ -48,19 +48,16 @@ object SelectionFilter extends App {
     .map(InputParser.parse[CoordinatePoint](_))
 
   private val resultingQueue: ArrayMaxPQ[CoordinatePoint] =
-    arrayMaxPQFromRunner(
+    arrayMaxPQRunner(
       streamOfMaybeCoordinatePoints,
       (maxPQ: ArrayMaxPQ[CoordinatePoint]) =>
         (either: Either[String, CoordinatePoint]) => consumeOneF(maxPQ, either),
       max_allowable_pq_size
-    )
+    )(classTag[CoordinatePoint], ReverseOriginOrdering)
 
-  Stream
-    .iterate(resultingQueue)(queue => {
-      println(queue.delMax())
-      queue
-    })
-    .takeWhile(!_.isEmpty)
+  while (!resultingQueue.isEmpty) {
+    println(s"${resultingQueue.size()}th point: ${resultingQueue.delMax()}")
+  }
 
   private def consumeOneF(
     maxPQ: ArrayMaxPQ[CoordinatePoint],
@@ -73,10 +70,14 @@ object SelectionFilter extends App {
         )
         System.exit(1)
       case Right(point) =>
-        if (maxPQ.size() == max_allowable_pq_size && point > maxPQ.max()) {
-          println(s"Dropping most distant Coordinate Point: ${maxPQ.delMax()}")
+        if (maxPQ.size() < max_allowable_pq_size || point < maxPQ.max()) {
+          if (maxPQ.size() == max_allowable_pq_size - 1) {
+            println(
+              s"Dropping most distant Coordinate Point: ${maxPQ.delMax()}"
+            )
+          }
+          maxPQ.insert(point)
         }
-        maxPQ.insert(point)
     }
   }
 
