@@ -5,6 +5,8 @@ import java.nio.file.{Files, Paths}
 import ca.vgorcinschi.algorithms2_4.ArrayMaxPQ
 import Parseable._
 import CoordinatePoint._
+import cats.Id
+import cats.data.{Reader, ReaderT}
 
 import scala.annotation.tailrec
 import scala.io.StdIn
@@ -21,19 +23,17 @@ object SelectionFilter extends App {
   import Ordered._
 
   if (args.isEmpty) {
-    System.err.println("""ERROR: The name of the file containing 
+    Readers.printErrorAndExit.run("""ERROR: The name of the file containing
          points to be plotted is the single required argument
          to the program.""")
-    System.exit(1)
   }
 
   private val fileName: String = args(0)
 
   if (!Files.exists(Paths.get(fileName))) {
-    System.err.println(
+    Readers.printErrorAndExit.run(
       s"ERROR: File $fileName doesn't exist or you don't have necessary permissions to access to it"
     )
-    System.exit(1)
   }
 
   private val max_allowable_pq_size = getMFromUser
@@ -65,10 +65,9 @@ object SelectionFilter extends App {
   ): Unit = {
     either match {
       case Left(error_input) =>
-        System.err.println(
+        Readers.printErrorAndExit.run(
           s"ERROR: Symbol $error_input couldn't be parsed into an instance of ${CoordinatePoint.getClass.getSimpleName}"
         )
-        System.exit(1)
       case Right(point) =>
         if (maxPQ.size() < max_allowable_pq_size || point < maxPQ.max()) {
           if (maxPQ.size() == max_allowable_pq_size - 1) {
@@ -91,4 +90,14 @@ object SelectionFilter extends App {
       case Right(value) => value
     }
   }
+}
+
+private object Readers {
+  private val printErrorMessage =
+    Reader((errMsg: String) => System.err.println(errMsg))
+
+  private val systemExit = Reader[Unit, Unit](_ => System.exit(1))
+
+  val printErrorAndExit: ReaderT[Id, String, Unit] =
+    printErrorMessage.andThen(systemExit)
 }
