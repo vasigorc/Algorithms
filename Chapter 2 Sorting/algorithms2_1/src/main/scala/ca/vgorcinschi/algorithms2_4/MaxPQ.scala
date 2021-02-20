@@ -1,7 +1,5 @@
 package ca.vgorcinschi.algorithms2_4
 
-// FIXME change return type of both max and delMax() to return Option[Key]
-// this will remove a lot of ugliness from the implementation
 trait MaxPQ[Key] {
 
   implicit protected val cmp: Ordering[_ >: Key]

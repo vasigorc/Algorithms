@@ -20,4 +20,8 @@ lazy val root = (project in file(".")).
         "org.typelevel" %% "cats-core" % catsVersion
       )
     }
-  )
+)
+scalacOptions ++= Seq(
+  "-Ypartial-unification"
+)
+
