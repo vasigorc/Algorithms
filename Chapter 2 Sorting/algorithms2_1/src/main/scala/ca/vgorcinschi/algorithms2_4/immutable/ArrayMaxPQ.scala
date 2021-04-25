@@ -5,12 +5,12 @@ import scala.reflect.ClassTag
 
 class ArrayMaxPQ[U : Ordering : ClassTag] private(private val priorityQueue: Array[U],
                                                   override val N: Int)
-  extends AbstractMaxPQ[U] with FindMin[U]{
+  extends AbstractMaxPQ[U] with FindMin[U] {
 
   import ArrayMaxPQ._
 
   override type Contravariant[K >: U] = ArrayMaxPQ[K]
-  override type Nonvariant[_] = ArrayMaxPQ[U]
+  override type Invariant[_] = ArrayMaxPQ[U]
 
   private var maybeMin: Option[U] = None
 
@@ -48,10 +48,8 @@ class ArrayMaxPQ[U : Ordering : ClassTag] private(private val priorityQueue: Arr
     })
   }
 
-  private def copyArray[K >: U : ClassTag](nextN: Int, extraF: Array[K] => Array[K]
-                                           //do nothing by default
-                                           = (array: Array[K]) => array): Array[K] = {
-    val nextPriorityQueue = extraF(new Array[K](recalculateArraySize(nextN)))
+  private def copyArray[K >: U: ClassTag](nextN: Int): Array[K] = {
+    val nextPriorityQueue = new Array[K](recalculateArraySize(nextN))
     Array.copy(priorityQueue, 1, nextPriorityQueue, 1, N)
     nextPriorityQueue
   }
@@ -60,37 +58,53 @@ class ArrayMaxPQ[U : Ordering : ClassTag] private(private val priorityQueue: Arr
     val size = priorityQueue.length
 
     if (size == nextN) return nextN * 2
-    else if (nextN > 0 && nextN == size / 4) return math.max(INITIAL_CAPACITY, size / 2)
+    else if (nextN > 0 && nextN == size / 4)
+      return math.max(INITIAL_CAPACITY, size / 2)
     else size
   }
 
   override def max(): Option[U] = if (N < 1) None else Some(priorityQueue(1))
 
-  /**
-   * remove the max element if at least one
-   * element is present and a new instance of
-   * this PQ without the max element
-   *
-   * @return
-   */
-  override def delMax(): (Option[U], ArrayMaxPQ[U]) = {
-    val maxValue = max()
-    val nextN = N - 1
-    var nextPriorityQueue: Array[U] = copyArray(nextN, array => {
-      array(1) = priorityQueue(N)
-      array
-    })
+  /** remove the max element if at least one
+    * element is present and a new instance of
+    * this PQ without the max element
+    *
+    * @return
+    */
+  override def delMax(): ArrayMaxPQ[U] = {
+    val nextN                       = N - 1
+    var nextPriorityQueue: Array[U] = copyArray(nextN)
+    nextPriorityQueue(1) = nextPriorityQueue(N)
+    nextPriorityQueue(N) = null.asInstanceOf[U]
     nextPriorityQueue = sink(nextPriorityQueue, nextN)
-    (maxValue, ArrayMaxPQ(nextPriorityQueue, nextN, min()))
+    ArrayMaxPQ(nextPriorityQueue, nextN, min())
   }
+
+  override def toStream: Stream[U] = {
+    @tailrec
+    def loop(shrinkingPq: ArrayMaxPQ[U], acc: Stream[U]): Stream[U] =
+      shrinkingPq.max() match {
+        case None        => acc
+        case Some(value) => loop(shrinkingPq.delMax(), value #:: acc)
+      }
+    loop(delMax(), max().fold(Stream[U]())(_ #:: Stream.empty)).reverse
+  }
+
+  override def iterator: Iterator[U] = toStream.toIterator
 }
 
 object ArrayMaxPQ {
   import Ordered._
 
+  private val leftChild  = (i: Int) => i * 2
+  private val rightChild = leftChild.andThen(_ + 1)
+
   private val INITIAL_CAPACITY: Int = 10
   // invisible outside class
-  private def swim[U : Ordering : ClassTag](array: Array[U], lastIndex: Int):Array[U] = {
+  private def swim[U: Ordering: ClassTag](
+    array: Array[U],
+    lastIndex: Int
+  ): Array[U] = {
     var k = lastIndex
     while (k > 1 && less(array(k / 2), array(k))) {
       exch(array, k / 2, k)
@@ -99,23 +113,26 @@ object ArrayMaxPQ {
     array
   }
 
-  /**
-   * "Sink" element at index 1 by exchanging it with
+  /** "Sink" element at index 1 by exchanging it with
    * one of the children until it finds a bigger child
    * @param array de-normalized priority queue
    * @param lastIndex - index of last counted value in the queue
    * @tparam U - ordered type
    * @return normalized priority queue
    */
-  private def sink[U : Ordering : ClassTag](array: Array[U], lastIndex: Int): Array[U] = {
+  private def sink[U: Ordering: ClassTag](
+    array: Array[U],
+    lastIndex: Int
+  ): Array[U] = {
 
     @tailrec
-    def innerLoop(currentIndex: Int): Unit = 2 * currentIndex match {
+    def innerLoop(currentIndex: Int): Unit = leftChild(currentIndex) match {
       case left if left <= lastIndex =>
-        val right = left + 1
-        val largestValueIndex = if (left < lastIndex && less(array, left, right)) {
-          right
-        } else left
+        val right = rightChild(currentIndex)
+        val largestValueIndex =
+          if (left < lastIndex && less(array, left, right)) {
+            right
+          } else left
         if (greater(array, currentIndex, largestValueIndex)) return
         exch(array, currentIndex, largestValueIndex)
         innerLoop(largestValueIndex)
